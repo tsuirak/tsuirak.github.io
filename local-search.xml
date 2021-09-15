@@ -4,9 +4,9 @@
   
   
   <entry>
-    <title>Java异常</title>
-    <link href="/2020/10/10/java-exception/"/>
-    <url>/2020/10/10/java-exception/</url>
+    <title>计算机网络</title>
+    <link href="/2020/10/10/computer-network/"/>
+    <url>/2020/10/10/computer-network/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -15,11 +15,9 @@
       
       <category>Java</category>
       
-      <category>Java语言</category>
+      <category>编程基础</category>
       
-      <category>语言基础</category>
-      
-      <category>异常</category>
+      <category>计算机网络</category>
       
     </categories>
     
@@ -54,9 +52,9 @@
   
   
   <entry>
-    <title>Java虚拟机</title>
-    <link href="/2020/10/10/java-jvm/"/>
-    <url>/2020/10/10/java-jvm/</url>
+    <title>Java异常</title>
+    <link href="/2020/10/10/java-exception/"/>
+    <url>/2020/10/10/java-exception/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -67,7 +65,9 @@
       
       <category>Java语言</category>
       
-      <category>JVM</category>
+      <category>语言基础</category>
+      
+      <category>异常</category>
       
     </categories>
     
@@ -102,6 +102,29 @@
   
   
   <entry>
+    <title>Java虚拟机</title>
+    <link href="/2020/10/10/java-jvm/"/>
+    <url>/2020/10/10/java-jvm/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Java语言</category>
+      
+      <category>JVM</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java网络编程</title>
     <link href="/2020/10/10/java-socket/"/>
     <url>/2020/10/10/java-socket/</url>
@@ -116,6 +139,29 @@
       <category>Java语言</category>
       
       <category>网络编程</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>操作系统</title>
+    <link href="/2020/10/10/os/"/>
+    <url>/2020/10/10/os/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>编程基础</category>
+      
+      <category>操作系统</category>
       
     </categories>
     
@@ -141,29 +187,6 @@
       <category>语言基础</category>
       
       <category>多线程</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>操作系统</title>
-    <link href="/2020/10/10/os/"/>
-    <url>/2020/10/10/os/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>编程基础</category>
-      
-      <category>操作系统</category>
       
     </categories>
     
@@ -245,29 +268,6 @@
       <category>Spring家族</category>
       
       <category>SpringMVC</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>计算机网络</title>
-    <link href="/2020/10/10/computer-network/"/>
-    <url>/2020/10/10/computer-network/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>编程基础</category>
-      
-      <category>计算机网络</category>
       
     </categories>
     
