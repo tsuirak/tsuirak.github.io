@@ -4,31 +4,6 @@
   
   
   <entry>
-    <title>Java异常</title>
-    <link href="/2020/10/10/java-exception/"/>
-    <url>/2020/10/10/java-exception/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>Java语言</category>
-      
-      <category>语言基础</category>
-      
-      <category>异常</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>计算机网络</title>
     <link href="/2020/10/10/computer-network/"/>
     <url>/2020/10/10/computer-network/</url>
@@ -43,29 +18,6 @@
       <category>编程基础</category>
       
       <category>计算机网络</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Java虚拟机</title>
-    <link href="/2020/10/10/java-jvm/"/>
-    <url>/2020/10/10/java-jvm/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>Java语言</category>
-      
-      <category>JVM</category>
       
     </categories>
     
@@ -91,6 +43,54 @@
       <category>语言基础</category>
       
       <category>集合</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java异常</title>
+    <link href="/2020/10/10/java-exception/"/>
+    <url>/2020/10/10/java-exception/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Java语言</category>
+      
+      <category>语言基础</category>
+      
+      <category>异常</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java虚拟机</title>
+    <link href="/2020/10/10/java-jvm/"/>
+    <url>/2020/10/10/java-jvm/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Java语言</category>
+      
+      <category>JVM</category>
       
     </categories>
     
