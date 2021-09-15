@@ -52,6 +52,31 @@
   
   
   <entry>
+    <title>Java反射</title>
+    <link href="/2020/10/10/java-reflection/"/>
+    <url>/2020/10/10/java-reflection/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Java语言</category>
+      
+      <category>语言基础</category>
+      
+      <category>反射</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java异常</title>
     <link href="/2020/10/10/java-exception/"/>
     <url>/2020/10/10/java-exception/</url>
@@ -91,31 +116,6 @@
       <category>Java语言</category>
       
       <category>JVM</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Java反射</title>
-    <link href="/2020/10/10/java-reflection/"/>
-    <url>/2020/10/10/java-reflection/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>Java语言</category>
-      
-      <category>语言基础</category>
-      
-      <category>反射</category>
       
     </categories>
     
