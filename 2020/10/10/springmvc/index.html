@@ -292,7 +292,7 @@
 <li>客户端发起请求测试</li>
 </ol>
 <p><strong>流程演示</strong></p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-08-19%2019.16.34.png" srcset="/img/loading.gif" lazyload alt="截屏2021-08-19 19.16.34"></p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-08-19%2019.16.34.png" srcset="/img/loading.gif" lazyload></p>
 <h1 id="SpringMVC的注解解析"><a href="#SpringMVC的注解解析" class="headerlink" title="SpringMVC的注解解析"></a>SpringMVC的注解解析</h1><h2 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h2><p>作用：用于建立请求 URL 和处理请求方法之间的对应关系。</p>
 <p>位置</p>
 <ul>
@@ -381,7 +381,7 @@
 <h2 id="注解驱动"><a href="#注解驱动" class="headerlink" title="注解驱动"></a><u>注解驱动</u></h2><p><strong><u>&lt;mvc:annotation-driven/&gt;</u></strong></p>
 <p>开启 mvc 注解驱动。如果不开启注解驱动，那么所有的请求将会被默认 Servlet 处理。</p>
 <p>搭配：**<u>&lt;mvc:default-servlet-handler&gt;</u>**（开启默认 Servlet，开启对静态资源的访问）。</p>
-<h2 id="视图解析器"><a href="#视图解析器" class="headerlink" title="视图解析器"></a><a href="#%3Cu%3E%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8%3C/u%3E%EF%BC%88ViewResolver%EF%BC%89">视图解析器</a></h2><p class="note note-info">点击标题跳转到详情</p>
+<h2 id="视图解析器"><a href="#视图解析器" class="headerlink" title="视图解析器"></a><a href="#%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8(ViewResolver)">视图解析器</a></h2><p class="note note-info">点击标题跳转到详情</p>
 
 
 
@@ -421,7 +421,8 @@
 <li>若使用字符串数组类型的形参，此参数的数组中包含了每一个数据；</li>
 <li>若使用字符串类型的形参，此参数的值为每个数据中间使用逗号拼接的结果。</li>
 </ul>
-<h2 id="RequestParam注解"><a href="#RequestParam注解" class="headerlink" title="@RequestParam注解"></a>@RequestParam注解</h2><p>当请求的参数名称与 Controller 的业务方法参数名称不一致时，就需要通过 @RequestParam 注解显示的绑定。</p>
+<h2 id="RequestParam注解"><a href="#RequestParam注解" class="headerlink" title="@RequestParam注解"></a>@RequestParam注解</h2><p> <span id = "@RequestParam注解"></span></p>
+<p>当请求的参数名称与 Controller 的业务方法参数名称不一致时，就需要通过 @RequestParam 注解显示的绑定。</p>
 <p>@RequestParam 是将请求参数和控制器方法的形参创建映射关系。</p>
 <blockquote>
 <p><strong>value</strong>：指定为形参赋值的请求参数的参数名；</p>
@@ -438,7 +439,8 @@
 
 
 
-<h2 id="RequestHeader注解"><a href="#RequestHeader注解" class="headerlink" title="@RequestHeader注解"></a>@RequestHeader注解</h2><p>@RequestHeader 是将请求头信息和控制器方法的形参创建映射关系。    </p>
+<h2 id="RequestHeader注解"><a href="#RequestHeader注解" class="headerlink" title="@RequestHeader注解"></a>@RequestHeader注解</h2><p> <span id = "@RequestHeader注解"></span></p>
+<p>@RequestHeader 是将请求头信息和控制器方法的形参创建映射关系。    </p>
 <blockquote>
 <ul>
 <li><strong>value</strong>：请求头的名称；</li>
@@ -450,7 +452,8 @@
 
 
 
-<h2 id="CookieValue注解"><a href="#CookieValue注解" class="headerlink" title="@CookieValue注解"></a>@CookieValue注解</h2><p>@CookieValue 是将 cookie 数据和控制器方法的形参创建映射关系。使用 @CookieValue 可以获得指定Cookie的值。</p>
+<h2 id="CookieValue注解"><a href="#CookieValue注解" class="headerlink" title="@CookieValue注解"></a>@CookieValue注解</h2><p> <span id = "@CookieValue注解"></span></p>
+<p>@CookieValue 是将 cookie 数据和控制器方法的形参创建映射关系。使用 @CookieValue 可以获得指定Cookie的值。</p>
 <blockquote>
 <ul>
 <li><strong>value</strong>：指定 cookie 的名称；</li>
@@ -558,7 +561,8 @@
 
 
 
-<h2 id="视图解析器（ViewResolver）"><a href="#视图解析器（ViewResolver）" class="headerlink" title="视图解析器（ViewResolver）"></a><u>视图解析器</u>（ViewResolver）</h2><p><strong><u>ViewResolver</u></strong></p>
+<h2 id="视图解析器（ViewResolver）"><a href="#视图解析器（ViewResolver）" class="headerlink" title="视图解析器（ViewResolver）"></a>视图解析器（ViewResolver）</h2><p><span id="视图解析器(ViewResolver)"></span></p>
+<p><strong><u>ViewResolver</u></strong></p>
 <p><strong><u>InternalResourceViewResolver</u></strong></p>
 <p>该解析器的默认设置，如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">REDIRECT_URL_PREFIX = <span class="hljs-string">&quot;redirect:&quot;</span>  --重定向前缀<br>FORWARD_URL_PREFIX = <span class="hljs-string">&quot;forward:&quot;</span>    --转发前缀（默认值）<br>prefix = <span class="hljs-string">&quot;&quot;</span>;     --视图名称前缀<br>suffix = <span class="hljs-string">&quot;&quot;</span>;     --视图名称后缀<br></code></pre></td></tr></table></figure>
@@ -646,7 +650,8 @@
 </li>
 </ul>
 </blockquote>
-<h2 id="PathVariable注解"><a href="#PathVariable注解" class="headerlink" title="@PathVariable注解"></a>@PathVariable注解</h2><p>@PathVariable 可以用来映射 URL 中的占位符到目标方法的参数中。</p>
+<h2 id="PathVariable注解"><a href="#PathVariable注解" class="headerlink" title="@PathVariable注解"></a>@PathVariable注解</h2><p> <span id = "@PathVariable注解"></span></p>
+<p>@PathVariable 可以用来映射 URL 中的占位符到目标方法的参数中。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequestMapping(&quot;/testPathVariable/&#123;id&#125;&quot;)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">testPathVariable</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable(&quot;id&quot;)</span> Integer id)</span></span><br><span class="hljs-function">    </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;testPathVariable:&quot;</span>+id);<br>        <span class="hljs-keyword">return</span> SUCCESS;<br>    &#125;<br></code></pre></td></tr></table></figure>
 
 
@@ -656,7 +661,8 @@
 <h1 id="SpringMVC的数据响应"><a href="#SpringMVC的数据响应" class="headerlink" title="SpringMVC的数据响应"></a>SpringMVC的数据响应</h1><h2 id="HttpMessageConverter"><a href="#HttpMessageConverter" class="headerlink" title="HttpMessageConverter"></a><u>HttpMessageConverter</u></h2><p>**<u>HttpMessageConverter</u>**，报文信息转换器，将请求报文转换为 Java 对象，或将 Java 对象转换为响应报文。</p>
 <p><u>HttpMessageConverter</u> 提供了两个注解和两个类型。</p>
 <p>@RequestBody，@ResponseBody，RequestEntity，ResponseEntity。</p>
-<h2 id="RequestBody注解"><a href="#RequestBody注解" class="headerlink" title="@RequestBody注解"></a>@RequestBody注解</h2><p>@RequestBody 可以获取<strong>请求体</strong>，需要在 Controller 方法设置一个形参，使用 @RequestBody 进行标识，当前请求的请求体就会为当前注解所标识的形参赋值。</p>
+<h2 id="RequestBody注解"><a href="#RequestBody注解" class="headerlink" title="@RequestBody注解"></a>@RequestBody注解</h2><p> <span id = "@RequestBody注解"></span></p>
+<p>@RequestBody 可以获取<strong>请求体</strong>，需要在 Controller 方法设置一个形参，使用 @RequestBody 进行标识，当前请求的请求体就会为当前注解所标识的形参赋值。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">th:action</span>=<span class="hljs-string">&quot;@&#123;/testRequestBody&#125;&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span><br>    用户名：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>    密码：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequestMapping(&quot;/testRequestBody&quot;)</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">testRequestBody</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> String requestBody)</span></span>&#123;<br>    System.out.println(<span class="hljs-string">&quot;requestBody:&quot;</span>+requestBody);<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;success&quot;</span>;<br>&#125;<br><br><span class="hljs-comment">// 输出</span><br><span class="hljs-comment">// requestBody:username=admin&amp;password=123456</span><br></code></pre></td></tr></table></figure>
@@ -668,7 +674,8 @@
 
 
 
-<h2 id="ResponseBody注解"><a href="#ResponseBody注解" class="headerlink" title="@ResponseBody注解"></a>@ResponseBody注解</h2><p>@ResponseBody 用于标识一个 Controller 方法，可以将该方法的返回值直接作为<strong>响应报文</strong>的响应体响应到浏览器。</p>
+<h2 id="ResponseBody注解"><a href="#ResponseBody注解" class="headerlink" title="@ResponseBody注解"></a>@ResponseBody注解</h2><p> <span id = "@ResponseBody注解"></span></p>
+<p>@ResponseBody 用于标识一个 Controller 方法，可以将该方法的返回值直接作为<strong>响应报文</strong>的响应体响应到浏览器。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequestMapping(&quot;/testResponseBody&quot;)</span><br><span class="hljs-meta">@ResponseBody</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">testResponseBody</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;success&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
@@ -691,7 +698,8 @@
 
 
 
-<h2 id="RestController注解"><a href="#RestController注解" class="headerlink" title="@RestController注解"></a>@RestController注解</h2><p>@RestController 注解是 SpringMVC 提供的一个复合注解，标识在控制器的类上，就相当于为类添加了@Controller 注解，并且为其中的每个方法添加了@ResponseBody 注解。</p>
+<h2 id="RestController注解"><a href="#RestController注解" class="headerlink" title="@RestController注解"></a>@RestController注解</h2><p> <span id = "@RestController注解"></span></p>
+<p>@RestController 注解是 SpringMVC 提供的一个复合注解，标识在控制器的类上，就相当于为类添加了@Controller 注解，并且为其中的每个方法添加了@ResponseBody 注解。</p>
 <h2 id="ResponseEntity"><a href="#ResponseEntity" class="headerlink" title="ResponseEntity"></a>ResponseEntity</h2><p>ResponseEntity 用于 Controller 方法的返回值类型，该控制器方法的返回值就是响应到浏览器的响应报文。</p>
 <p>（用于实现文件下载）</p>
 <h1 id="文件的上传和下载"><a href="#文件的上传和下载" class="headerlink" title="文件的上传和下载"></a>文件的上传和下载</h1><h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><p>使用 ResponseEntity 实现下载文件的功能。</p>
@@ -714,7 +722,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequestMapping(&quot;/testUp&quot;)</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">testUp</span><span class="hljs-params">(MultipartFile photo, HttpSession session)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;<br>    <span class="hljs-comment">// 获取上传的文件的文件名</span><br>    String fileName = photo.getOriginalFilename();<br>    <span class="hljs-comment">// 处理文件重名问题</span><br>  	<span class="hljs-comment">// 获取上传文件后缀名</span><br>    String hzName = fileName.substring(fileName.lastIndexOf(<span class="hljs-string">&quot;.&quot;</span>));<br>    fileName = UUID.randomUUID().toString() + hzName;<br>    <span class="hljs-comment">// 获取服务器中photo目录的路径</span><br>    ServletContext servletContext = session.getServletContext();<br>    String photoPath = servletContext.getRealPath(<span class="hljs-string">&quot;photo&quot;</span>);<br>    File file = <span class="hljs-keyword">new</span> File(photoPath);<br>    <span class="hljs-keyword">if</span>(!file.exists())&#123;<br>        file.mkdir();<br>    &#125;<br>    String finalPath = photoPath + File.separator + fileName;<br>    <span class="hljs-comment">// 实现上传功能</span><br>    photo.transferTo(<span class="hljs-keyword">new</span> File(finalPath));<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;success&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
 </blockquote>
-<h1 id="SpringMVC的拦截器"><a href="#SpringMVC的拦截器" class="headerlink" title="SpringMVC的拦截器"></a>SpringMVC的拦截器</h1><p>SpringMVC 的拦截器类似于 Servlet 开发中的过滤器 Filter，用于对处理器进行 <strong>预处理（preHandler）</strong> 和<strong>后处理（postHandler）</strong>。</p>
+<h1 id="SpringMVC的拦截器"><a href="#SpringMVC的拦截器" class="headerlink" title="SpringMVC的拦截器"></a>SpringMVC的拦截器</h1><p><span id="SpringMVC的拦截器"></span></p>
+<p>SpringMVC 的拦截器类似于 Servlet 开发中的过滤器 Filter，用于对处理器进行 <strong>预处理（preHandler）</strong> 和<strong>后处理（postHandler）</strong>。</p>
 <p>将拦截器按一定的顺序联结成一条链，这条链称为<strong>拦截器链（Interceptor Chain）</strong>。在访问被拦截的方法或字段时，拦截器链中的拦截器就会按其之前定义的顺序被调用。拦截器也是 AOP 思想的具体实现。</p>
 <p><strong>拦截器与过略器的区别</strong></p>
 <table>
@@ -736,7 +745,7 @@
 <td>只会拦截访问的控制器方法，如果访问的是 jsp、html、css、image、js 是不会进行拦截的</td>
 </tr>
 </tbody></table>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-18%2015.53.35.png" srcset="/img/loading.gif" lazyload alt="截屏2021-09-18 15.53.35" style="zoom:50%;" />
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-18%2015.53.35.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -803,10 +812,11 @@
 
 
 
-<h1 id="SpringMVC的异常处理器"><a href="#SpringMVC的异常处理器" class="headerlink" title="SpringMVC的异常处理器"></a>SpringMVC的异常处理器</h1><p><strong><u>HandlerExceptionResolver</u></strong></p>
+<h1 id="SpringMVC的异常处理器"><a href="#SpringMVC的异常处理器" class="headerlink" title="SpringMVC的异常处理器"></a>SpringMVC的异常处理器</h1><p><span id="SpringMVC的异常处理器"></span></p>
+<p><strong><u>HandlerExceptionResolver</u></strong></p>
 <p>系统中异常包括两类：<strong>预期异常</strong>和<strong>运行时异常（RuntimeException）</strong>，前者通过捕获异常从而获取异常信息，后者主要通过规范代码开发、测试等手段减少运行时异常的发生。</p>
 <p>系统的 <strong>Dao</strong>、<strong>Service</strong>、<strong>Controller</strong> 出现都通过 throws Exception 向上抛出，最后由 SpringMVC 前端控制器交由异常处理器进行异常处理，如下图：</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/image-20210821171506546.png" srcset="/img/loading.gif" lazyload alt="image-20210821171506546"></p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/image-20210821171506546.png" srcset="/img/loading.gif" lazyload></p>
 <h5 id=""><a href="#" class="headerlink" title=""></a></h5><p><strong>自定义异常处理的方式</strong></p>
 <ul>
 <li><p>使用 Spring MVC 提供的简单异常处理器 <strong><u>SimpleMappingExceptionResolver</u></strong></p>
@@ -818,7 +828,8 @@
 
 
 
-<h2 id="基于注解的异常处理"><a href="#基于注解的异常处理" class="headerlink" title="基于注解的异常处理"></a><strong>基于注解的异常处理</strong></h2><h3 id="ControllerAdvice注解"><a href="#ControllerAdvice注解" class="headerlink" title="@ControllerAdvice注解"></a>@ControllerAdvice注解</h3><p>增强的 Controller 注解。</p>
+<h2 id="基于注解的异常处理"><a href="#基于注解的异常处理" class="headerlink" title="基于注解的异常处理"></a><strong>基于注解的异常处理</strong></h2><h3 id="ControllerAdvice注解"><a href="#ControllerAdvice注解" class="headerlink" title="@ControllerAdvice注解"></a>@ControllerAdvice注解</h3><p> <span id = "@ControllerAdvice注解"></span></p>
+<p>增强的 Controller 注解。</p>
 <blockquote>
 <ol>
 <li>全局异常处理；</li>
@@ -826,7 +837,8 @@
 <li>全局数据预处理。</li>
 </ol>
 </blockquote>
-<h3 id="ExceptionHandler注解"><a href="#ExceptionHandler注解" class="headerlink" title="@ExceptionHandler注解"></a>@ExceptionHandler注解</h3><p>统一处理某一类异常，从而能够减少代码重复率和复杂度。</p>
+<h3 id="ExceptionHandler注解"><a href="#ExceptionHandler注解" class="headerlink" title="@ExceptionHandler注解"></a>@ExceptionHandler注解</h3><p> <span id = "@ExceptionHandler注解"></span></p>
+<p>统一处理某一类异常，从而能够减少代码重复率和复杂度。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 将当前类标识为异常处理的组件</span><br><span class="hljs-meta">@ControllerAdvice</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExceptionController</span> </span>&#123;<br><br>    <span class="hljs-comment">// 用于设置所标识方法处理的异常</span><br>    <span class="hljs-meta">@ExceptionHandler(ArithmeticException.class)</span><br>    <span class="hljs-comment">// ex表示当前请求处理中出现的异常对象</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">handleArithmeticException</span><span class="hljs-params">(Exception ex, Model model)</span></span>&#123;<br>        model.addAttribute(<span class="hljs-string">&quot;ex&quot;</span>, ex);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;error&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
@@ -880,14 +892,14 @@
 </ol>
 </blockquote>
 <h2 id="DispatchServlet"><a href="#DispatchServlet" class="headerlink" title="DispatchServlet"></a>DispatchServlet</h2><p><em><strong>：中央控制器</strong></em></p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/img005.png" srcset="/img/loading.gif" lazyload alt="img005" style="zoom:70%;" />
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/img005.png" srcset="/img/loading.gif" lazyload  style="zoom:70%;" />
 
 
 
 <h3 id="初始化过程"><a href="#初始化过程" class="headerlink" title="初始化过程"></a>初始化过程</h3><p><em><strong><u>源码 to do</u></strong></em></p>
 <h3 id="服务过程"><a href="#服务过程" class="headerlink" title="服务过程"></a>服务过程</h3><p><em><strong><u>源码 to do</u></strong></em></p>
 <h3 id="调用组件处理请求"><a href="#调用组件处理请求" class="headerlink" title="调用组件处理请求"></a>调用组件处理请求</h3><p><em><strong><u>源码 to do</u></strong></em></p>
-<h2 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h2><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2010.23.18.png" srcset="/img/loading.gif" lazyload alt="截屏2021-09-19 10.23.18" style="zoom:50%;" />
+<h2 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h2><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2010.23.18.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p><strong><u>总结流程</u></strong></p>
 <blockquote>
