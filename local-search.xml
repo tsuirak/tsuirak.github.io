@@ -4,6 +4,29 @@
   
   
   <entry>
+    <title>计算机网络</title>
+    <link href="/2020/10/10/computer-network/"/>
+    <url>/2020/10/10/computer-network/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>编程基础</category>
+      
+      <category>计算机网络</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java集合</title>
     <link href="/2020/10/10/java-collection/"/>
     <url>/2020/10/10/java-collection/</url>
@@ -29,9 +52,9 @@
   
   
   <entry>
-    <title>计算机网络</title>
-    <link href="/2020/10/10/computer-network/"/>
-    <url>/2020/10/10/computer-network/</url>
+    <title>Java反射</title>
+    <link href="/2020/10/10/java-reflection/"/>
+    <url>/2020/10/10/java-reflection/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -40,9 +63,34 @@
       
       <category>Java</category>
       
-      <category>编程基础</category>
+      <category>Java语言</category>
       
-      <category>计算机网络</category>
+      <category>语言基础</category>
+      
+      <category>反射</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java虚拟机</title>
+    <link href="/2020/10/10/java-jvm/"/>
+    <url>/2020/10/10/java-jvm/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Java语言</category>
+      
+      <category>JVM</category>
       
     </categories>
     
@@ -77,29 +125,6 @@
   
   
   <entry>
-    <title>Java虚拟机</title>
-    <link href="/2020/10/10/java-jvm/"/>
-    <url>/2020/10/10/java-jvm/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>Java语言</category>
-      
-      <category>JVM</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Java网络编程</title>
     <link href="/2020/10/10/java-socket/"/>
     <url>/2020/10/10/java-socket/</url>
@@ -114,31 +139,6 @@
       <category>Java语言</category>
       
       <category>网络编程</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Java反射</title>
-    <link href="/2020/10/10/java-reflection/"/>
-    <url>/2020/10/10/java-reflection/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>Java语言</category>
-      
-      <category>语言基础</category>
-      
-      <category>反射</category>
       
     </categories>
     
