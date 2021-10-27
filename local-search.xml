@@ -27,6 +27,29 @@
   
   
   <entry>
+    <title>Java虚拟机</title>
+    <link href="/2020/10/10/java-jvm/"/>
+    <url>/2020/10/10/java-jvm/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Java语言</category>
+      
+      <category>JVM</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java异常</title>
     <link href="/2020/10/10/java-exception/"/>
     <url>/2020/10/10/java-exception/</url>
@@ -43,29 +66,6 @@
       <category>语言基础</category>
       
       <category>异常</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Java虚拟机</title>
-    <link href="/2020/10/10/java-jvm/"/>
-    <url>/2020/10/10/java-jvm/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>Java语言</category>
-      
-      <category>JVM</category>
       
     </categories>
     
@@ -208,33 +208,6 @@
   
   
   <entry>
-    <title>SpringBoot</title>
-    <link href="/2020/10/10/springboot/"/>
-    <url>/2020/10/10/springboot/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>应用框架</category>
-      
-      <category>后端</category>
-      
-      <category>Spring家族</category>
-      
-      <category>SpringBoot</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Spring</title>
     <link href="/2020/10/10/spring/"/>
     <url>/2020/10/10/spring/</url>
@@ -253,6 +226,33 @@
       <category>Spring家族</category>
       
       <category>Spring</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SpringBoot</title>
+    <link href="/2020/10/10/springboot/"/>
+    <url>/2020/10/10/springboot/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>应用框架</category>
+      
+      <category>后端</category>
+      
+      <category>Spring家族</category>
+      
+      <category>SpringBoot</category>
       
     </categories>
     
