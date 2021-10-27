@@ -27,9 +27,9 @@
   
   
   <entry>
-    <title>Java集合</title>
-    <link href="/2020/10/10/java-collection/"/>
-    <url>/2020/10/10/java-collection/</url>
+    <title>Java异常</title>
+    <link href="/2020/10/10/java-exception/"/>
+    <url>/2020/10/10/java-exception/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -42,7 +42,30 @@
       
       <category>语言基础</category>
       
-      <category>集合</category>
+      <category>异常</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java虚拟机</title>
+    <link href="/2020/10/10/java-jvm/"/>
+    <url>/2020/10/10/java-jvm/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Java语言</category>
+      
+      <category>JVM</category>
       
     </categories>
     
@@ -77,32 +100,9 @@
   
   
   <entry>
-    <title>Java虚拟机</title>
-    <link href="/2020/10/10/java-jvm/"/>
-    <url>/2020/10/10/java-jvm/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>Java语言</category>
-      
-      <category>JVM</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Java异常</title>
-    <link href="/2020/10/10/java-exception/"/>
-    <url>/2020/10/10/java-exception/</url>
+    <title>Java集合</title>
+    <link href="/2020/10/10/java-collection/"/>
+    <url>/2020/10/10/java-collection/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -115,7 +115,7 @@
       
       <category>语言基础</category>
       
-      <category>异常</category>
+      <category>集合</category>
       
     </categories>
     
@@ -148,6 +148,43 @@
   
   
   <entry>
+    <title>Nginx</title>
+    <link href="/2020/10/10/nginx/"/>
+    <url>/2020/10/10/nginx/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><p><em><strong>Nginx</strong></em> 是高性能的 <em><strong>HTTP</strong></em> 和反向代理的服务器，处理高并发能力是十分强大的，能经受高负载的考验，有报告表明能支持高达 50,000 个并发连接数。</p><h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><p><strong>正向代理</strong></p><p><em><strong>Nginx</strong></em> 不仅可以做反向代理，实现负载均衡。还能用作正向代理来进行上网等功能。 正向代理：如果把局域网外的 <em><strong>Internet</strong></em> 想象成一个巨大的资源库，则局域网中的客户端要访问 <em><strong>Internet</strong></em>，则需要通过代理服务器来访问，这种代理服务就称为正向代理。</p><p><u>需要在客户端配置代理服务器进行指定网站访问</u>。</p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 16.29.54.png" style="zoom:50%;" /><p><strong>反向代理</strong></p><p>反向代理，其实客户端对代理是无感知的，因为客户端不需要任何配置就可以访问，我们只需要将请求发送到反向代理服务器，由反向代理服务器去选择目标服务器获取数据后，在返回给客户端，此时反向代理服务器和目标服务器对外就是一个服务器，<u>暴露的是代理服务器地址，隐藏了真实服务器 <em><strong>IP</strong></em> 地址</u>。</p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 16.35.09.png" style="zoom:50%;" /><h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p><strong>单一模式</strong></p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 16.40.11.png" style="zoom:50%;" /><p><strong>负载均衡</strong></p><p>增加服务器的数量，然后将请求分发到各个服务器上，将原先请求集中到单个服务器上的情况改为将请求分发到多个服务器上，将负载分发到不同的服务器，即负载均衡。</p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 16.45.55.png" style="zoom:50%;" /><h2 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h2><p>为了加快网站的解析速度，可以把动态页面和静态页面由不同的服务器来解析，加快解析速度。降低原来单个服务器的压力。</p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 16.49.18.png" style="zoom:50%;" /><h1 id="安装和启动"><a href="#安装和启动" class="headerlink" title="安装和启动"></a>安装和启动</h1><p>官网：<a href="http://nginx.org/">http://nginx.org/</a></p><blockquote><ol><li>需要安装 <em><strong>gcc-c++</strong></em> 编译器</li></ol><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmake">yum <span class="hljs-keyword">install</span> gcc-c++<br>yum <span class="hljs-keyword">install</span> -y openssl openssl-devel<br></code></pre></td></tr></table></figure><ol start="2"><li>安装 <em><strong>pcre</strong></em> 包</li></ol><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">yum <span class="hljs-keyword">install</span> -y pcre pcre-devel<br></code></pre></td></tr></table></figure><ol start="3"><li>安装 <em><strong>zlib</strong></em> 包</li></ol><figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nsis">yum install -y <span class="hljs-literal">zlib</span> <span class="hljs-literal">zlib</span>-devel<br></code></pre></td></tr></table></figure><ol start="4"><li>在 <em><strong>/opt/</strong></em>  下载 <em><strong>nginx</strong></em></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://nginx.org/download/nginx-1.19.9.tar.gz<br></code></pre></td></tr></table></figure><ol start="5"><li>解压并进入 <em><strong>nginx</strong></em> 目录</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">tar -zxvf nginx-1.19.9.tar.gz<br><span class="hljs-built_in">cd</span> nginx-1.19.9<br></code></pre></td></tr></table></figure><ol start="6"><li>使用 <em><strong>nginx</strong></em> 默认配置</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./configure<br></code></pre></td></tr></table></figure><ol start="7"><li>编译安装</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make &amp;&amp; make install<br></code></pre></td></tr></table></figure><p>默认安装路径：<code>/usr/local/nginx</code></p><p>启动：<code>cd /usr/local/nginx/sbin</code></p><p>默认启动脚本：<code>./nginx</code></p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 17.02.59.png" style="zoom:50%;" /><p>成功启动后可以进行访问：<code>172.16.88.168:80</code>（需要关闭防火墙）</p><p>默认端口：80</p></blockquote><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /usr/<span class="hljs-built_in">local</span>/nginx/sbin <span class="hljs-comment"># 默认安装路径</span><br><br>./nginx -v <span class="hljs-comment"># 查看 nginx 版本号 </span><br><br>./nginx <span class="hljs-comment"># 启动 nginx</span><br><br>./nginx -s stop <span class="hljs-comment"># 停止 nginx </span><br><br>./nginx -s reload <span class="hljs-comment"># 重新加载 nginx </span><br></code></pre></td></tr></table></figure><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p><em><strong>nginx.conf</strong></em></p><p>默认路径：***/usr/local/nginx/conf/nginx.conf***</p><blockquote><p><em><strong>全局块</strong></em></p><p>主要包括配置运行 <em><strong>Nginx</strong></em> 服务器的用户（组）、允许生成的 <em><strong>worker process</strong></em> 数，进程 <em><strong>PID</strong></em> 存放路径、日志存放路径和类型以及配置文件的引入等。</p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 21.47.03.png" style="zoom:50%;" /><p><em><strong>events块</strong></em></p><p><em><strong>events</strong></em> 块涉及的指令主要影响 <em><strong>Nginx</strong></em> 服务器与用户的网络连接，常用的设置包括是否开启对多 <em><strong>work process</strong></em> 下的网络连接进行序列化，是否允许同时接收多个网络连接，选取哪种事件驱动模型来处理连接请求，每个 <em><strong>word process</strong></em> 可以同时支持的最大连接数等。</p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 21.48.11.png" style="zoom:50%;" /><p><em><strong>http块</strong></em></p><p>这算是 <em><strong>Nginx</strong></em> 服务器配置中最频繁的部分，代理、缓存和日志定义等绝大多数功能和第三方模块的配置都在这里。 需要注意的是：<em><strong>http</strong></em> 块也可以包括 <em><strong>http</strong></em> 全局块、<em><strong>server</strong></em> 块。</p><ol><li><p><em><strong>http 全局块</strong></em></p><p><em><strong>http</strong></em> 全局块配置的指令包括文件引入、<em><strong>MIME-TYPE</strong></em> 定义、日志自定义、连接超时时间、单链接请求数上限等。</p></li><li><p><em><strong>server块</strong></em></p><p>这块和虚拟主机有密切关系，虚拟主机从用户角度看，和一台独立的硬件主机是完全一样的，该技术的产生是为了 节省互联网服务器硬件成本。</p><p>每个 <em><strong>http</strong></em> 块可以包括多个 <em><strong>server</strong></em> 块，而每个 <em><strong>server</strong></em> 块就相当于一个虚拟主机。 而每个 <em><strong>server</strong></em> 块也分为全局 <em><strong>server</strong></em> 块，以及可以同时包含多个 <em><strong>locaton</strong></em> 块。</p><ol><li><p><em><strong>全局 server 块</strong></em></p><p>最常见的配置是本虚拟机主机的监听配置和本虚拟主机的名称或 IP 配置。</p></li><li><p><em><strong>location 块</strong></em></p><p>一个 <em><strong>server</strong></em> 块可以配置多个 <em><strong>location</strong></em> 块。</p><p>这块的主要作用是基于 <em><strong>Nginx</strong></em> 服务器接收到的请求字符串（例如 <em><strong>server_name/uri-string</strong></em>），对虚拟主机名称（也可以是 <em><strong>IP</strong></em> 别名）之外的字符串（例如 前面的 <em><strong>/uri-string</strong></em>）进行匹配，对特定的请求进行处理。地址定向、数据缓 存和应答控制等功能，还有许多第三方模块的配置也在这里进行。</p></li></ol></li></ol><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 21.48.47.png" style="zoom:50%;" /></blockquote><h2 id="反向代理-1"><a href="#反向代理-1" class="headerlink" title="反向代理"></a>反向代理</h2><h4 id="案例-1"><a href="#案例-1" class="headerlink" title="案例 1"></a>案例 1</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">实现效果：使用 nginx 进行反向代理，访问 www<span class="hljs-selector-class">.test</span><span class="hljs-selector-class">.com</span> 直接跳转到 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8080</span><br></code></pre></td></tr></table></figure><p>访问的流程：</p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 23.55.12.png" alt="" style="zoom:50%;" /><p>如何启动 <em><strong>tomcat</strong></em></p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> tomcat安装路径bin目录<span class="hljs-regexp">//</span> 默认端口<span class="hljs-number">8080</span>./startup.sh<br></code></pre></td></tr></table></figure><ol><li>本地 <em><strong>hosts</strong></em> 文件进行域名和 <em><strong>ip</strong></em> 对应配置</li></ol><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean"># 最后一行加上# 虚拟机对应的ip172<span class="hljs-number">.16</span><span class="hljs-number">.88</span><span class="hljs-number">.168</span> www.test.com<br></code></pre></td></tr></table></figure><ol start="2"><li>在 <em><strong>nginx</strong></em> 进行请求转发的配置（反向代理配置）</li></ol><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 23.54.20.png" alt="" style="zoom:50%;" /><ol start="3"><li>启动 <em><strong>nginx</strong></em></li></ol><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> 默认路径 <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/nginx/</span>sbin<span class="hljs-regexp">/./</span>nginx -c <span class="hljs-regexp">/opt/</span>etc/nginx.conf <span class="hljs-comment"># 配置文件的路径</span><br></code></pre></td></tr></table></figure><p>最终：访问 <code>wwww.test.com</code> 跳转到 <em><strong>tomcat</strong></em> 成功启动页面。</p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 23.56.21.png" style="zoom:50%;" /><hr><h4 id="案例-2"><a href="#案例-2" class="headerlink" title="案例 2"></a>案例 2</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">实现效果：使用 nginx 反向代理，根据访问的路径跳转到不同端口的服务中 nginx 监听端口为 <span class="hljs-number">9001</span>访问 http:<span class="hljs-regexp">//</span><span class="hljs-number">172.16</span>.<span class="hljs-number">88.168</span>:<span class="hljs-number">9001</span><span class="hljs-regexp">/edu/</span> 直接跳转到 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8080</span>访问 http:<span class="hljs-regexp">//</span><span class="hljs-number">172.16</span>.<span class="hljs-number">88.168</span>:<span class="hljs-number">9001</span><span class="hljs-regexp">/vod/</span> 直接跳转到 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8081</span><br></code></pre></td></tr></table></figure><ol><li><p>准备两个 <em><strong>tomcat</strong></em> 服务器（略）</p></li><li><p>配置 <em><strong>nginx.conf</strong></em></p></li></ol><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">server &#123;        listen       <span class="hljs-number">9001</span>;        server_name  <span class="hljs-number">172.16</span>.<span class="hljs-number">88.168</span>;        location ~ <span class="hljs-regexp">/edu/</span> &#123;            proxy_pass http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8080</span>;        &#125;        location ~ <span class="hljs-regexp">/vod/</span> &#123;            proxy_pass http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8081</span>;        &#125; ... &#125;<br></code></pre></td></tr></table></figure><h3 id="proxy-pass"><a href="#proxy-pass" class="headerlink" title="proxy_pass"></a><em>proxy_pass</em></h3><blockquote><p>格式： <em><strong>proxy_pass URL</strong></em></p><p>URL包含：传输协议、主机名、<em><strong>uri</strong></em></p></blockquote><p><em><strong>url</strong></em> 的 / 问题</p><blockquote><p>在 <em><strong>nginx</strong></em> 中配置 <em><strong>proxy_pass</strong></em> 时，当在后面的 <em><strong>url</strong></em> 加上了/，相当于是绝对根路径，则 <em><strong>nginx</strong></em> 不会把 <em><strong>location</strong></em> 中匹配的路径部分代理；</p><p>如果没有 /，则会把匹配的路径部分也给代理。</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">假设 server_name:192.168.1.10请求:http://192.168.1.10/a/a.html示例1：location /a/&#123;    proxy_pass http://192.168.1.10;    ...&#125;结果1：http://192.168.1.10/a/a.html示例2：location /a/&#123;    proxy_pass http://192.168.1.10/;    ...&#125;结果2：http://192.168.1.10/a.html示例3：location /a/&#123;    proxy_pass http://192.168.1.10/nanase;    ...&#125;结果3：http://192.168.1.10/nanasea.html示例4：location /a/&#123;    proxy_pass http://192.168.1.10/nanase/;    ...&#125;结果4：http://192.168.1.10/nanase/a.html<br></code></pre></td></tr></table></figure><p><strong><u>为了方便记忆和规范配置，建议所有的 <em>proxy_pass</em> 后的 <em>url</em> 都以 / 结尾。</u></strong></p><h3 id="location"><a href="#location" class="headerlink" title="location"></a><em>location</em></h3><p>该指令用于匹配 <em><strong>URL</strong></em>。</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">location</span> [ = | <span class="hljs-regexp">~ |</span> <span class="hljs-regexp">~* |</span><span class="hljs-regexp"> ^~</span> ] uri &#123;&#125;<br></code></pre></td></tr></table></figure><blockquote><p><code>=</code> </p><p>用于不含正则表达式的 <em><strong>uri</strong></em> 前，要求请求字符串与 <em><strong>uri</strong></em> 严格匹配，如果匹配成功，就停止继续向下搜索并立即处理该请求。</p><p><code>~</code></p><p>用于表示 <em><strong>uri</strong></em> 包含正则表达式，并且区分大小写。</p><p><code>~*</code></p><p>用于表示 <em><strong>uri</strong></em> 包含正则表达式，并且不区分大小写。</p><p><code>^~</code></p><p>用于不含正则表达式的 <em><strong>uri</strong></em> ，要求 <em><strong>Nginx</strong></em> 服务器找到标识 <em><strong>uri</strong></em> 和请求 符串匹配度最高的 <em><strong>location</strong></em> 后，立即使用此 <em><strong>location</strong></em> 处理请求，而不再使用 <em><strong>location</strong></em> 块中的正则 <em><strong>uri</strong></em> 和请求字符串做匹配。</p></blockquote><p><strong><u><em>注意：如果 uri 包含正则表达式，则必须要有 ~ 或者 ~* 标识。</em></u></strong>                 </p><p>​                                                                       </p><h2 id="负载均衡-1"><a href="#负载均衡-1" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>增加服务器的数量，然后将请求分发到各个服务器上面。即将原先请求集中到单个服务器上转化为将请求分发到多个服务器上，将负载分发到不同的服务器，即负载均衡。</p><h4 id="案例-1-1"><a href="#案例-1-1" class="headerlink" title="案例 1"></a>案例 1</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">实现效果：浏览器地址栏输入地址 http:<span class="hljs-regexp">//</span><span class="hljs-number">172.16</span>.<span class="hljs-number">88.168</span><span class="hljs-regexp">/edu/</span>a.html，负载均衡效果，平均分担 <span class="hljs-number">8080</span> 和 <span class="hljs-number">8081</span> 端口中。<br></code></pre></td></tr></table></figure><ol><li>准备两个 <em><strong>tomcat</strong></em> 服务器（略）</li><li>配置 <em><strong>nginx.conf</strong></em> 文件</li></ol><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">http</span> &#123;...upsteam myserver &#123;ip_hash;server <span class="hljs-number">172.16.88.168:8080</span> weight=<span class="hljs-number">1</span>;server <span class="hljs-number">172.16.88.168:8081</span> weight=<span class="hljs-number">1</span>;&#125;server &#123;        listen       <span class="hljs-number">80</span>;        server_name  <span class="hljs-number">172.16.88.168</span>;        location / &#123;            proxy_pass http://myserver;            root html;            index index.html index.htm;        &#125; ... &#125;&#125;<br></code></pre></td></tr></table></figure><h3 id="分配策略"><a href="#分配策略" class="headerlink" title="分配策略"></a>分配策略</h3><ul><li><p><em><strong>轮询</strong></em>（默认）<br> 每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器 <em><strong>down</strong></em> 掉，能自动剔除。</p></li><li><p><em><strong>weight</strong></em><br> <em><strong>weight</strong></em> 代表权重默认为 1，权重越高被分配的客户端越多。</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">upstream server_pool &#123;<span class="hljs-built_in">server </span>192.168.5.21 <span class="hljs-attribute">weight</span>=10; <span class="hljs-built_in">server </span>192.168.5.22 <span class="hljs-attribute">weight</span>=10; &#125;<br></code></pre></td></tr></table></figure></li><li><p><em><strong>ip_hash</strong></em><br> 每个请求按访问 <em><strong>ip</strong></em> 的 <em><strong>hash</strong></em> 结果分配，这样每个访客固定访问一个后端服务器。</p><figure class="highlight roboconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs roboconf">upstream server_pool &#123;<span class="hljs-attribute">ip_hash;server 192.168.5.21</span>:80; <span class="hljs-attribute">server 192.168.5.22</span>:80; &#125;<br></code></pre></td></tr></table></figure></li><li><p><em><strong>fair</strong></em>（第三方） 按后端服务器的响应时间来分配请求，响应时间短的优先分配。</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">upstream</span> server_pool &#123; server <span class="hljs-number">192.168.5.21:80</span>; server <span class="hljs-number">192.168.5.22:80</span>; fair;&#125;<br></code></pre></td></tr></table></figure></li></ul><h2 id="动静分离-1"><a href="#动静分离-1" class="headerlink" title="动静分离"></a>动静分离</h2><p><em><strong>Nginx</strong></em> 动静分离简单来说就是把动态跟静态请求分开，不能理解成只是单纯的把动态页面和 静态页面物理分离。</p><p>一种是纯粹把静态文件独立成单独的域名，放在独立的服务器上，也是目前主流推崇的方案。</p><p>另外一种方法就是动态跟静态文件混合在一起发布，通过 <em><strong>nginx</strong></em> 来分开。</p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-27 14.18.44.png" style="zoom:50%;" /><h4 id="案例-1-2"><a href="#案例-1-2" class="headerlink" title="案例 1"></a>案例 1</h4><ol><li>在 <em><strong>linux</strong></em> 系统中准备静态资源，用于进行访问</li><li>配置 <em><strong>nginx</strong></em> 文件</li></ol><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle">server &#123;        listen       <span class="hljs-number">80</span>;        server_name  <span class="hljs-number">172.16</span>.<span class="hljs-number">88.168</span>;        location <span class="hljs-regexp">/html/</span> &#123;        root <span class="hljs-regexp">/data/</span>;        index index.html index.htm;        # 访问 <span class="hljs-regexp">/data/</span>html<span class="hljs-regexp">/.*html        &#125;        location /im</span>age<span class="hljs-regexp">/ &#123;        root /</span>data/;        autoindex on; # 列出文件目录        &#125; ... &#125;<br></code></pre></td></tr></table></figure><h2 id="高可用集群"><a href="#高可用集群" class="headerlink" title="高可用集群"></a>高可用集群</h2><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-27 14.21.39.png" alt="截屏2021-10-27 14.21.39" style="zoom:50%;" /><p>即主服务器宕机，启动备用服务器。</p><h4 id="案例-1-3"><a href="#案例-1-3" class="headerlink" title="案例 1"></a>案例 1</h4><p><em><strong>keepalive + nginx</strong></em></p><p><strong>高可用集群（主从模式）</strong></p><ol><li><p>准备两台服务器</p><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dns">服务器ip：<span class="hljs-number">192.168.17.128</span><span class="hljs-number">192.168.17.131</span><br></code></pre></td></tr></table></figure></li><li><p>两台服务器安装 <em><strong>keepalive</strong></em> 和 <em><strong>nginx</strong></em> （略）</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">yum <span class="hljs-keyword">install</span> keepalive-y<br></code></pre></td></tr></table></figure></li><li><p>完成高可用配置（主从模式）</p><p>在 <code>/usr/local/src/</code> 添加检测脚本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bashA=`ps -C nginx –no-header |wc -l` if [ $A -eq 0 ];then/usr/local/nginx/sbin/nginxsleep 2if [ `ps -C nginx --no-header |wc -l` -eq 0 ];then        killall keepalived    fifi</span><br></code></pre></td></tr></table></figure><p>配置主服务器</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 主要修改 keepalive 配置文件# /etc/keepalived/keepalived.conf# 主和备服务器修改不同地方# 全局配置global_defs &#123;notification_email &#123; acassen@firewall.loc failover@firewall.loc sysadmin@firewall.loc&#125;notification_email_from Alexandre.Cassen@firewall.loc smtp_server 192.168.17.129smtp_connect_timeout 30router_id LVS_DEVEL # 访问主机服务器名字&#125;# 脚本配置vrrp_script chk_http_port &#123; script &quot;/usr/local/src/nginx_check.sh&quot; # 脚本interval 2 # 检测脚本执行的间隔weight 2 # 设置当前服务器的权重&#125;# 虚拟ip配置vrrp_instance VI_1 &#123; state MASTER # 主服务器：MASTER 备份服务器：BACKUP interface ens33 # 网卡virtual_router_id 51 # 主备机的id必须相同priority 100 # 优先级；主机值较大，备份机值较小 advert_int 1 # 时间间隔检测# 权限authentication &#123; auth_type PASSauth_pass 1111 &#125;# 虚拟ipvirtual_ipaddress &#123;192.168.17.50 # VRRP H 虚拟地址&#125;&#125;</span><br></code></pre></td></tr></table></figure></li><li><p>启动 <em><strong>nginx</strong></em> 和 <em><strong>keepalived</strong></em> 服务</p></li></ol><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><h2 id="master-amp-worker"><a href="#master-amp-worker" class="headerlink" title="master&amp;worker"></a>master&amp;worker</h2><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-27 14.49.04.png" style="zoom:50%;" /><h2 id="worker如何工作"><a href="#worker如何工作" class="headerlink" title="worker如何工作"></a>worker如何工作</h2><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-27 14.59.12.png" style="zoom:50%;" /><h2 id="一个master多个worker"><a href="#一个master多个worker" class="headerlink" title="一个master多个worker"></a>一个master多个worker</h2><ul><li>可以使用 <em><strong>nginx –s reload</strong></em> 热部署，利用 <em><strong>nginx</strong></em> 进行热部署操作；</li><li>每个 <em><strong>woker</strong></em> 是独立的进程，如果有其中的一个 <em><strong>woker</strong></em> 出现问题，其他 <em><strong>woker</strong></em> 独立的， 继续进行争抢，实现请求过程，不会造成服务中断。</li></ul><h2 id="worker的数量"><a href="#worker的数量" class="headerlink" title="worker的数量"></a>worker的数量</h2><p><em><strong>nginx</strong></em> 类似 <em><strong>redis</strong></em> 都采用 <em><strong>io</strong></em> 多路复用机制，每个 <em><strong>worker</strong></em> 都是一个独立的进程。</p><p>即 <em><strong>worker</strong></em> 数量和服务器的 <em><strong>cpu</strong></em> 数量相等最合适。</p><h2 id="连接数worker-connection"><a href="#连接数worker-connection" class="headerlink" title="连接数worker_connection"></a>连接数worker_connection</h2><figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tap">第一个：发送请求，占用了 woker 的几个连接数? 答案:<span class="hljs-number"> 2 </span>或者<span class="hljs-number"> 4 </span><br></code></pre></td></tr></table></figure><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">第二个：nginx 有一个 master，有 <span class="hljs-number">4</span> 个 woker，每个 woker 支持最大的连接数 <span class="hljs-number">1024</span>，支持的最大并发数是多少?worker支持的最大连接数：<span class="hljs-number">4</span> * <span class="hljs-number">1024</span>普通的静态访问最大并发数是：worker_connections * worker_processes <span class="hljs-regexp">/ 21024 * 4 /</span> <span class="hljs-number">2</span>而如果是 HTTP 作 为反向代理来说，最大并发数量应该是：worker_connections * worker_processes <span class="hljs-regexp">/ 41024 * 4 /</span> <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><ul><li><a href="https://www.bilibili.com/video/BV1zJ411w7SV?from=search&seid=5693495616515059218&spm_id_from=333.337.0.0">尚硅谷-王老师</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>应用框架</category>
+      
+      <category>后端</category>
+      
+      <category>服务器软件</category>
+      
+      <category>Web服务器</category>
+      
+      <category>Nginx</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>nginx</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>操作系统</title>
     <link href="/2020/10/10/os/"/>
     <url>/2020/10/10/os/</url>
@@ -162,33 +199,6 @@
       <category>编程基础</category>
       
       <category>操作系统</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Spring</title>
-    <link href="/2020/10/10/spring/"/>
-    <url>/2020/10/10/spring/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>应用框架</category>
-      
-      <category>后端</category>
-      
-      <category>Spring家族</category>
-      
-      <category>Spring</category>
       
     </categories>
     
@@ -216,6 +226,33 @@
       <category>Spring家族</category>
       
       <category>SpringBoot</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Spring</title>
+    <link href="/2020/10/10/spring/"/>
+    <url>/2020/10/10/spring/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>应用框架</category>
+      
+      <category>后端</category>
+      
+      <category>Spring家族</category>
+      
+      <category>Spring</category>
       
     </categories>
     
