@@ -39,6 +39,35 @@
   
   
   <entry>
+    <title>数据结构与算法</title>
+    <link href="/2021/08/25/ds-algorithm/"/>
+    <url>/2021/08/25/ds-algorithm/</url>
+    
+    <content type="html"><![CDATA[<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><ul><li><p><a href="https://programmercarl.com/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html">动态规划理论基础</a></p><blockquote><ul><li>确定dp数组（dp table）以及下标的含义；</li><li>确定递推公式；</li><li>dp数组如何初始化；</li><li>确定遍历顺序；</li><li>举例推导dp数组。</li></ul></blockquote></li><li><p><a href="https://leetcode-cn.com/problems/fibonacci-number/">509. 斐波那契数</a></p><p class="note note-success">简单</p></li><li><p><a href="https://leetcode-cn.com/problems/climbing-stairs/">70. 爬楼梯</a></p><p class="note note-success">简单</p></li><li><p><a href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/">746. 使用最小花费爬楼梯</a></p><p class="note note-success">简单</p></li></ul><p><strong><a href="https://programmercarl.com/%E5%91%A8%E6%80%BB%E7%BB%93/20210107%E5%8A%A8%E8%A7%84%E5%91%A8%E6%9C%AB%E6%80%BB%E7%BB%93.html">总结一</a></strong></p><hr><ul><li><p><a href="https://leetcode-cn.com/problems/unique-paths/">62. 不同路径</a></p><p class="note note-warning">中等</p></li><li><p><a href="https://leetcode-cn.com/problems/unique-paths-ii/">63. 不同路径 II</a></p><p class="note note-warning">中等</p></li><li><p><a href="https://leetcode-cn.com/problems/integer-break/">343. 整数拆分</a></p><p class="note note-warning">中等</p></li><li><p><a href="https://leetcode-cn.com/problems/unique-binary-search-trees/">96. 不同的二叉搜索树</a> </p><p class="note note-danger">困难</p></li></ul><p><strong><a href="https://programmercarl.com/%E5%91%A8%E6%80%BB%E7%BB%93/20210114%E5%8A%A8%E8%A7%84%E5%91%A8%E6%9C%AB%E6%80%BB%E7%BB%93.html">总结二</a></strong></p><hr><ul><li><p><a href="https://programmercarl.com/%E8%83%8C%E5%8C%85%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%8001%E8%83%8C%E5%8C%85-1.html">01背包理论基础（一）</a></p><p class="note note-warning">中等</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">backpack</span> </span>&#123;<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br><span class="hljs-keyword">int</span>[] weight = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;;<br><span class="hljs-keyword">int</span>[] value = &#123;<span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>&#125;;<br><span class="hljs-keyword">int</span> bagSize = <span class="hljs-number">4</span>;<br>testWeightBagProblem(weight, value, bagSize);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testWeightBagProblem</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] weight, <span class="hljs-keyword">int</span>[] value, <span class="hljs-keyword">int</span> bagSize)</span> </span>&#123;<br><span class="hljs-keyword">int</span> size = weight.length;<br><span class="hljs-comment">// 定义dp[i][j]：从下标0～i个物品任意取，放入容量为j的背包，价值总和最大为多少</span><br><span class="hljs-keyword">int</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[size + <span class="hljs-number">1</span>][bagSize + <span class="hljs-number">1</span>];<br><span class="hljs-comment">// 初始化，当容量j=0时，价值均为0</span><br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= size; i++) &#123;<br>dp[i][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-comment">// 初始化，第一个物品是否能装入背包</span><br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = weight[<span class="hljs-number">0</span>]; i &lt;= bagSize; i++) &#123;<br>dp[<span class="hljs-number">0</span>][i] = value[<span class="hljs-number">0</span>];<br>&#125;<br><br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= size; i++) &#123;<br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt;= bagSize; j++) &#123;<br><span class="hljs-keyword">if</span>(weight[i - <span class="hljs-number">1</span>] &gt; j) dp[i][j] = dp[i - <span class="hljs-number">1</span>][j];<br><span class="hljs-keyword">else</span> dp[i][j] = Math.max(dp[i - <span class="hljs-number">1</span>][j], dp[i - <span class="hljs-number">1</span>][j - weight[i - <span class="hljs-number">1</span>]] + value[i - <span class="hljs-number">1</span>]);<br>&#125;<br>&#125;<br><br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= size; i++) &#123;<br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt;= bagSize; j++) &#123;<br>System.out.print(dp[i][j] + <span class="hljs-string">&quot; &quot;</span>);<br>&#125;<br>System.out.println(<span class="hljs-string">&quot;&quot;</span>);<br>&#125;<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p><a href="https://programmercarl.com/%E8%83%8C%E5%8C%85%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%8001%E8%83%8C%E5%8C%85-2.html">01背包理论基础（二）</a></p><p class="note note-warning">中等</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">backpack</span> </span>&#123;<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br><span class="hljs-keyword">int</span>[] weight = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;;<br><span class="hljs-keyword">int</span>[] value = &#123;<span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>&#125;;<br><span class="hljs-keyword">int</span> bagSize = <span class="hljs-number">4</span>;<br>testWeightBagProblem(weight, value, bagSize);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testWeightBagProblem</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] weight, <span class="hljs-keyword">int</span>[] value, <span class="hljs-keyword">int</span> bagSize)</span> </span>&#123;<br><span class="hljs-keyword">int</span> size = weight.length;<br><span class="hljs-comment">// dp[i]：当容量为i的背包，价值最大为dp[i]</span><br><span class="hljs-keyword">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[bagSize + <span class="hljs-number">1</span>];<br><br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) &#123; <span class="hljs-comment">// 遍历物品</span><br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = bagSize; j &gt;= weight[i]; j--) &#123; <span class="hljs-comment">// 遍历背包容量</span><br>dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);<br>&#125;<br>&#125;<br><br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= bagSize; i++) System.out.print(dp[i] + <span class="hljs-string">&quot; &quot;</span>);<br><br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p><a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/">416. 分割等和子集</a></p><p class="note note-warning">中等</p></li><li><p><a href="https://leetcode-cn.com/problems/last-stone-weight-ii/">1049. 最后一块石头的重量 II</a></p><p class="note note-warning">中等</p></li></ul><h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><ul><li><p><a href="https://programmercarl.com/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html">贪心算法理论基础</a></p><blockquote><ul><li>将问题分解为若干个子问题；</li><li>找出适合的贪心策略；</li><li>求解每一个子问题的最优解；</li><li>将局部最优解堆叠成全局最优解。</li></ul></blockquote></li><li><p><a href="https://leetcode-cn.com/problems/assign-cookies/">455. 分发饼干</a></p><p class="note note-success">简单</p></li><li><p><a href="https://leetcode-cn.com/problems/wiggle-subsequence/">376. 摆动序列</a></p><p class="note note-danger">困难</p></li><li><p><a href="https://leetcode-cn.com/problems/maximum-subarray/">53. 最大子序和</a></p><p class="note note-success">简单</p></li></ul><p><strong><a href="https://programmercarl.com/%E5%91%A8%E6%80%BB%E7%BB%93/20201126%E8%B4%AA%E5%BF%83%E5%91%A8%E6%9C%AB%E6%80%BB%E7%BB%93.html#%E5%91%A8%E4%B8%80">总结一</a></strong></p><hr><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><ul><li><a href="https://programmercarl.com/">Carl</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>编程基础</category>
+      
+      <category>数据结构与算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>algorithm</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java多线程</title>
     <link href="/2021/08/25/java-thread/"/>
     <url>/2021/08/25/java-thread/</url>
@@ -175,6 +204,29 @@
   
   
   <entry>
+    <title>计算机网络</title>
+    <link href="/2020/10/10/computer-network/"/>
+    <url>/2020/10/10/computer-network/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>编程基础</category>
+      
+      <category>计算机网络</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java异常</title>
     <link href="/2020/10/10/java-exception/"/>
     <url>/2020/10/10/java-exception/</url>
@@ -200,9 +252,9 @@
   
   
   <entry>
-    <title>计算机网络</title>
-    <link href="/2020/10/10/computer-network/"/>
-    <url>/2020/10/10/computer-network/</url>
+    <title>Java虚拟机</title>
+    <link href="/2020/10/10/java-jvm/"/>
+    <url>/2020/10/10/java-jvm/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -211,9 +263,9 @@
       
       <category>Java</category>
       
-      <category>编程基础</category>
+      <category>Java语言</category>
       
-      <category>计算机网络</category>
+      <category>JVM</category>
       
     </categories>
     
@@ -248,9 +300,9 @@
   
   
   <entry>
-    <title>Java虚拟机</title>
-    <link href="/2020/10/10/java-jvm/"/>
-    <url>/2020/10/10/java-jvm/</url>
+    <title>Java网络编程</title>
+    <link href="/2020/10/10/java-socket/"/>
+    <url>/2020/10/10/java-socket/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -261,7 +313,7 @@
       
       <category>Java语言</category>
       
-      <category>JVM</category>
+      <category>网络编程</category>
       
     </categories>
     
@@ -287,29 +339,6 @@
       <category>语言基础</category>
       
       <category>反射</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Java网络编程</title>
-    <link href="/2020/10/10/java-socket/"/>
-    <url>/2020/10/10/java-socket/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-      <category>Java语言</category>
-      
-      <category>网络编程</category>
       
     </categories>
     
