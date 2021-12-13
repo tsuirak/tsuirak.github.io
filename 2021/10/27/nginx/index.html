@@ -303,21 +303,21 @@
 
 
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p><em><strong>nginx.conf</strong></em></p>
-<p>默认路径：***/usr/local/nginx/conf/nginx.conf***</p>
+<p>默认路径：<code>/usr/local/nginx/conf/nginx.conf</code></p>
 <blockquote>
-<p><em><strong>全局块</strong></em></p>
+<p><em><strong>1.全局块</strong></em></p>
 <p>主要包括配置运行 <em><strong>Nginx</strong></em> 服务器的用户（组）、允许生成的 <em><strong>worker process</strong></em> 数，进程 <em><strong>PID</strong></em> 存放路径、日志存放路径和类型以及配置文件的引入等。</p>
 <img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 21.47.03.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
-<p><em><strong>events块</strong></em></p>
+<p><em><strong>2.events块</strong></em></p>
 <p><em><strong>events</strong></em> 块涉及的指令主要影响 <em><strong>Nginx</strong></em> 服务器与用户的网络连接，常用的设置包括是否开启对多 <em><strong>work process</strong></em> 下的网络连接进行序列化，是否允许同时接收多个网络连接，选取哪种事件驱动模型来处理连接请求，每个 <em><strong>word process</strong></em> 可以同时支持的最大连接数等。</p>
 <img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 21.48.11.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
-<p><em><strong>http块</strong></em></p>
+<p><em><strong>3.http块</strong></em></p>
 <p>这算是 <em><strong>Nginx</strong></em> 服务器配置中最频繁的部分，代理、缓存和日志定义等绝大多数功能和第三方模块的配置都在这里。 需要注意的是：<em><strong>http</strong></em> 块也可以包括 <em><strong>http</strong></em> 全局块、<em><strong>server</strong></em> 块。</p>
 <ol>
 <li><p><em><strong>http 全局块</strong></em></p>
@@ -535,12 +535,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2021/12/10/mp1/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">MybatisPlus：自动填充</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/25/ds-algorithm/">
-                        <span class="hidden-mobile">数据结构与算法</span>
+                      <a href="/2021/08/25/computer-network/">
+                        <span class="hidden-mobile">计算机网络</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
