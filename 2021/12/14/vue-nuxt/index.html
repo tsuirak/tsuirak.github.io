@@ -1,0 +1,610 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#6f7b5b">
+  <meta name="description" content="">
+  <meta name="author" content="tsuiraku">
+  <meta name="keywords" content="">
+  
+  <title>后台模版框架：vue-nuxt - tsuiraku</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":100,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tsuiraku</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="后台模版框架：vue-nuxt">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-14 19:04" pubdate>
+        2021年12月14日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      16
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">后台模版框架：vue-nuxt</h1>
+            
+            <div class="markdown-body">
+              <h1 id="后台模版"><a href="#后台模版" class="headerlink" title="后台模版"></a>后台模版</h1><p><em><strong>nuxt</strong></em> 文档：➡ <a target="_blank" rel="noopener" href="https://www.nuxtjs.cn/">官方</a></p>
+<p><em><strong>element-ui</strong></em> 文档：➡ <a target="_blank" rel="noopener" href="https://element.eleme.cn/#/zh-CN">官方</a></p>
+<p>模版：</p>
+<blockquote>
+<p><em><strong>vue-nuxt</strong></em></p>
+<p><em><strong>源码提取地址</strong></em>：➡ <em><strong><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1EgjwFeqkcfoZ-dBS-tTfCA">百度云</a></strong></em></p>
+<p><em><strong>源码提取码</strong></em>：<em><strong>bima</strong></em></p>
+</blockquote>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><em><strong>npm install</strong></em> </p>
+<blockquote>
+<p>其中部分配置中应用了插值表达式，建议修改为固定的值，否则 <em><strong>npm install</strong></em>  报错。</p>
+<p>需要修改 <em><strong>package.json</strong></em></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;需要修改的地方&quot;</span>,<br>  <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,<br>  <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;需要修改的地方&quot;</span>,<br>  <span class="hljs-attr">&quot;author&quot;</span>: <span class="hljs-string">&quot;需要修改的地方&quot;</span>,<br>  <span class="hljs-attr">&quot;private&quot;</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">&quot;scripts&quot;</span>: &#123;<br>			...<br>  &#125;,<br>  <span class="hljs-attr">&quot;dependencies&quot;</span>: &#123;<br>		...<br>  &#125;,<br>  <span class="hljs-attr">&quot;devDependencies&quot;</span>: &#123;<br>		...<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>需要修改 <em><strong>nuxt.config.js</strong></em>，设置最后会显示在页面标题栏和 <em><strong>meta</strong></em> 数据中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-comment">/*</span><br><span class="hljs-comment">  ** Headers of the page</span><br><span class="hljs-comment">  */</span><br>  <span class="hljs-attr">head</span>: &#123;<br>    <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;需要修改的地方&#x27;</span>,<br>    <span class="hljs-attr">meta</span>: [<br>      &#123; <span class="hljs-attr">charset</span>: <span class="hljs-string">&#x27;utf-8&#x27;</span> &#125;,<br>      &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;viewport&#x27;</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">&#x27;width=device-width, initial-scale=1&#x27;</span> &#125;,<br>      &#123; <span class="hljs-attr">hid</span>: <span class="hljs-string">&#x27;description&#x27;</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;description&#x27;</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">&#x27;需要修改的地方&#x27;</span> &#125;<br>    ],<br>    <span class="hljs-attr">link</span>: [<br>      &#123; <span class="hljs-attr">rel</span>: <span class="hljs-string">&#x27;icon&#x27;</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;image/x-icon&#x27;</span>, <span class="hljs-attr">href</span>: <span class="hljs-string">&#x27;/favicon.ico&#x27;</span> &#125;<br>    ]<br>  &#125;,<br>  ...<br>&#125;<br></code></pre></td></tr></table></figure>
+</blockquote>
+<p><em><strong>element-ui</strong></em></p>
+<blockquote>
+<p><em><strong>nuxt</strong></em> 中没有自带 <em><strong>element-ui</strong></em>，为了使开发方便，建议在 <em><strong>package.json</strong></em> 中添加依赖</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-string">&quot;dependencies&quot;</span>: &#123;<br>  <span class="hljs-attr">&quot;element-ui&quot;</span>: <span class="hljs-string">&quot;2.15.7&quot;</span> <span class="hljs-comment">// 定义element-ui的版本</span><br>  ...<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>执行 <em><strong>npm install element-ui</strong></em>。</p>
+</blockquote>
+<p><em><strong>plugins</strong></em></p>
+<blockquote>
+<p>目的是为了引入插件，比如上面通过 <em><strong>npm install</strong></em> 下载的 <em><strong>element-ui</strong></em></p>
+<ol>
+<li><em><strong>plugins/</strong></em> 创建 <em><strong>myPlugins.js</strong></em></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> ElementUI <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-ui&#x27;</span> <span class="hljs-comment">// 引入组件</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-ui/lib/theme-chalk/index.css&#x27;</span> <span class="hljs-comment">// 引入css</span><br>Vue.use(ElementUI)  <span class="hljs-comment">// 使用element-ui</span><br></code></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li><em><strong>nuxt.config.js</strong></em> 中引入  <em><strong>myPlugins.js</strong></em></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js">plugins: [&#123;<br>  <span class="hljs-attr">src</span>: <span class="hljs-string">&#x27;~plugins/myPlugin&#x27;</span>,<br>  <span class="hljs-attr">ssr</span>: <span class="hljs-literal">true</span>,<br>&#125;],<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// nuxt.config.js</span><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-comment">/*</span><br><span class="hljs-comment">  ** Headers of the page</span><br><span class="hljs-comment">  */</span><br>  <span class="hljs-attr">head</span>: &#123;<br>    <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;需要修改的地方&#x27;</span>,<br>    <span class="hljs-attr">meta</span>: [<br>      &#123; <span class="hljs-attr">charset</span>: <span class="hljs-string">&#x27;utf-8&#x27;</span> &#125;,<br>      &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;viewport&#x27;</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">&#x27;width=device-width, initial-scale=1&#x27;</span> &#125;,<br>      &#123; <span class="hljs-attr">hid</span>: <span class="hljs-string">&#x27;description&#x27;</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;description&#x27;</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">&#x27;需要修改的地方&#x27;</span> &#125;<br>    ],<br>    <span class="hljs-attr">link</span>: [<br>      &#123; <span class="hljs-attr">rel</span>: <span class="hljs-string">&#x27;icon&#x27;</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;image/x-icon&#x27;</span>, <span class="hljs-attr">href</span>: <span class="hljs-string">&#x27;/favicon.ico&#x27;</span> &#125;<br>    ]<br>  &#125;,<br>  <span class="hljs-comment">/**</span><br><span class="hljs-comment">   * Customize the progress bar color</span><br><span class="hljs-comment">   */</span><br>  <span class="hljs-attr">loading</span>: &#123; <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;#3B8070&#x27;</span> &#125;,<br><br>  <span class="hljs-comment">/**</span><br><span class="hljs-comment">   * 插件</span><br><span class="hljs-comment">   */</span><br>  <span class="hljs-attr">plugins</span>: [&#123;<br>    <span class="hljs-attr">src</span>: <span class="hljs-string">&#x27;~plugins/myPlugin&#x27;</span>,<br>    <span class="hljs-attr">ssr</span>: <span class="hljs-literal">true</span>,<br>  &#125;],<br>  <br>  <span class="hljs-comment">/**</span><br><span class="hljs-comment">   * css</span><br><span class="hljs-comment">   */</span><br>  <span class="hljs-attr">css</span>: [<br>    <span class="hljs-string">&#x27;element-ui/lib/theme-chalk/index.css&#x27;</span><br>  ],<br>  <br>  <span class="hljs-comment">/**</span><br><span class="hljs-comment">   * Build configuration</span><br><span class="hljs-comment">   */</span><br>  <span class="hljs-attr">build</span>: &#123;<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">    ** Run ESLint on save</span><br><span class="hljs-comment">    */</span><br>    extend (config, &#123; isDev, isClient &#125;) &#123;<br>      <span class="hljs-keyword">if</span> (isDev &amp;&amp; isClient) &#123;<br>        config.module.rules.push(&#123;<br>          <span class="hljs-attr">enforce</span>: <span class="hljs-string">&#x27;pre&#x27;</span>,<br>          <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.(js|vue)$/</span>,<br>          loader: <span class="hljs-string">&#x27;eslint-loader&#x27;</span>,<br>          <span class="hljs-attr">exclude</span>: <span class="hljs-regexp">/(node_modules)/</span><br>        &#125;)<br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><em><strong>axios</strong></em></p>
+<p>与 <em><strong>vue-element-admin</strong></em> 不同的是，该框架没有对 <em><strong>axios</strong></em> 进行封装。</p>
+<ol>
+<li><p><em><strong>npm install axios</strong></em></p>
+</li>
+<li><p>创建<em><strong>utils</strong></em>文件夹，<em><strong>utils</strong></em> 下创建 <em><strong>request.js</strong></em></p>
+</li>
+<li><p>需要提前下载 <em><strong>axios</strong></em>、<em><strong>element-ui</strong></em>、<em><strong>js-cookie</strong></em></p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;axios&#x27;</span><br><span class="hljs-keyword">import</span> &#123; MessageBox, Message &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-ui&#x27;</span><br><span class="hljs-keyword">import</span> cookie <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;js-cookie&#x27;</span><br><br><span class="hljs-comment">// 创建axios实例</span><br><span class="hljs-keyword">const</span> service = axios.create(&#123;<br>  <span class="hljs-attr">baseURL</span>: <span class="hljs-string">&#x27;http://localhost&#x27;</span>,<br>  <span class="hljs-attr">timeout</span>: <span class="hljs-number">15000</span> <span class="hljs-comment">// 请求超时时间</span><br>&#125;)<br><br><span class="hljs-comment">// http request 拦截器</span><br>service.interceptors.request.use(<br>  <span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> &#123;<br>    <span class="hljs-comment">// token 先不处理，后续使用时在完善</span><br>    <span class="hljs-keyword">if</span> (cookie.get(<span class="hljs-string">&#x27;token&#x27;</span>)) &#123;<br>      config.headers[<span class="hljs-string">&#x27;token&#x27;</span>] = cookie.get(<span class="hljs-string">&#x27;token&#x27;</span>)<br>    &#125;<br>    <span class="hljs-keyword">return</span> config<br>  &#125;,<br>  <span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(err)<br>  &#125;)<br><span class="hljs-comment">// http response 拦截器</span><br>service.interceptors.response.use(<br>  <span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (response.data.code === <span class="hljs-number">208</span>) &#123;<br>      eventLogin.$emit(<span class="hljs-string">&#x27;loginDialogEvent&#x27;</span>)<br>      <span class="hljs-keyword">return</span><br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-keyword">if</span> (response.data.code !== <span class="hljs-number">200</span>) &#123;<br>        Message(&#123;<br>          <span class="hljs-attr">message</span>: response.data.message,<br>          <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;error&#x27;</span>,<br>          <span class="hljs-attr">duration</span>: <span class="hljs-number">5</span> * <span class="hljs-number">1000</span><br>        &#125;)<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(response.data)<br>      &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">return</span> response.data<br>      &#125;<br>    &#125;<br>  &#125;,<br>  <span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(error.response)<br>  &#125;)<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> service<br></code></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h2><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-12-14%2019.06.59.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<p><em><strong>package.json</strong></em></p>
+<blockquote>
+<p>包含名称、描述和版本之类的信息，以及运行、开发以及有选择地将项目发布到 <em><strong>NPM</strong></em> 所需的信息。是项目的核心配置。<em><strong>npm in stall</strong></em>，将会执行安装配置。</p>
+</blockquote>
+<p>➡ <a target="_blank" rel="noopener" href="http://blog.yidengxuetang.com/post/201911/25/"><em><strong>详细了解</strong></em></a></p>
+<p><em><strong>nuxt.config.js</strong></em></p>
+<blockquote>
+<p><em><strong>nuxt</strong></em> 框架核心配置文件。</p>
+</blockquote>
+<p><em><strong>assets</strong></em></p>
+<blockquote>
+<p>用于组织未编译的静态资源如 <em><strong>LESS</strong></em>、<em><strong>SASS</strong></em> 或 <em><strong>JavaScript</strong></em>。</p>
+</blockquote>
+<p><em><strong>components</strong></em></p>
+<blockquote>
+<p><em><strong>vue</strong></em> 支持相关的组件。<em><strong>Nuxt.js</strong></em> 不会扩展增强该目录下 <em><strong>Vue.js</strong></em> 组件，即这些组件不会像页面组件那样有 <em><strong>asyncData</strong></em> 方法的特性。</p>
+</blockquote>
+<p><em><strong>layouts</strong></em></p>
+<blockquote>
+<p>页面布局！定义网页布局方式。用于组织应用的布局组件。</p>
+</blockquote>
+<p><em><strong>pages</strong></em></p>
+<blockquote>
+<p><em><strong>vue</strong></em> 页面！定义项目页面具体内容。<em><strong>Nuxt.js</strong></em> 框架读取该目录下所有的 <em><strong>.vue</strong></em> 文件并自动生成对应的路由配置。<em><strong>&lt;nuxt&gt;</strong></em>  会引入 <em><strong>/pages/index.vue</strong></em>。</p>
+</blockquote>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-12-14%2020.05.15.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<p><em><strong>plugins</strong></em></p>
+<blockquote>
+<p>用于组织那些需要在根 <em><strong>vue.js</strong></em> 应用实例化之前需要运行的 <em><strong>Javascript</strong></em> 插件。</p>
+</blockquote>
+<h2 id="框架开发"><a href="#框架开发" class="headerlink" title="框架开发"></a>框架开发</h2><h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><blockquote>
+<p><em><strong>nuxt</strong></em> 中路由的跳转：</p>
+<ul>
+<li><p>固定路由（文件命名：<code>index.vue</code>）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">window</span>.location.href = <span class="hljs-string">&#x27;/tsuiraku&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>动态路由（文件命名：<code>_参数名.vue</code>）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">window</span>.location.href = <span class="hljs-string">&#x27;/tsuiraku&#x27;</span> + id<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>默认寻找 <em><strong>/pages/</strong></em> 中的 <em><strong>.vue</strong></em> 文件。</p>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">前端开发总结</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处： <a target="_blank" href="https://tsuiraku.com/" rel="nofollow noopener noopener">tsuiraku</a>
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/12/16/login/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">登陆注册（腾讯云短信服务）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/14/utils-date/">
+                        <span class="hidden-mobile">自定义工具类：日期相关的工具类</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"dC2NdQqyqOkPy2Xg2ij7PMS4-gzGzoHsz","appKey":"XMhtIUKKmpfGkgkdObosNu5I","placeholder":"优质评论可以帮助作者获得更高权重（可以填写您的昵称以及联系方式，方便作者回复）","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+<div>
+  <span id="timeDate">载入天数...</span>
+  <span id="times">载入时分秒...</span>
+  <script>
+  var now = new Date();
+  function createtime(){
+      var grt= new Date("10/01/2020 8:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站已经运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  </script>
+</div>
+
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?tsuirak";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="tsuirak";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/about/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

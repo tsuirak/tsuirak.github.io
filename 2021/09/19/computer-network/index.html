@@ -1,0 +1,1018 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#6f7b5b">
+  <meta name="description" content="">
+  <meta name="author" content="tsuiraku">
+  <meta name="keywords" content="">
+  
+  <title>计算机网络 - tsuiraku</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":100,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tsuiraku</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="计算机网络">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-19 14:33" pubdate>
+        2021年9月19日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      84
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">计算机网络</h1>
+            
+            <div class="markdown-body">
+              <h1 id="TCP-IP协议栈"><a href="#TCP-IP协议栈" class="headerlink" title="TCP/IP协议栈"></a>TCP/IP协议栈</h1><p><em><strong>TCP/IP</strong></em> 协议采用 <em><strong>4</strong></em> 层结构，分别是<em><strong>应用层、传输层、网络层、链路层</strong></em>。</p>
+<p><em><strong>TCP/IP</strong></em> 协议和 <em><strong>OSI</strong></em> 参考模型</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2015.27.42.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<p><em><strong>TCP/IP</strong></em> 协议的基本框架</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-18%2020.11.30.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/849589-20170628002845914-1085185628.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>流程：当通过 <em><strong>http</strong></em> 发起一个请求时，应用层、传输层、网络层和链路层的相关协议依次对该请求进行包装并携带对应的首部，最终在链路层生成以太网数据包，以太网数据包通过物理介质传输给对方主机，对方接收到数据包以后，然后再一层一层采用对应的协议进行拆包，最后把应用层数据交给应用程序处理。</p>
+<blockquote>
+<p>网络通信就好比送快递，商品外面的一层层包裹就是各种协议。协议包含了商品信息、收货地址、收件人、联系方式等，然后还需要配送车、配送站、快递员，商品才能最终到达用户手中。</p>
+<p>一般情况下，快递是不能直达的，需要先转发到对应的配送站，然后由配送站再进行派件。</p>
+<p>配送车就是物理介质，配送站就是网关， 快递员就是路由器，收货地址就是IP地址，联系方式就是MAC地址。 </p>
+<p>快递员负责把包裹转发到各个配送站，配送站根据收获地址里的省市区，确认是否需要继续转发到其他配送站，当包裹到达了目标配送站以后，配送站再根据联系方式找到收件人进行派件。 </p>
+</blockquote>
+<h1 id="物理介质"><a href="#物理介质" class="headerlink" title="物理介质"></a>物理介质</h1><p>物理介质就是把电脑连接起来的物理手段，常见的有光纤、双绞线，以及无线电波，它决定了电信号（<em><strong>0 or 1</strong></em>）的传输方式，物理介质的不同决定了电信号的传输带宽、速率、传输距离以及抗干扰性等。</p>
+<h1 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h1><h2 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h2><p>网络通信就是把有特定意义的数据通过物理介质传送给对方，单纯的发送 <strong>0</strong> 和 <strong>1</strong> 是没有意义的，要传输有意义的数据，就需要以字节为单位对 <strong>0</strong> 和 <strong>1</strong> 进行分组，并且要标识好每一组电信号的信息特征，然后按照分组的顺序依次发送。**<u>以太网规定一组电信号就是一个数据包，一个数据包被称为一帧， 制定这个规则的协议就是以太网协议</u>**。</p>
+<h3 id="以太网帧的格式"><a href="#以太网帧的格式" class="headerlink" title="以太网帧的格式"></a>以太网帧的格式</h3><p><strong>一个完整的以太网数据包</strong>。</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2015.44.10.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2023.36.52.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<p><em><strong>Ethernet II</strong></em></p>
+<blockquote>
+<p>整个<strong>数据帧</strong>由<strong>首部</strong>、<strong>数据</strong>和<strong>尾部</strong>三部分组成。</p>
+<ul>
+<li><p>首部</p>
+<p>固定为 <em><strong>14</strong></em> 个字节，包含了目标 <em><strong>MAC</strong></em> 地址、源 <em><strong>MAC</strong></em> 地址和类型；</p>
+</li>
+<li><p>数据</p>
+<p>最短为 <em><strong>46</strong></em> 个字节，最长为 <em><strong>1500</strong></em> 个字节，如果需要传输的数据很长，就必须分割成多个帧进行发送；</p>
+</li>
+<li><p>尾部</p>
+<p>固定为 <em><strong>4</strong></em> 个字节，表示数据帧校验序列，用于确定数据包在传输过程中是否损坏。</p>
+</li>
+</ul>
+<p>因此，以太网协议通过对电信号进行分组并形成数据帧，然后通过物理介质把数据帧发送给接收方。</p>
+</blockquote>
+<p><strong><u>以太网如何来识别接收方的身份？</u></strong> - <strong>网卡地址（Mac地址）</strong></p>
+<h2 id="Mac地址"><a href="#Mac地址" class="headerlink" title="Mac地址"></a>Mac地址</h2><p>以太网规协议定，接入网络的设备都必须安装网络适配器，即 <strong>网卡</strong>。数据包必须是从一块网卡传送到另一块网卡。</p>
+<p>而 <strong>网卡地址</strong> 就是数据包的发送地址和接收地址，也就是帧首部所包含的  <strong>MAC</strong> 地址，<strong>MAC</strong> 地址是每块网卡的身份标识，就如同身份证上的身份证号码，具有全球唯一性。</p>
+<blockquote>
+<p>MAC地址采用十六进制标识，共6个字节， 前三个字节是厂商编号，后三个字节是网卡流水号，例如 <strong>4C-0F-6E-12-D2-19</strong>。</p>
+</blockquote>
+<p>当有了 <strong>MAC</strong> 地址以后，以太网采用 <strong>广播</strong> 形式，把数据包发给该 <strong>子网内</strong> 所有主机，子网内每台主机在接收到这个包以后，都会读取首部里的目标 <strong>MAC</strong> 地址，然后和自己的 <strong>MAC</strong> 地址进行对比，如果相同就做下一步处理，如果不同，就丢弃这个包。</p>
+<p><u><strong>网桥、网卡、网关？</strong></u></p>
+<blockquote>
+<ol>
+<li><p>网桥，是把两个不同物理层，不同 <strong>MAC</strong> 子层，不同速率的局域网连接在一起。比如说 <strong>10MB/S</strong> 与 <strong>100MB/S</strong> 的局域网。因为它有储存转化功能。</p>
+</li>
+<li><p>网卡是电脑的一个接收信息、转换信息、暂储信息的一个硬件。它是把接受到信息递交给上层，如（<strong>CUP</strong>）的一个接口。</p>
+</li>
+<li><p>网关（<strong>Gateway</strong>）又称网间连接器，协议转换器。网关在传输层上以实现网络互连，是最复杂的网络互连设备，仅用于两个高层协议不同的网络互连。网关既可以用于广域网互连，也可以用于局域网互连。 网关是一种充当转换重任的计算机系统或设备。在使用不同的通信协议、数据格式或语言，甚至体系结构完全不同的两种系统之间，网关是一个翻译器。与网桥只是简单地传达信息不同，网关对收到的信息要重新打包，以适应目的系统的需求。同时，网关也可以提供过滤和安全功能。大多数网关运行在 <strong>OSI</strong> 协议的顶层，即应用层。</p>
+<p> 所以生动的表示以下<br> 网关是邮电局，所有的信息必须通过这里的打包、封箱、寻址，才能发出去与收进来；<br> 网卡是设备，也就是邮电局邮筒，你家的信箱；<br> 而网桥是邮递员，但他只负责一个镇里面(局域网)不负责广域网。</p>
+</li>
+</ol>
+</blockquote>
+<p><strong><u>链路层的主要工作就是对电信号进行分组并形成具有特定意义的数据帧，然后以广播的形式通过物理介质发送给接收方。</u></strong></p>
+<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><blockquote>
+<p>对于上面的过程，问题？</p>
+<p>发送者如何知道接收者的 MAC 地址？</p>
+<p>发送者如何知道接收者和自己同属一个子网？</p>
+<p>如果接收者和自己不在同一个子网，数据包如何发给对方？</p>
+</blockquote>
+<p><strong><u><em>IP协议、ARP协议、路由协议。</em></u></strong></p>
+<h2 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h2><p><strong><u>解决：发送者如何知道接收者和自己同属一个子网？</u></strong></p>
+<p>首先，明确 <strong>MAC</strong> 地址只与厂商有关，与所处的网络无关，所以无法通过 <strong>MAC</strong> 地址来判断两台主机是否属于同一个子网。</p>
+<p>因此，网络层引入了 <strong>IP</strong> 协议，制定了一套新地址，使得我们能够区分两台主机是否同属一个网络，这套地址就是网络地址，也就是所谓的 <strong>IP</strong> 地址。</p>
+<p>IP地址目前有两个版本。</p>
+<ul>
+<li><p><strong>IPv4</strong></p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs x86asm">IPv4是一个<span class="hljs-number">32</span>位的地址，常采用<span class="hljs-number">4</span>个十进制数字表示。<br><span class="hljs-built_in">IP</span>协议将这个<span class="hljs-number">32</span>位的地址分为两部分，前面部分代表网络地址，后面部分表示该主机在局域网中的地址。<br>由于各类地址的分法不尽相同，以C类地址<span class="hljs-number">192.168</span><span class="hljs-number">.24</span><span class="hljs-number">.1</span>为例，其中前<span class="hljs-number">24</span>位就是网络地址，后<span class="hljs-number">8</span>位就是主机地址。因此，如果两个<span class="hljs-built_in">IP</span>地址在同一个子网内，则网络地址一定相同。<br>为了判断<span class="hljs-built_in">IP</span>地址中的网络地址，<span class="hljs-built_in">IP</span>协议还引入了子网掩码，<span class="hljs-built_in">IP</span>地址和子网掩码通过按位与运算后就可以得到网络地址。<br>由于发送者和接收者的<span class="hljs-built_in">IP</span>地址是已知的(应用层的协议会传入)， 因此只需要通过子网掩码对两个<span class="hljs-built_in">IP</span>地址进行<span class="hljs-keyword">AND</span>运算后就能够判断双方是否在同一个子网了。<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>IPv6</strong></p>
+</li>
+</ul>
+<h3 id="IP数据报格式"><a href="#IP数据报格式" class="headerlink" title="IP数据报格式"></a>IP数据报格式</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2019.08.20.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2019.04.14.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<blockquote>
+<p><strong>固定部分</strong>：一定是 20B；</p>
+<p><strong>版本</strong>：4位，对应当前使用的 <em><strong>Ipv4/Ipv6</strong></em> ；</p>
+<p><strong>首部长度</strong>：4位，单位为 <em><strong>4B</strong></em>，最小值为 5；</p>
+<p><strong>区分服务</strong>：8位，指期望获得哪种类型的服务（很少使用）；</p>
+<p><strong>总长度：</strong>16位，表示首部 + 数据，单位是 <em><strong>1B</strong></em>，即最大能容纳 $(2^{16}-1)\times B=65515 B$；</p>
+<p>（理论上一个 <em><strong>IP</strong></em> 数据包的总长度可以达到 65535 个字节，但是以太网数据包的最大长度是 <em><strong>1500</strong></em> 个字符，如果超过这个大小，就需要对 <em><strong>IP</strong></em> 数据包进行分割，分成多帧发送）</p>
+<p><strong>标识</strong>：16位，同一数据报的分片使用同一标识；</p>
+<p><em><strong>（例如，当前数据报长度超过了链路层的 MTU 值，那么它进行分片，它分片得到的每个小片都和原来数据报使用同样的标识）</strong></em></p>
+<p><strong>标志</strong>：3位，只有两位有意义，中间位 <em><strong>DF</strong></em>（Don’t Fragment），最低位 <em><strong>MF</strong></em>（More Fragment）；</p>
+<p><em><strong>（DF=1：禁止分片；DF=0：允许分片）</strong></em></p>
+<p><em><strong>（MF=1：后面还有分片；MF=0：后面没有分片/最后一片）</strong></em></p>
+<p><strong>片偏移</strong>：13位，指出较长分组分片后，某片在原分组中的相对位置，以 <em><strong>8B</strong></em> 为单位；</p>
+<p><strong>生存时间</strong>（<em><strong>TTL</strong></em>）：8位，表示 <em><strong>IP</strong></em> 分组的保质期。没经过一个路由，则减去 1，直到 0 丢弃；</p>
+<p>协议：8位，运输层传下来的数据部分的协议（需要记忆的字段值对应，**<u>TCP：6，UDP：17</u>**）；</p>
+<p><strong>首部检验和</strong>：16位，只检验首部和；</p>
+<p><strong>原地址</strong>：32位；</p>
+<p><strong>目的地址</strong>：32位；</p>
+<p><strong>可选字段</strong>：0～40B，用来排错、测量以及安全等措施；</p>
+<p><strong>填充</strong>：将首部补充成 4B 的整数倍。</p>
+</blockquote>
+<h3 id="IP数据报分片"><a href="#IP数据报分片" class="headerlink" title="IP数据报分片"></a>IP数据报分片</h3><h4 id="最大传送单元MTU"><a href="#最大传送单元MTU" class="headerlink" title="最大传送单元MTU"></a>最大传送单元MTU</h4><p>链路层数据帧可以封装数据的上限。</p>
+<p>以太网的 <em><strong>MTU</strong></em> 是 1500 字节。</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2019.34.13.png" srcset="/img/loading.gif" lazyload  style="zoom:50%;" />
+
+<p>如果所传送的数据报长度超过某链路的 MTU 值？ - 分片。</p>
+<h4 id="如何避免分片"><a href="#如何避免分片" class="headerlink" title="如何避免分片"></a>如何避免分片</h4><p><strong><u><em>To do</em></u></strong></p>
+<h4 id="分片的顺序"><a href="#分片的顺序" class="headerlink" title="分片的顺序"></a>分片的顺序</h4><p><strong><u><em>To do</em></u></strong></p>
+<h4 id="接收端如何确认所有的分片都已经到达"><a href="#接收端如何确认所有的分片都已经到达" class="headerlink" title="接收端如何确认所有的分片都已经到达"></a>接收端如何确认所有的分片都已经到达</h4><p><strong><u><em>To do</em></u></strong></p>
+<h3 id="IP选路"><a href="#IP选路" class="headerlink" title="IP选路"></a>IP选路</h3><p><strong><u><em>To do</em></u></strong></p>
+<h2 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h2><blockquote>
+<p><strong>TCP/IP</strong> 协议栈中处于网络层，<strong>OSI</strong> 标准中处于数据链路层。</p>
+<p>引用：**<u>谈论 ARP 协议究竟属于第几层一点意义也没有，那完全是对 IETF 哲学的误解，是强行使用 ISO 的哲学研究 IETF 体系的生搬硬套。IETF 哲学是很实际和洒脱的，不似 ISO 那样刻板。</u>**</p>
+</blockquote>
+<p><strong><u>解决：发送者如何知道接收者的 MAC 地址？</u></strong></p>
+<p>即地址解析协议，是根据 <strong>IP</strong> 地址获取 <strong>MAC</strong> 地址的一个网络层协议。</p>
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-20%2013.58.26.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<p>首先检查 <strong>ARP高速缓存</strong>，有对应表项就写入帧，没有就用目的 <strong>MAC</strong> 地址为 <strong>FF-FF-FF-FF-FF-FF</strong> 的帧封装并广播 ARP 请求分组，同一局域网中的所有主机都可以收到该请求。</p>
+<p><strong>ARP</strong> 首先会发起一个请求数据包，数据包的首部包含了目标主机的 <strong>IP</strong> 地址（<em><strong>IP3</strong></em>），然后这个数据包会在链路层进行再次包装，生成 <strong>以太网数据包</strong>，最终由以太网广播给子网内的所有主机，每一台主机都会接收到这个数据包，并取出标头里的 <strong>IP</strong> 地址，然后和自己的 <strong>IP</strong> 地址进行比较，如果相同就返回自己的 <strong>MAC</strong> 地址，如果不同就丢弃该数据包。<strong>ARP</strong> 接收返回消息，以此确定目标机的 <strong>MAC</strong> 地址。与此同时，<strong>ARP</strong> 还会将返回的 <strong>MAC</strong> 地址与对应的 <strong>IP</strong> 地址存入本机 <strong>ARP</strong> 缓存中并保留一定时间，下次请求时直接查询 <strong>ARP</strong> 缓存以节约资源。</p>
+<blockquote>
+<p>ARP协议4种典型情况</p>
+<ol>
+<li><p>主机A发给本网络上的主机B：用ARP找到主机B的硬件地址；</p>
+</li>
+<li><p>主机A发给另一网络上的主机B：用ARP找到本网络上一个路由器(网关)的硬件地址；</p>
+</li>
+<li><p>路由器发给本网络的主机A：用ARP找到主机A的硬件地址；</p>
+</li>
+<li><p>路由器发给另一网络的主机B：用ARP找到本网络上的一个路由器的硬件地址。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="ARP高速缓存"><a href="#ARP高速缓存" class="headerlink" title="ARP高速缓存"></a>ARP高速缓存</h3><p>为了使 ARP 高效运行，每个主机或路由器上都维护有一张 ARP 缓存表。</p>
+<p>存储 IP 地址和 Mac 地址的映射（同一个局域网内部的）。</p>
+<p>每个映射的缓存条目包含5个元素</p>
+<blockquote>
+<p>主机名（对应一个 IP 地址）；</p>
+<p>硬件地址类型；</p>
+<p>硬件地址；</p>
+<p>标志；</p>
+<p>本地网络接口。</p>
+</blockquote>
+<p>生存周期一般为 10～20 min。</p>
+<h3 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-20%2015.22.13.png" srcset="/img/loading.gif" lazyload style="zoom:30%;" />
+
+<p>ARP 报文总长度为 28 字节，MAC 地址长度为 6 字节，IP 地址长度为 4 字节。</p>
+<blockquote>
+<ul>
+<li>硬件类型：指明了发送方想知道的硬件接口类型，以太网的值为 1。</li>
+<li>协议类型：表示要映射的协议地址类型。它的值为 0x0800，表示 IP 地址。</li>
+<li>硬件地址长度和协议长度：分别指出硬件地址和协议的长度，以字节为单位。对于以太网上 IP 地址的ARP请求或应答来说，它们的值分别为 6 和 4。</li>
+<li>操作类型：用来表示这个报文的类型，ARP 请求为 1，ARP 响应为 2，RARP 请求为 3，RARP 响应为 4。</li>
+<li>发送方 MAC 地址：发送方设备的硬件地址。</li>
+<li>发送方 IP 地址：发送方设备的 IP 地址。</li>
+<li>目标 MAC 地址：接收方设备的硬件地址。</li>
+<li>目标 IP 地址：接收方设备的IP地址。</li>
+</ul>
+</blockquote>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h2><p><strong><u>解决：如果接收者和自己不在同一个子网，数据包如何发给对方？</u></strong></p>
+<p>通过 <em><strong>ARP</strong></em> 协议的工作原理可以发现，<em><strong>ARP</strong></em> 的 <em><strong>MAC</strong></em> 寻址还是局限在同一个子网中，因此网络层引入了路由协议，首先通过 <em><strong>IP</strong></em> 协议来判断两台主机是否在同一个子网中，如果在同一个子网，就通过 <em><strong>ARP</strong></em> 协议查询对应的 <em><strong>MAC</strong></em> 地址，然后以广播的形式向该子网内的主机发送数据包；如果不在同一个子网，以太网会将该数据包转发给本子网的<strong>网关</strong>进行路由。网关是互联网上子网与子网之间的桥梁，所以网关会进行多次转发，最终将该数据包转发到目标 <em><strong>IP</strong></em> 所在的子网中，然后再通过 <em><strong>ARP</strong></em> 获取目标机 <em><strong>MAC</strong></em>，最终也是通过广播形式将数据包发送给接收方。</p>
+<p>而完成这个路由协议的物理设备就是<strong>路由器，</strong>在错综复杂的网络世界里，路由器扮演者<strong>交通枢纽</strong>的角色，它会根据信道情况，选择并设定路由，以最佳路径来转发数据包。</p>
+<h2 id="ICMP协议"><a href="#ICMP协议" class="headerlink" title="ICMP协议"></a>ICMP协议</h2><p><em><strong>ICPM</strong></em> 协议支持主机或路由器，</p>
+<h3 id="ICMP数据报格式"><a href="#ICMP数据报格式" class="headerlink" title="ICMP数据报格式"></a>ICMP数据报格式</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-18%2020.15.15.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<h3 id="ICMP差错报文"><a href="#ICMP差错报文" class="headerlink" title="ICMP差错报文"></a>ICMP差错报文</h3><ol>
+<li>终点不可达：当路由器或者主机不能交付数据报时就向源点发生终点不可达。**<u>（无法交付）</u>**</li>
+<li>源点抑制：几乎不再使用。</li>
+<li>时间超过：当路由器收到 <em><strong>TTL=0</strong></em> 的数据报时，除了丢弃该数据报外，还要向源点发生时间超过报文。**<u>（TTL=0）</u>**</li>
+<li>参数问题：路由器或目的主机收到的数据报的首部中有的字段的值不正确时，就丢弃该数据报，并向源点发 送参数问题报文。 <strong><u>（即首部字段有问题）</u></strong></li>
+<li>变路由（重定向）：路由器把改变路由报文发送给主机，让主机知道下次应将数据报发送给另外的路由器 （可通过更好的路由）。 （**<u>值得更好的路由）</u>**</li>
+</ol>
+<p><strong>ICMP差错报文数据字段</strong></p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-18%2020.25.29.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<p><strong>不应该发生ICMP差错报文</strong></p>
+<ol>
+<li><p>对 <em><strong>ICMP</strong></em> 差错报告报文不再发送 <em><strong>ICMP</strong></em> 差错报告报文。</p>
+</li>
+<li><p>对第一个分片的数据报片的所有后续数据报片都不发送 <em><strong>ICMP</strong></em> 差错报告报文。 </p>
+</li>
+<li><p>对具有组播地址的数据报都不发送 <em><strong>ICMP</strong></em> 差错报告报文。</p>
+</li>
+<li><p>对具有特殊地址（如127.0.0.0或0.0.0.0）的数据报不发送 <em><strong>ICMP</strong></em> 差错报告报文。</p>
+</li>
+</ol>
+<h3 id="ICMP询问报文"><a href="#ICMP询问报文" class="headerlink" title="ICMP询问报文"></a>ICMP询问报文</h3><ol>
+<li>回送请求和回答报文。主机或路由器向特定目的主机发出的询问，收到此报文的主机必须给源主机或路由器发生 <em><strong>ICMP</strong></em> 回送回答报文。测试目的站是否可达以及了解其相关状态。</li>
+<li>时间戳请求和回答报文。请某个主机或路由器回答当前的日期和时间。用来进行时钟同步和测量时间。</li>
+</ol>
+<h3 id="ICMP应用"><a href="#ICMP应用" class="headerlink" title="ICMP应用"></a>ICMP应用</h3><p><em><strong>ping</strong></em>：测试两个主机之间的连通性，使用了 <em><strong>ICMP</strong></em> 回送请求和回答报文。</p>
+<p><em><strong>Traceroute</strong></em> ：跟踪一个分组从源点到终点的路径，使用了 <em><strong>ICMP</strong></em> 时间超过差错报告报文。</p>
+<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><blockquote>
+<p>链路层定义了主机的身份，即 MAC 地址， 而网络层定义了IP地址，明确了主机所在的网段，有了这两个地址，数据包就从可以从一个主机发送到另一台主机。但实际上数据包是从一个主机的某个应用程序发出，然后由对方主机的应用程序接收。而每台电脑都有可能同时运行着很多个应用程序，所以当数据包被发送到主机上以后，是无法确定哪个应用程序要接收这个包。</p>
+<p>如何解决？</p>
+</blockquote>
+<p><strong><u><em>UDP 协议、TCP协议</em></u></strong></p>
+<h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>端口号长度为 <em><strong>16bit</strong></em>，能表示 65536 个不同的端口号。</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2013.02.12.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<table>
+<thead>
+<tr>
+<th>应用程序</th>
+<th>FTP</th>
+<th>TELNET</th>
+<th>SMTP</th>
+<th>DNS</th>
+<th>TFTP</th>
+<th>HTTP</th>
+<th>SNMP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>熟知端口号</strong></td>
+<td><strong>21</strong></td>
+<td><strong>23</strong></td>
+<td><strong>25</strong></td>
+<td><strong>53</strong></td>
+<td><strong>69</strong></td>
+<td><strong>80</strong></td>
+<td><strong>161</strong></td>
+</tr>
+</tbody></table>
+<h2 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h2><p><strong><u>解决：确定哪个应用程序要接收这个包。</u></strong></p>
+<p>UDP协议定义了<strong>端口</strong>，给每个应用程序标识身份。同一个主机上的每个应用程序都需要指定唯一的端口号，并且规定网络中传输的数据包必须加上端口信息。当数据包到达主机以后，就可以根据端口号找到对应的应用程序了。</p>
+<p><strong>主要特点</strong></p>
+<ul>
+<li>无连接的，减少开销和发送数据之前的时延。</li>
+<li>使用最大努力进行交付，即不保证可靠交付。</li>
+<li>面向报文的，适合一次性传输最少数据的网络应用。</li>
+<li>无拥塞控制，适合实时应用。</li>
+<li>首部开销小，8B，而 <em><strong>TCP</strong></em>：20B。</li>
+</ul>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2013.17.43.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<h3 id="UDP数据报格式"><a href="#UDP数据报格式" class="headerlink" title="UDP数据报格式"></a>UDP数据报格式</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-18%2020.01.53.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2013.22.05.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<p><em><strong>UDP</strong></em> 数据包由首部和数据两部分组成，首部长度为 8 个字节，主要包括源端口和目标端口；数据最大为 65527 个字节，整个数据包的长度最大可达到 65535 个字节。</p>
+<p><em><strong>UDP</strong></em> 协议比较简单，实现容易，但它没有确认机制， 数据包一旦发出，无法知道对方是否收到，因此可靠性较差。</p>
+<h2 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h2><p>传输控制协议（<em><strong>TCP，Transmission Control Protocol</strong></em>）是为了在不可靠的互联网络上提供可靠的端到端字节流而专门设计的一个传输协议。</p>
+<p><strong>主要特点</strong></p>
+<ol>
+<li><p><em><strong>TCP</strong></em> 是面向连接（虚连接）的传输层协议。</p>
+</li>
+<li><p>每一条 <em><strong>TCP</strong></em> 连接只能有两个端点，每一条 <em><strong>TCP</strong></em> 连接只能是点对点的。 </p>
+</li>
+<li><p><em><strong>TCP</strong></em> 提供可靠交付的服务，无差错、不丢失、不重复、按序到达。可靠有序，不丢不重。</p>
+</li>
+<li><p><em><strong>TCP</strong></em> 提供全双工通信。</p>
+<ol>
+<li>发送缓存，准备发生的数据 &amp; 已发送但尚未收到确认的数据。</li>
+<li>接受缓存，按序到达但尚未接受应用程序读取的数据 &amp; 不按序到达的数据。</li>
+</ol>
+</li>
+<li><p><em><strong>TCP</strong></em> 面向字节流。<em><strong>TCP</strong></em> 会把应用程序交下来的数据看成仅仅是一连串的无结构的字节流。</p>
+</li>
+</ol>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2013.42.33.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<h3 id="TCP数据报格式"><a href="#TCP数据报格式" class="headerlink" title="TCP数据报格式"></a>TCP数据报格式</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2013.45.44.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<blockquote>
+<p>序号：在一个 <em><strong>TCP</strong></em> 连接中传送的字节流中 的每一个字节都按顺序编号，本字段表示本报文段所发送数据的第一个字节的序号。</p>
+<p>确认号：期望收到对方下一个报文段的第一个数据字节的序号。若确认号为 <em><strong>N</strong></em>， 则证明到序号 <em><strong>N-1</strong></em> 为止的所有数据都已正确收到。</p>
+<p>数据偏移（首部长度）：<em><strong>TCP</strong></em> 报文段的数据起始处距离 <em><strong>TCP</strong></em> 报文段的起始处有多远，以 <em><strong>4B</strong></em> 为单位，即 1 个数值是 <em><strong>4B</strong></em>。</p>
+<p>紧急位 <em><strong>URG</strong></em>：<em><strong>URG=1</strong></em> 时，标明此报文段中有紧急数据，是高优先级的数据，应尽快传送，不用在缓存里排队，配合紧急指针字段使用。（发送方）</p>
+<p>确认位 <em><strong>ACK</strong></em>：<em><strong>ACK=1</strong></em> 时确认号有效，在连接建立后所有传送的报文段都必须把 <em><strong>ACK</strong></em> 置为 1。</p>
+<p>推送位 <em><strong>PSH</strong></em>：<em><strong>PSH=1</strong></em> 时，接收方尽快交付接收应用进程，不再等到缓存填满再向上交付。（接收方）</p>
+<p>复位 <em><strong>RST</strong></em>：<em><strong>RST=1</strong></em> 时，表明 <em><strong>TCP</strong></em> 连接中出现严重差错，必须释放连接，然后再重新建立传输链接。</p>
+<p>同步位 <em><strong>SYN</strong></em>：<em><strong>SYN=1</strong></em> 时，表明是一个连接请求/连接接受报文。</p>
+<p>终止位 <em><strong>FIN</strong></em>：<em><strong>FIN=1</strong></em> 时，表明此报文段发送方数据已发完，要求释放连接。</p>
+<p>窗口：指的是发送本报文段的一方的接收窗口，即现在允许对方发送的数据量。</p>
+<p>检验和：检验首部+数据，检验时要加上 <em><strong>12B</strong></em> 伪首部，第四个字段为 6。</p>
+<p>紧急指针：<em><strong>URG=1</strong></em> 时才有意义，指出本报文段中紧急数据的字节数。</p>
+<p>选项：最大报文段长度 <em><strong>MSS</strong></em>、窗口扩大、时间戳、选择确认等。</p>
+</blockquote>
+<h3 id="TCP的连接控制管理"><a href="#TCP的连接控制管理" class="headerlink" title="TCP的连接控制管理"></a>TCP的连接控制管理</h3><p>连接传输的三个阶段：</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2014.26.23.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<p><em><strong>TCP</strong></em> 连接的建立采用客户服务器方式，主动发起连接建立的应用进程叫做客户，而被动等待连接建 立的应用进程叫服务器。</p>
+<h4 id="三次握手！！！"><a href="#三次握手！！！" class="headerlink" title="三次握手！！！"></a>三次握手！！！</h4><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2014.30.49.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<ol>
+<li><strong>第一次握手</strong></li>
+</ol>
+<p>客户端发送连接请求报文段，无应用层数据。</p>
+<p><em><strong>SYN=1，seq=x（随机）</strong></em></p>
+<ol start="2">
+<li><strong>第二次握手</strong></li>
+</ol>
+<p>服务器端为该 <em><strong>TCP</strong></em> 连接分配缓存和变量，并向客户端返回确认报文段，允许连接，无应用层数据。</p>
+<p><em><strong>SYN=1，ACK=1，seq=y（随机），ack=x+1</strong></em></p>
+<ol start="3">
+<li><strong>第三次握手</strong></li>
+</ol>
+<p>客户端为该 <em><strong>TCP</strong></em> 连接分配缓存和变量，并向服务器端返回确认的确认，可以携带数据。</p>
+<p><em><strong>SYN=0，ACK=1，seq=x+1，ack=y+1</strong></em></p>
+<ol start="4">
+<li><strong>成功建立连接，可以进行数据传输</strong></li>
+</ol>
+<blockquote>
+<p><u>扩展：<em><strong>SYN</strong></em> 洪泛攻击。</u></p>
+<p><em><strong>SYN</strong></em> 洪泛攻击发生在 <em><strong>OSI</strong></em> 第四层，这种方式利用 <em><strong>TCP</strong></em> 协议的特性，就是三次握手。攻击者发送 <em><strong>TCP</strong></em> <em><strong>SYN</strong></em>，<em><strong>SYN</strong></em> 是 <em><strong>TCP</strong></em> 三次握手中的第一个数据包，而当服务器返回 <em><strong>ACK</strong></em> 后，该攻击者就不对其进行再确认，那这个 <em><strong>TCP</strong></em> 连接就处于挂起状态，也就是所谓的半连接状态，服务器收不到再确认的话，还会重复发送 <em><strong>ACK</strong></em> 给攻击者。这样更加会浪费服务器的资源。攻击者就对服务器发送非常大量的这种TCP连接，由于每一个都没法完成三次握手，所以在服务器上，这些 <em><strong>TCP</strong></em> 连接会因为挂起状态而消耗 <em><strong>CPU</strong></em> 和内存，最后服务器可能死机，就无法为正常用户提供服务了。</p>
+</blockquote>
+<h4 id="四次挥手！！！"><a href="#四次挥手！！！" class="headerlink" title="四次挥手！！！"></a>四次挥手！！！</h4><p>可以由双方任意提出终止。</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2014.39.30.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+
+
+<ol>
+<li><p>客户端发送连接释放报文段，停止发送数据，主动关闭 <em><strong>TCP</strong></em> 连接。</p>
+<p><em><strong>FIN=1，seq=u</strong></em></p>
+</li>
+<li><p>服务器端回送一个确认报文段，客户到服务器这个方向的连接就释放了——半关闭状态。（此时服务端还可以发送数据）</p>
+<p><em><strong>ACK=1，seq=v，ack=u+1</strong></em> </p>
+</li>
+<li><p>服务器端发完数据，就发出连接释放报文段，主动关闭 <em><strong>TCP</strong></em> 连接。</p>
+<p><em><strong>FIN=1，ACK=1，seq=w，ack=u+1</strong></em> </p>
+</li>
+<li><p>客户端回送一个确认报文段，再等到时间等待计时器设置的 <em><strong>2MSL</strong></em> （最长报文段寿命）后，连接彻底关闭。 <em><strong>ACK=1，seq=u+1，ack=w+1</strong></em></p>
+</li>
+</ol>
+<h3 id="TCP的可靠传输"><a href="#TCP的可靠传输" class="headerlink" title="TCP的可靠传输"></a>TCP的可靠传输</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2015.11.54.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<p><strong><u>可靠：保证接收方进程从缓存区读出的字节流与发送方发出的字节流是完全一样的。</u></strong></p>
+<h4 id="TCP实现可靠传输的机制"><a href="#TCP实现可靠传输的机制" class="headerlink" title="TCP实现可靠传输的机制"></a>TCP实现可靠传输的机制</h4><blockquote>
+<ol>
+<li>校验</li>
+<li>序号</li>
+<li>确认</li>
+<li>重传</li>
+</ol>
+</blockquote>
+<p><strong>序号</strong></p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2015.14.20.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<p><strong>确认</strong></p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2015.15.27.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<p><strong>重传</strong></p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2015.15.58.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<p><strong><u>如何快速重传？</u></strong></p>
+<p>*<em>冗余 <em>ACK</em>（冗余确认）</em>*</p>
+<p>每当比期望序号大的失序报文段到达时，发送一个冗余 <em><strong>ACK</strong></em>，指明下一个期待字节的序号。 </p>
+<p>发送方已发送 1，2，3，4，5 报文段；</p>
+<p>接收方收到 1，返回给1的确认（确认号为 2 的第一个字节）；</p>
+<p>接收方收到 3，仍返回给1的确认（确认号为 2 的第一个字节）；</p>
+<p>接收方收到 4，仍返回给1的确认（确认号为 2 的第一个字节）； </p>
+<p>接收方收到5，仍返回给1的确认（确认号为2的第一个字节）； </p>
+<p>发送方收到 <strong>3</strong> 个对于报文段 <strong>1</strong> 的冗余 <em><strong>ACK</strong></em> ，则认为 2 报文段丢失，重传2号报文段。<u><strong>快速重传。</strong></u></p>
+<h3 id="TCP的流量控制"><a href="#TCP的流量控制" class="headerlink" title="TCP的流量控制"></a>TCP的流量控制</h3><p>流量控制，即让发送方慢点，要让接收方来得及接收。</p>
+<p>TCP利用 <strong><u>滑动窗口</u></strong> 机制实现流量控制。</p>
+<p>在通信过程中，接收方根据自己接收缓存的大小，动态地调整发送方的发送窗口大小，即接收窗口 <em><strong>rwnd</strong></em>（接收方 设置确认报文段的窗口字段来将 <em><strong>rwnd</strong></em> 通知给发送方），发送方的发送窗口取接收窗口 <em><strong>rwnd</strong></em> 和拥塞窗口 <em><strong>cwnd</strong></em> 的最小值。</p>
+<p>A 向 B 发送数据，连接建立时，B 告诉 A：“我的 rwnd=400（字节）”，设每一个报文段 100B，报文段序号初始值为 1。</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2015.48.48.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<p><em><strong>TCP</strong></em> 为每一个连接设有一个持续计时器，只要 <em><strong>TCP</strong></em> 连接的一方收到对方的零窗口通知，就启动持续计时器。</p>
+<p>若持续计时器设置的时间到期， 就发送一个零窗口探测报文段。 接收方收到探测报文段时给出现在的窗口值。</p>
+<p>若窗口仍然是 0，那么发送方就重新设置持续计时器。</p>
+<h3 id="TCP的拥塞控制"><a href="#TCP的拥塞控制" class="headerlink" title="TCP的拥塞控制"></a>TCP的拥塞控制</h3><p>出现拥塞的条件：对资源需求的总和 $&gt;$ 可用资源。</p>
+<p>网络中有许多资源同时呈现供应不足 $\longrightarrow$ 网络性能变坏 $\longrightarrow$ 网络吞吐量将随输入负荷增大而下降。</p>
+<p>拥塞控制：防止过多的数据注入到网络中。</p>
+<p>拥塞控制和流量控制的区别：</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2017.49.34.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:33%;" />
+
+
+
+
+
+<p>假定：</p>
+<ol>
+<li>数据单方向传送，而另一个方向只传送确认；</li>
+<li> 接收方总是有足够大的缓存空间，因而发送窗口大小取决于拥塞程度。</li>
+</ol>
+<p>发送窗口= <em><strong>Min</strong></em> { 接收窗口 <em><strong>rwnd</strong></em>，拥塞窗口 <em><strong>cwnd</strong></em> } </p>
+<p>接收窗口：接收方根据接受缓存设置的值，并告知给发送方，反映接收方容量。 </p>
+<p>拥塞窗口：发送方根据自己估算的网络拥塞程度而设置的窗口值，反映网络当前容量。</p>
+<h4 id="慢开始和拥塞避免"><a href="#慢开始和拥塞避免" class="headerlink" title="慢开始和拥塞避免"></a>慢开始和拥塞避免</h4><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2017.55.02.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<p>一个传输轮次指的是</p>
+<ul>
+<li>发送了一批报文段，并收到它们的确认的时间；</li>
+<li>一个往返时延 <em><strong>RTT</strong></em>；</li>
+<li>开始发送一批拥塞窗口内的报文段到开始发送下一批拥塞窗口内的报文段的时间。</li>
+</ul>
+<h4 id="快重传和快恢复"><a href="#快重传和快恢复" class="headerlink" title="快重传和快恢复"></a>快重传和快恢复</h4><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2017.55.20.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><blockquote>
+<p>理论上讲，有了以上三层协议的支持，数据已经可以从一个主机上的应用程序传输到另一台主机的应用程序了，但此时传过来的数据是字节流，不能很好的被程序识别，操作性差。因此，应用层定义了各种各样的协议来规范数据格式，常见的有 <em><strong>HTTP、FTP、SMTP</strong></em> 等，<em><strong>HTTP</strong></em> 是一种比较常用的应用层协议，主要用于 <em><strong>B/S</strong></em> 架构之间的数据。</p>
+<p>应用层的主要工作就是<u><strong>定义数据格式并按照对应的格式解读数据。</strong></u></p>
+</blockquote>
+<p><strong><u><em>DNS协议、FTP协议、HTTP协议、HTTPS协议</em></u></strong></p>
+<h2 id="DNS协议"><a href="#DNS协议" class="headerlink" title="DNS协议"></a>DNS协议</h2><p>域名解析系统，即域名解析为 <em><strong>ip</strong></em> 地址。</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2019.02.32.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2019.03.52.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:50%;" />
+
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2019.06.31.png" srcset="/img/loading.gif" lazyload style="zoom:30%;" />
+
+
+
+<h3 id="域名（DNS）服务器"><a href="#域名（DNS）服务器" class="headerlink" title="域名（DNS）服务器"></a>域名（DNS）服务器</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2019.11.21.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><ul>
+<li>递归查询</li>
+<li>迭代查询</li>
+</ul>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2019.16.12.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="FTP协议"><a href="#FTP协议" class="headerlink" title="FTP协议"></a>FTP协议</h2><p>文件传输协议 <em><strong>FTP</strong></em>（File Transfer Protocol）。</p>
+<p>提供不同种类主机系统（硬、软件体系等都可以不同）之间的文件传输能力。</p>
+<p>简单文件传送协议 <em><strong>TFTP</strong></em>（Trivial File Transfer Protocol）。</p>
+<p>FTP是基于客户/服务器（<em><strong>C/S</strong></em>）的协议。 </p>
+<p>用户通过一个客户机程序连接至在远程计算机上运行的服务器程序。</p>
+<p>依照 <em><strong>FTP</strong></em> 协议提供服务，进行文件传送的计算机就是 <em><strong>FTP</strong></em> 服务器。 </p>
+<p>连接 <em><strong>FTP</strong></em> 服务器，遵循 <em><strong>FTP</strong></em> 协议与服务器传送文件的电脑就是 <em><strong>FTP</strong></em> 客户端。</p>
+<h3 id="FTP工作原理"><a href="#FTP工作原理" class="headerlink" title="FTP工作原理"></a>FTP工作原理</h3><ul>
+<li><p><strong>登录</strong></p>
+</li>
+<li><p><strong>匿名登陆</strong>：不需要登陆，即可拷贝文件。</p>
+</li>
+</ul>
+<p><u><strong>FTP使用TCP实现可靠传输。</strong></u></p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-20%2019.45.43.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<p><em><strong>TCP</strong></em> 控制连接端口：传请求，控制连接始终保持。</p>
+<p><em><strong>TCP</strong></em> 数据连接端口：传文件，数据连接保持一会。</p>
+<p><strong>流程</strong></p>
+<ul>
+<li><em><strong>FTP</strong></em> 客户首先发起建立 <em><strong>1</strong></em> 个与 <em><strong>FTP</strong></em> 服务器端口号 <em><strong>21</strong></em> 之间的 <em><strong>TCP</strong></em> 控制连接， 指定 <em><strong>TCP</strong></em> 作为传输层协议；</li>
+<li>客户在建立的控制连接上获得身份认证；</li>
+<li>客户在建立的控制连接上发送命令来浏览远程主机的目录.；</li>
+<li>当服务器接收到 <em><strong>1</strong></em> 个文件传输命令时，在服务器端口号 <em><strong>20</strong></em> 创建 <em><strong>1</strong></em> 个与客户的 <em><strong>TCP</strong></em> 数据连接</li>
+<li><em><strong>1</strong></em> 个文件传输后，服务器结束这个 <em><strong>TCP</strong></em> 数据连接；</li>
+<li>之后再次传输，服务器创建第 <em><strong>2</strong></em> 个 <em><strong>TCP</strong></em> 与客户的数据连接来传输下一个文件。</li>
+</ul>
+<h3 id="FTP传输模式"><a href="#FTP传输模式" class="headerlink" title="FTP传输模式"></a>FTP传输模式</h3><p>文本模式：<em><strong>ASCII</strong></em> 模式，以文本序列传输数据；</p>
+<p>二进制模式：<em><strong>Binary</strong></em> 模式，以二进制序列传输数据。</p>
+<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><h2 id="HTTPs协议"><a href="#HTTPs协议" class="headerlink" title="HTTPs协议"></a>HTTPs协议</h2><h1 id="全流程回顾"><a href="#全流程回顾" class="headerlink" title="全流程回顾"></a>全流程回顾</h1><ul>
+<li><strong>链路层</strong>：对 <em><strong>0</strong></em> 和 <em><strong>1</strong></em> 进行分组，定义数据帧，确认主机的物理（<em><strong>MAC</strong></em>）地址，传输数据；</li>
+<li><strong>网络层</strong>：定义 <em><strong>IP</strong></em> 地址，确认主机所在的网络位置，并通过 <em><strong>IP</strong></em> 进行 <em><strong>MAC</strong></em> 寻址，对外网数据包进行路由转发；</li>
+<li><strong>传输层</strong>：定义端口，确认主机上应用程序的身份，并将数据包交给对应的应用程序；</li>
+<li><strong>应用层</strong>：定义数据格式，并按照对应的格式解读数据。</li>
+</ul>
+<blockquote>
+<p>当你输入一个网址并按下回车键的时候：</p>
+<ol>
+<li><p>首先，应用层协议对该请求包做了格式定义；</p>
+</li>
+<li><p>紧接着传输层协议加上了双方的端口号，确认了双方通信的应用程序；</p>
+</li>
+<li><p>然后网络协议加上了双方的 <em><strong>IP</strong></em> 地址，确认了双方的网络位置；</p>
+</li>
+<li><p>最后链路层协议加上了双方的 <em><strong>MAC</strong></em> 地址，确认了双方的物理位置，同时将数据进行分组，形成数据帧，采用广播方式，通过传输介质发送给对方主机。而对于不同网段，该数据包首先会转发给网关路由器，经过多次转发后，最终被发送到目标主机。目标机接收到数据包后，采用对应的协议，对帧数据进行组装，然后再通过一层一层的协议进行解析，最终被应用层的协议解析并交给服务器处理。</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1U4411M71p?spm_id_from=333.999.0.0">CodeSheep</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19E411D78Q?from=search&seid=5480191567800494678&spm_id_from=333.337.0.0">王道计算机网络考研</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/onepixel/p/7092302.html">参考博客-深入浅出TCP/IP协议栈</a></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/computer-network/">computer network</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处： <a target="_blank" href="https://tsuiraku.com/" rel="nofollow noopener noopener">tsuiraku</a>
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/27/nginx/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Nginx</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/25/java-collection/">
+                        <span class="hidden-mobile">Java集合</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"dC2NdQqyqOkPy2Xg2ij7PMS4-gzGzoHsz","appKey":"XMhtIUKKmpfGkgkdObosNu5I","placeholder":"优质评论可以帮助作者获得更高权重（可以填写您的昵称以及联系方式，方便作者回复）","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+<div>
+  <span id="timeDate">载入天数...</span>
+  <span id="times">载入时分秒...</span>
+  <script>
+  var now = new Date();
+  function createtime(){
+      var grt= new Date("10/01/2020 8:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站已经运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  </script>
+</div>
+
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?tsuirak";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="tsuirak";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/about/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
