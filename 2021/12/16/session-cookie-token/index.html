@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2 字
+      1.8k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      18
        分钟
     </span>
   
@@ -236,7 +236,51 @@
             <h1 style="display: none">session，cookie，token</h1>
             
             <div class="markdown-body">
-              <h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1>
+              <h1 id="发展史"><a href="#发展史" class="headerlink" title="发展史"></a>发展史</h1><ol>
+<li><p>很久很久以前，<em><strong>Web</strong></em> 基本上就是文档的浏览而已， 既然是浏览，作为服务器， 不需要记录谁在某一段时间里都浏览了什么文档，每次请求都是一个新的 <em><strong>HTTP</strong></em> 协议， 就是请求加响应， 尤其是不用记住是谁刚刚发了 <em><strong>HTTP</strong></em> 请求， 每个请求对服务器来说都是全新的。</p>
+</li>
+<li><p>但是随着交互式 <em><strong>Web</strong></em> 应用的兴起，像在线购物网站等需要登录的网站，马上就面临一个问题：那就是要管理会话，必须记住是哪些人登录系统， 哪些人往自己的购物车中放商品， 也就是说服务器必须要把每个人区分开，这就是一个不小的挑战。</p>
+<p>因为 <em><strong>HTTP</strong></em> 请求是无状态的，所以想出的办法就是给大家发一个会话标识（<em><strong>session id</strong></em>），说白了就是一个随机的字串，每个人收到的都不一样， 每次大家向服务器发起 <em><strong>HTTP</strong></em> 请求的时候，把这个字符串给一并捎过来， 这样服务器就能区分开谁是谁了。</p>
+</li>
+<li><p>但是服务器就面临一个巨大的考验！每个人只需要保存自己的 <em><strong>session id</strong></em>，而服务器则要保存所有人的<em><strong>session id</strong></em>！ 如果访问服务器多了， 就得由成千上万，甚至几十万个。</p>
+<p>这对服务器来说是一个巨大的开销 ， 严重的限制了服务器扩展能力。</p>
+<p>例如，假设两个机器组成了一个集群， <em><strong>F</strong></em> 君通过机器 <em><strong>A</strong></em> 登录了系统， 那 <em><strong>session id</strong></em> 会保存在机器 <em><strong>A</strong></em> 上， 假如<em><strong>F</strong></em> 君的下一次请求被转发到机器 <em><strong>B</strong></em> 怎么办？ 机器 <em><strong>B</strong></em> 可没有存储 <em><strong>F</strong></em> 君的 <em><strong>session id</strong></em>！</p>
+<p>有时候会采用一点小伎俩： <em><strong>session sticky</strong></em> ， 就是让 <em><strong>F</strong></em> 君的请求一直粘连在机器 <em><strong>A</strong></em> 上， 但是这也不管用， 要是机器 <em><strong>A</strong></em> 挂掉了， 还是得转到机器 <em><strong>B</strong></em> 去。</p>
+<p>那只好做 <em><strong>session</strong></em> 的复制了， 把 <em><strong>session id</strong></em> 在两个机器之间搬来搬去，服务器的压力很大的！</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/1350514-20180504122814029-1201707523.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<p>后来有个叫 <em><strong>Memcached</strong></em> 的支了招： 把 <em><strong>session id</strong></em> 集中存储到一个地方，所有的机器都来访问这个地方的数据， 这样一来，就不用复制了，但是增加了单点失败的可能性， 要是那个负责 <em><strong>session</strong></em> 的机器挂掉了， 所有人都得重新登录一遍， 估计得被人骂死。</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/1350514-20180504123036062-1920411426.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" /></li>
+<li><p>于是有人就一直在思考， 为什么要保存这可恶的 <em><strong>session id</strong></em> 呢， 只让每个客户端去保存该多好？</p>
+<p>可是如果不保存这些 <em><strong>session id</strong></em>，怎么验证客户端发给服务器的 <em><strong>session id</strong></em> 的确是本服务器生成的呢？</p>
+<p>如果不去验证，服务器都不知道这些请求是不是合法登录的用户， 那些不怀好意的家伙们就可能伪造 <em><strong>session id</strong></em>为所欲为了。</p>
+<p><u><strong>嗯对！关键点就是验证 ！</strong></u></p>
+<p>比如说， <em><strong>F</strong></em> 君已经登录了系统， 服务器给 <em><strong>F</strong></em> 君发宋一个令牌（<em><strong>token</strong></em>）， 里边包含了 <em><strong>F</strong></em> 君的 <em><strong>user id</strong></em>，下一次 <em><strong>F</strong></em> 君再次通过 <em><strong>Http</strong></em> 请求访问服务器的时候， 将这个 <em><strong>token</strong></em> 通过<em><strong>Http header</strong></em> 带过来。</p>
+<p>不过这和 <em><strong>session id</strong></em> 没有本质区别啊， 任何人都可以可以伪造， 所以得想点儿办法， 让别人伪造不了。</p>
+<p>那就对数据做一个签名吧， 比如说在发送数据前用 <em><strong>HMAC-SHA256</strong></em> 算法，加上一个只有服务器才知道的密钥， 对数据做一个签名， 把这个签名和数据一起作为 <em><strong>token</strong></em> ， 由于密钥别人不知道， 就无法伪造 <em><strong>token</strong></em> 了。</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/1350514-20180504123206667-444188772.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<p>对于这个 <em><strong>token</strong></em> 服务器端并不保存， 当 <em><strong>F</strong></em> 君把这个 <em><strong>token</strong></em> 给服务器发过来的时候，再用同样的 <em><strong>HMAC-SHA256</strong></em> 算法和同样的密钥，对数据再计算一次签名， 和 <em><strong>token</strong></em> 中的签名做个比较， 如果相同， 服务器就知道 <em><strong>F</strong></em> 君已经登录过了，并且可以直接取到 <em><strong>F</strong></em> 君的 <em><strong>user id</strong></em>。如果不相同， 数据部分肯定被人篡改过， 服务器就告诉发送者： 对不起，没有认证。</p>
+<img src="https://gitee.com/tsuiraku/typora/raw/master/img/1350514-20180504123326596-1492094512.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<p><em><strong>token</strong></em> 中的数据是明文保存的（虽然在传送前会用 <em><strong>Base64</strong></em> 做下编码， 但那不是加密）， 还是可以被别人看到的， 所以我不能在其中保存像密码这样的敏感信息。</p>
+<p>当然， 如果一个人的 <em><strong>token</strong></em> 被别人偷走了， 那服务器端也没办法， 也会认为小偷就是合法用户， 这其实和一个人的 <em><strong>session id</strong></em> 被别人偷走是一样的。</p>
+<p>这样一来， 服务器就不保存 <em><strong>session id</strong></em> 了，仅仅只是生成 <em><strong>token</strong></em>，然后验证 <em><strong>token</strong></em> ， 用 <em><strong>CPU</strong></em> 计算时间换取了 <em><strong>session</strong></em> 的存储空间 ！</p>
+<p>解除了<em><strong>session id</strong></em>这个负担， 可以说是无事一身轻， 我的机器集群现在就可以轻松地做水平扩展， 用户访问量增大， 直接加机器就行。 这种无状态的感觉实在是太好了！</p>
+</li>
+</ol>
+<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a><em>Cookie</em></h1><p><em><strong>cookie</strong></em> 是一个非常具体的东西，指的就是浏览器里面能永久存储的一种数据，仅仅是浏览器实现的一种数据存储功能。</p>
+<p><em><strong>cookie</strong></em> 由服务器生成，发送给浏览器，浏览器把 <em><strong>cookie</strong></em> 以 <em><strong>kv</strong></em> 形式保存到某个目录下的文本文件内，下一次请求同一网站时会把该 <em><strong>cookie</strong></em> 发送给服务器。由于 <em><strong>cookie</strong></em> 是存在客户端上的，所以浏览器加入了一些限制确保<em><strong>cookie</strong></em> 不会被恶意使用，同时不会占据太多磁盘空间，所以每个域的 <em><strong>cookie</strong></em> 数量是有限的。</p>
+<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a><em>Session</em></h1><p><em><strong>session</strong></em> 从字面上讲，就是会话。这个就类似于你和一个人交谈，你怎么知道当前和你交谈的是张三而不是李四呢？对方肯定有某种特征（长相等）表明他就是张三。</p>
+<p><em><strong>session</strong></em> 也是类似的道理，服务器要知道当前发请求给自己的是谁。为了做这种区分，服务器就要给每个客户端分配不同的身份标识，然后客户端每次向服务器发请求的时候，都带上这个身份标识，服务器就知道这个请求来自于谁了。至于客户端怎么保存这个身份标识，可以有很多种方式，对于浏览器客户端，大家都默认采用 <em><strong>cookie</strong></em> 的方式。</p>
+<p>服务器使用 <em><strong>session</strong></em> 把用户的信息临时保存在了服务器上，用户离开网站后 <em><strong>session</strong></em> 会被销毁。这种用户信息存储方式相对 <em><strong>cookie</strong></em> 来说更安全，可是 <em><strong>session</strong></em> 有一个缺陷：如果 <em><strong>web</strong></em> 服务器做了负载均衡，那么下一个操作请求到了另一台服务器的时候 <em><strong>session</strong></em> 就会丢失。</p>
+<h1 id="Token"><a href="#Token" class="headerlink" title="Token"></a><em>Token</em></h1><p>参考：<a target="_blank" rel="noopener" href="https://tsuiraku.com/2021/12/16/jwt/">JSon Web Token</a></p>
+<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/moyand/p/9047978.html">彻底理解cookie，session，token</a></li>
+</ul>
+
             </div>
             <hr>
             <div>
