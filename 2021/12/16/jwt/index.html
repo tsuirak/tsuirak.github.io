@@ -1,0 +1,682 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#6f7b5b">
+  <meta name="description" content="">
+  <meta name="author" content="tsuiraku">
+  <meta name="keywords" content="">
+  
+  <title>JSON Web Token（JWT） - tsuiraku</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":100,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"dC2NdQqyqOkPy2Xg2ij7PMS4-gzGzoHsz","app_key":"XMhtIUKKmpfGkgkdObosNu5I","server_url":"https://dc2ndqqy.lc-cn-n1-shared.com"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tsuiraku</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="JSON Web Token（JWT）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-16 11:05" pubdate>
+        2021年12月16日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">JSON Web Token（JWT）</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Json-Web-Token"><a href="#Json-Web-Token" class="headerlink" title="Json Web Token?"></a><em>Json Web Token?</em></h1><p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwt.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p><em><strong>JSON Web Token</strong></em>：在 <em><strong>Web</strong></em> 应用间安全地传递信息。</p>
+<p><em><strong>JWT</strong></em> 是一个非常轻巧的<a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32"><strong>规范</strong></a>。这个规范允许我们使用 <em><strong>JWT</strong></em> 在用户和服务器之间传递安全可靠的信息。</p>
+</blockquote>
+<p>假想一下一个业务。<u>实现 A 用户关注 B 用户功能，系统发送邮件给 B 用户，并且附有一个链接：点此关注 A 用户</u>。</p>
+<p>链接的地址可以是这样的：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//y</span>our.awesome-app.com<span class="hljs-regexp">/make-friend/</span>?from_user=B&amp;target_user=A<br></code></pre></td></tr></table></figure>
+
+<p>上面的业务流程主要通过 <em><strong>URL</strong></em> 来描述这个当然这样做有一个弊端，那就是要求用户 <em><strong>B</strong></em> 用户是一定要先登录的。可不可以简化这个流程？让 <em><strong>B</strong></em> 用户不用登录就可以完成这个操作。<em><strong>JWT</strong></em> 就允许我们做到这点。</p>
+<h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><blockquote>
+<p>一个 <em><strong>JWT</strong></em> 实际上就是一个字符串，它由三部分组成，<strong>头部</strong>、<strong>载荷</strong>与<strong>签名</strong>。</p>
+</blockquote>
+<h3 id="载荷（Payload）"><a href="#载荷（Payload）" class="headerlink" title="载荷（Payload）"></a>载荷（Payload）</h3><p>首先先将上面的添加好友的操作描述成一个 <em><strong>JSON</strong></em> 对象。其中添加了一些其他的信息，帮助今后收到这个 <em><strong>JWT</strong></em> 的服务器理解这个 <em><strong>JWT</strong></em> 所传递的信息 。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>    <span class="hljs-attr">&quot;iss&quot;</span>: <span class="hljs-string">&quot;tsuiraku JWT&quot;</span>,<br>    <span class="hljs-attr">&quot;iat&quot;</span>: <span class="hljs-number">1441593502</span>,<br>    <span class="hljs-attr">&quot;exp&quot;</span>: <span class="hljs-number">1441594722</span>,<br>    <span class="hljs-attr">&quot;aud&quot;</span>: <span class="hljs-string">&quot;www.tsuiraku.com&quot;</span>,<br>    <span class="hljs-attr">&quot;sub&quot;</span>: <span class="hljs-string">&quot;nanase@example.com&quot;</span>,<br>    <span class="hljs-attr">&quot;from_user&quot;</span>: <span class="hljs-string">&quot;B&quot;</span>,<br>    <span class="hljs-attr">&quot;target_user&quot;</span>: <span class="hljs-string">&quot;A&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这里面的前五个字段都是由 <em><strong>JWT</strong></em> 的标准所定义的。</p>
+<ul>
+<li><em><strong>iss</strong></em>：该 <em><strong>JWT</strong></em> 的签发者</li>
+<li><em><strong>iat</strong></em>：在什么时候签发的</li>
+<li><em><strong>exp</strong></em>：什么时候过期，这里是一个 <em><strong>Unix</strong></em> 时间戳</li>
+<li><em><strong>aud</strong></em>：接收该 <em><strong>JWT</strong></em> 的一方</li>
+<li><em><strong>sub</strong></em>：该 <em><strong>JWT</strong></em> 所面向的用户</li>
+</ul>
+<p>将上面的 <em><strong>JSON</strong></em> 对象进行 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/base64/8545775?fr=aladdin"><strong>base64编码</strong></a> 可以得到下面的字符串。这个字符串我们将它称作 <em><strong>JWT</strong></em> 的 <em><strong>Payload</strong></em>（载荷）。</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">ew<span class="hljs-number">0</span>KICAgICJpc<span class="hljs-number">3</span>MiOiAidH<span class="hljs-symbol">N1</span>aXJha<span class="hljs-number">3</span>UgSldUIiw<span class="hljs-symbol">NCiAgICAiaWF0</span>IjogMTQ<span class="hljs-number">0</span>MTU<span class="hljs-number">5</span>MzUwMiw<span class="hljs-symbol">NCiAgICAiZXhwIjogMTQ0</span>MTU<span class="hljs-number">5</span><span class="hljs-symbol">NDcyMiwNCiAgICAiYXVkIjogInd3</span>dy<span class="hljs-number">50</span>c<span class="hljs-number">3</span>VpcmFrdS<span class="hljs-number">5</span>jb<span class="hljs-number">20</span>iLA<span class="hljs-number">0</span>KICAgICJzdWIiOiAibmFuYX<span class="hljs-symbol">NlQGV4</span>YW<span class="hljs-number">1</span>wbGUuY<span class="hljs-number">29</span>tIiw<span class="hljs-symbol">NCiAgICAiZnJvbV91</span>c<span class="hljs-number">2</span>VyIjogIkIiLA<span class="hljs-number">0</span>KICAgICJ<span class="hljs-number">0</span>YXJ<span class="hljs-symbol">nZXRfdXNlciI6</span>ICJBI<span class="hljs-name">g0</span>KfQ==<br></code></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><em><strong>Base64</strong></em> 只是一种编码，也就是说，它是可以被翻译回原来的样子来的。**<u>它并不是一种加密过程</u>**。</p>
+</blockquote>
+<h3 id="头部（Header）"><a href="#头部（Header）" class="headerlink" title="头部（Header）"></a>头部（Header）</h3><p><em><strong>JWT</strong></em> 还需要一个头部，头部用于描述关于该 <em><strong>JWT</strong></em> 的最基本的信息，例如其类型以及签名所用的算法等。这也可以被表示成一个JSON对象。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;typ&quot;</span>: <span class="hljs-string">&quot;JWT&quot;</span>,<br>  <span class="hljs-attr">&quot;alg&quot;</span>: <span class="hljs-string">&quot;HS256&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>所用的签名算法是 <em><strong>HS256</strong></em> 算法。对它也要进行 <em><strong>Base64</strong></em> 编码，之后的字符串就成了 <em><strong>JWT</strong></em> 的 <em><strong>Header</strong></em>（头部）。</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">eyJ<span class="hljs-number">0</span>eXAiOiJKV<span class="hljs-number">1</span>QiLCJhbGciOiJIUzI<span class="hljs-number">1</span><span class="hljs-symbol">NiJ9</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="签名（签名）"><a href="#签名（签名）" class="headerlink" title="签名（签名）"></a>签名（签名）</h3><p>将上面的两个编码后的字符串都用句号<code>.</code>连接在一起（头部.载荷）。</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9</span>.ew<span class="hljs-number">0</span>KICAgICJpc<span class="hljs-number">3</span>MiOiAidHN<span class="hljs-number">1</span>aXJha<span class="hljs-number">3</span>UgSldUIiwNCiAgICAiaWF<span class="hljs-number">0</span>IjogMTQ<span class="hljs-number">0</span>MTU<span class="hljs-number">5</span>MzUwMiwNCiAgICAiZXhwIjogMTQ<span class="hljs-number">0</span>MTU<span class="hljs-number">5</span>NDcyMiwNCiAgICAiYXVkIjogInd<span class="hljs-number">3</span>dy<span class="hljs-number">50</span>c<span class="hljs-number">3</span>VpcmFrdS<span class="hljs-number">5</span>jb<span class="hljs-number">20</span>iLA<span class="hljs-number">0</span>KICAgICJzdWIiOiAibmFuYXNlQGV<span class="hljs-number">4</span>YW<span class="hljs-number">1</span>wbGUuY<span class="hljs-number">29</span>tIiwNCiAgICAiZnJvbV<span class="hljs-number">91</span>c<span class="hljs-number">2</span>VyIjogIkIiLA<span class="hljs-number">0</span>KICAgICJ<span class="hljs-number">0</span>YXJnZXRfdXNlciI<span class="hljs-number">6</span>ICJBIg<span class="hljs-number">0</span>KfQ==<br></code></pre></td></tr></table></figure>
+
+
+
+<p>最后，将上面拼接完的字符串用 <em><strong>HS256</strong></em> 算法进行加密。在加密的时候，我们还需要提供一个密钥（<em><strong>secret</strong></em>）。如果我们用 <em><strong>mystar</strong></em> 作为密钥的话，那么就可以得到加密后的内容：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">rSWamyAYwuHC<span class="hljs-meta">o7</span>IFAgd<span class="hljs-number">1</span>oRpSP<span class="hljs-number">7</span><span class="hljs-symbol">nzL7</span>BF<span class="hljs-number">5</span>t<span class="hljs-number">7</span>ItqpKViM<br></code></pre></td></tr></table></figure>
+
+<p>这一部分又叫做<strong>签名</strong>。</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/sig1.png" srcset="/img/loading.gif" lazyload></p>
+<p>最后将这一部分签名也拼接在被签名的字符串后面，我们就得到了完整的 <em><strong>JWT</strong></em></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9</span>.ew<span class="hljs-number">0</span>KICAgICJpc<span class="hljs-number">3</span>MiOiAidHN<span class="hljs-number">1</span>aXJha<span class="hljs-number">3</span>UgSldUIiwNCiAgICAiaWF<span class="hljs-number">0</span>IjogMTQ<span class="hljs-number">0</span>MTU<span class="hljs-number">5</span>MzUwMiwNCiAgICAiZXhwIjogMTQ<span class="hljs-number">0</span>MTU<span class="hljs-number">5</span>NDcyMiwNCiAgICAiYXVkIjogInd<span class="hljs-number">3</span>dy<span class="hljs-number">50</span>c<span class="hljs-number">3</span>VpcmFrdS<span class="hljs-number">5</span>jb<span class="hljs-number">20</span>iLA<span class="hljs-number">0</span>KICAgICJzdWIiOiAibmFuYXNlQGV<span class="hljs-number">4</span>YW<span class="hljs-number">1</span>wbGUuY<span class="hljs-number">29</span>tIiwNCiAgICAiZnJvbV<span class="hljs-number">91</span>c<span class="hljs-number">2</span>VyIjogIkIiLA<span class="hljs-number">0</span>KICAgICJ<span class="hljs-number">0</span>YXJnZXRfdXNlciI<span class="hljs-number">6</span>ICJBIg<span class="hljs-number">0</span>KfQ==.rSWamyAYwuHCo<span class="hljs-number">7</span>IFAgd<span class="hljs-number">1</span>oRpSP<span class="hljs-number">7</span>nzL<span class="hljs-number">7</span>BF<span class="hljs-number">5</span>t<span class="hljs-number">7</span>ItqpKViM<br></code></pre></td></tr></table></figure>
+
+<p>于是，就可以将邮件中的 <em><strong>URL</strong></em> 改成</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">https</span>://your.awesome-app.com/make-friend/?jwt=eeyJ<span class="hljs-number">0</span>eXAiOiJKV<span class="hljs-number">1</span>QiLCJhbGciOiJIUzI<span class="hljs-number">1</span>NiJ<span class="hljs-number">9</span>.ew<span class="hljs-number">0</span>KICAgICJpc<span class="hljs-number">3</span>MiOiAidHN<span class="hljs-number">1</span>aXJha<span class="hljs-number">3</span>UgSldUIiwNCiAgICAiaWF<span class="hljs-number">0</span>IjogMTQ<span class="hljs-number">0</span>MTU<span class="hljs-number">5</span>MzUwMiwNCiAgICAiZXhwIjogMTQ<span class="hljs-number">0</span>MTU<span class="hljs-number">5</span>NDcyMiwNCiAgICAiYXVkIjogInd<span class="hljs-number">3</span>dy<span class="hljs-number">50</span>c<span class="hljs-number">3</span>VpcmFrdS<span class="hljs-number">5</span>jb<span class="hljs-number">20</span>iLA<span class="hljs-number">0</span>KICAgICJzdWIiOiAibmFuYXNlQGV<span class="hljs-number">4</span>YW<span class="hljs-number">1</span>wbGUuY<span class="hljs-number">29</span>tIiwNCiAgICAiZnJvbV<span class="hljs-number">91</span>c<span class="hljs-number">2</span>VyIjogIkIiLA<span class="hljs-number">0</span>KICAgICJ<span class="hljs-number">0</span>YXJnZXRfdXNlciI<span class="hljs-number">6</span>ICJBIg<span class="hljs-number">0</span>KfQ==.rSWamyAYwuHCo<span class="hljs-number">7</span>IFAgd<span class="hljs-number">1</span>oRpSP<span class="hljs-number">7</span>nzL<span class="hljs-number">7</span>BF<span class="hljs-number">5</span>t<span class="hljs-number">7</span>ItqpKViM<br></code></pre></td></tr></table></figure>
+
+
+
+<p>最后！这样就可以安全地完成添加好友的操作了！</p>
+<h2 id="签名的目的"><a href="#签名的目的" class="headerlink" title="签名的目的"></a>签名的目的</h2><p>最后一步签名的过程，实际上是对头部以及载荷内容进行签名。一般而言，加密算法对于不同的输入产生的输出总是不一样的。对于两个不同的输入，产生同样的输出的概率极其地小。所以，可以统一的认为：不一样的输入产生不一样的输出。</p>
+<p>所以，如果有人对头部以及载荷的内容解码之后进行修改，再进行编码的话，那么新的头部和载荷的签名和之前的签名就将是不一样的。而且，如果不知道服务器加密的时候用的密钥的话，得出来的签名也一定会是不一样的。</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/sig2.png" srcset="/img/loading.gif" lazyload alt="签名过程"></p>
+<p>服务器应用在接受到 <em><strong>JWT</strong></em> 后，首先对头部和载荷的内容用同一算法再次签名。（<em><strong>JWT</strong></em> 的头部中用 <em><strong>alg</strong></em> 字段指明了加密算法）。</p>
+<p>如果服务器应用对头部和载荷再次以同样方法签名之后发现，计算出来的签名和接受到的签名不一样，那么就说明这个 <em><strong>token</strong></em> 的内容被别人动过的，服务器就应该拒绝这个 <em><strong>token</strong></em>，返回一个 <em><strong>HTTP 401 Unauthorized</strong></em> 响应。</p>
+<h2 id="信息会暴露"><a href="#信息会暴露" class="headerlink" title="信息会暴露"></a>信息会暴露</h2><p>在 <em><strong>JWT</strong></em> 中，不应该在载荷里面加入任何敏感的数据。在上面的例子中，传输的是用户的 <em><strong>User ID</strong></em>。这个值实际上不是什么敏感内容，一般情况下被知道也是安全的。</p>
+<p>但是像密码这样的内容就不能被放在 <em><strong>JWT</strong></em> 中了。如果将用户的密码放在了 <em><strong>JWT</strong></em> 中，那么怀有恶意的第三方通过<em><strong>Base64</strong></em> 解码就能很快地知道用户的密码。</p>
+<h2 id="JWT-适用场景"><a href="#JWT-适用场景" class="headerlink" title="JWT 适用场景"></a><em>JWT</em> 适用场景</h2><p><em><strong>JWT</strong></em> 适合用于向 <em><strong>Web</strong></em> 应用传递一些非敏感信息。例如在上面提到的完成加好友的操作，还有诸如下订单的操作等等。</p>
+<p>其实 <em><strong>JWT</strong></em> 还经常用于设计用户认证和授权系统，甚至实现 <em><strong>Web</strong></em> 应用的单点登录。</p>
+<h1 id="JWT-设计单点登录系统"><a href="#JWT-设计单点登录系统" class="headerlink" title="JWT 设计单点登录系统"></a><em>JWT</em> 设计单点登录系统</h1><p>所谓用户认证（Authentication），就是让用户登录，并且在接下来的一段时间内让用户访问网站时可以使用其账户，而不需要再次登录的机制。</p>
+<blockquote>
+<p>用户认证和用户授权（<em><strong>Authorization</strong></em>）。用户授权指的是规定并允许用户使用自己的权限，例如发布帖子、管理站点等。</p>
+</blockquote>
+<p>首先，服务器应用让用户通过 <em><strong>Web</strong></em> 表单将用户名和密码发送到服务器的接口。这一过程一般是一个 <em><strong>HTTP POST</strong></em> 请求。建议的方式是通过 <em><strong>SSL</strong></em> 加密的传输（<em><strong>https协议</strong></em>），从而避免敏感信息被嗅探。</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth1.png" srcset="/img/loading.gif" lazyload alt="用户登录请求"></p>
+<p>接下来，应用和数据库核对用户名和密码。</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth2.png" srcset="/img/loading.gif" lazyload alt="核对用户名密码"></p>
+<p>核对用户名和密码成功后，应用将用户的 <em><strong>user_id</strong></em> 作为 <em><strong>JWT Payload</strong></em> 的一个属性，将其与头部分别进行 <em><strong>Base64</strong></em> 编码拼接后签名，形成一个<u>半成品</u> <em><strong>JWT</strong></em>。</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth3.png" srcset="/img/loading.gif" lazyload alt="生成JWT"></p>
+<p>应用将 <em><strong>JWT</strong></em> 字符串作为该请求 <em><strong>Cookie</strong></em> 的一部分返回给用户。注意，在这里必须使用 <em><strong>HttpOnly</strong></em> 属性来防止 <em><strong>Cookie</strong></em> 被 <em><strong>JavaScript</strong></em> 读取，从而避免 <a target="_blank" rel="noopener" href="http://www.cnblogs.com/bangerlee/archive/2013/04/06/3002142.html">跨站脚本攻击（XSS攻击）</a>。</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth4.png" srcset="/img/loading.gif" lazyload alt="在Cookie中嵌入JWT"></p>
+<p>在 <em><strong>Cookie</strong></em> 失效或者被删除前，用户每次访问应用，应用都会接受到含有 <em><strong>jwt</strong></em> 的 <em><strong>Cookie</strong></em>。从而应用就可以将 <em><strong>JWT</strong></em> 从请求中提取出来。</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth5.png" srcset="/img/loading.gif" lazyload alt="从Cookie提取JWT"></p>
+<p>应用通过一系列任务检查 <em><strong>JWT</strong></em> 的有效性。检查签名是否正确；检查 <em><strong>Token</strong></em> 是否过期；检查 <em><strong>Token</strong></em> 的接收方是否是自己（可选）等。</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth6.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>应用在确认 <em><strong>JWT</strong></em> 有效之后，<em><strong>JWT</strong></em> 进行 <em><strong>Base64</strong></em> 解码，然后在 <em><strong>Payload</strong></em> 中读取用户的 <em><strong>id</strong></em> 值，也就是<code>user_id</code>属性。</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth7.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>应用从数据库取到 <em><strong>id=1025</strong></em> 用户的信息，加载到内存中，进行 <em><strong>ORM</strong></em> 之类的一系列底层逻辑初始化。</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth8.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>应用根据用户请求进行响应。</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth9.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="JWT-和-Session-方式存储-id-的差异"><a href="#JWT-和-Session-方式存储-id-的差异" class="headerlink" title="JWT 和 Session 方式存储 id 的差异"></a><em>JWT</em> 和 <em>Session</em> 方式存储 <em>id</em> 的差异</h3><p><em><strong>Session</strong></em></p>
+<blockquote>
+<p>当使用 <em><strong>Session</strong></em> 方式来存储用户 <em><strong>id</strong></em>，一开始用户的 <em><strong>Session</strong></em> 只会存储在一台服务器上。对于有多个子域名的站点，每个子域名至少会对应一台不同的服务器，例如：</p>
+<ul>
+<li><em><strong><a target="_blank" rel="noopener" href="http://www.tsuiraku.com/">www.tsuiraku.com</a></strong></em></li>
+<li><em><strong>cn.tsuiraku.com</strong></em></li>
+<li><em><strong>org.tsuirkau.com</strong></em></li>
+<li><em><strong>login.tsuiraku.com</strong></em></li>
+</ul>
+<p>所以如果要实现在 <code>login.tsuiraku.com</code> 登录后，在其他的子域名下依然可以取到 <em><strong>Session</strong></em>，这要求我们在多台服务器上同步 <em><strong>Session</strong></em>。（占用大量服务器内存）</p>
+</blockquote>
+<p><em><strong>JWT</strong></em></p>
+<blockquote>
+<p>而使用 <em><strong>JWT</strong></em> 的方式则没有这个问题的存在，因为用户的状态已经被传送到了客户端。因此，我们只需要将含有 <em><strong>JWT</strong></em> 的 <em><strong>Cookie</strong></em> 的 <code>domain</code> 设置为顶级域名即可，例如</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">Set-Cookie: <span class="hljs-attribute">jwt</span>=lll.zzz.xxx; HttpOnly; <span class="hljs-attribute">max-age</span>=980000; <span class="hljs-attribute">domain</span>=.tsuiraku.com<br></code></pre></td></tr></table></figure>
+
+<p>注意 <code>domain</code> 必须设置为一个点加顶级域名，即<code>.tsuiraku.com</code>。（该域名以及该域名下的子域名都可以获接收到 <em><strong>Cookie</strong></em>，并成功获取 <em><strong>JWT</strong></em>）</p>
+</blockquote>
+<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><ul>
+<li><a target="_blank" rel="noopener" href="http://blog.leapoahead.com/2015/09/06/understanding-jwt/">John - Wu - JWT1</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/">John - Wu - JWT2</a></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">后端开发总结</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86/">补充知识</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/jwt/">jwt</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处： <a target="_blank" href="https://tsuiraku.com/" rel="nofollow noopener noopener">tsuiraku</a>
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/12/16/springboot-jwt/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">springboot整合：Jwt</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/16/session-cookie-token/">
+                        <span class="hidden-mobile">session，cookie，token</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"dC2NdQqyqOkPy2Xg2ij7PMS4-gzGzoHsz","appKey":"XMhtIUKKmpfGkgkdObosNu5I","placeholder":"优质评论可以帮助作者获得更高权重（可以填写您的昵称以及联系方式，方便作者回复）","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+<div>
+  <span id="timeDate">载入天数...</span>
+  <span id="times">载入时分秒...</span>
+  <script>
+  var now = new Date();
+  function createtime(){
+      var grt= new Date("10/01/2021 8:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站已经运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  </script>
+</div>
+
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?tsuirak";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="tsuirak";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/about/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
