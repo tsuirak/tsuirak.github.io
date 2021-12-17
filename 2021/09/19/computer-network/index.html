@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      8k 字
+      10.7k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      84
+      116
        分钟
     </span>
   
@@ -684,7 +684,7 @@
 <h2 id="FTP协议"><a href="#FTP协议" class="headerlink" title="FTP协议"></a>FTP协议</h2><p>文件传输协议 <em><strong>FTP</strong></em>（File Transfer Protocol）。</p>
 <p>提供不同种类主机系统（硬、软件体系等都可以不同）之间的文件传输能力。</p>
 <p>简单文件传送协议 <em><strong>TFTP</strong></em>（Trivial File Transfer Protocol）。</p>
-<p>FTP是基于客户/服务器（<em><strong>C/S</strong></em>）的协议。 </p>
+<p><em><strong>FTP</strong></em> 是基于客户/服务器（<em><strong>C/S</strong></em>）的协议。 </p>
 <p>用户通过一个客户机程序连接至在远程计算机上运行的服务器程序。</p>
 <p>依照 <em><strong>FTP</strong></em> 协议提供服务，进行文件传送的计算机就是 <em><strong>FTP</strong></em> 服务器。 </p>
 <p>连接 <em><strong>FTP</strong></em> 服务器，遵循 <em><strong>FTP</strong></em> 协议与服务器传送文件的电脑就是 <em><strong>FTP</strong></em> 客户端。</p>
@@ -710,7 +710,236 @@
 </ul>
 <h3 id="FTP传输模式"><a href="#FTP传输模式" class="headerlink" title="FTP传输模式"></a>FTP传输模式</h3><p>文本模式：<em><strong>ASCII</strong></em> 模式，以文本序列传输数据；</p>
 <p>二进制模式：<em><strong>Binary</strong></em> 模式，以二进制序列传输数据。</p>
-<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><h2 id="HTTPs协议"><a href="#HTTPs协议" class="headerlink" title="HTTPs协议"></a>HTTPs协议</h2><h1 id="全流程回顾"><a href="#全流程回顾" class="headerlink" title="全流程回顾"></a>全流程回顾</h1><ul>
+<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><blockquote>
+<p><em><strong>HTTP</strong></em> 协议是 <strong>超文本传输协议</strong> 的缩写，英文是 <em><strong>Hyper Text Transfer Protocol</strong></em>。它是从 <em><strong>WEB</strong></em> 服务器传输超文本标记语言（<em><strong>HTML</strong></em>）到本地浏览器的传送协议。</p>
+<p>设计 <em><strong>HTTP</strong></em> 最初的目的是为了提供一种发布和接收 <em><strong>HTML</strong></em> 页面的方法。</p>
+<p><em><strong>HTTP</strong></em> 有多个版本，目前广泛使用的是 <em><strong>HTTP/1.1</strong></em> 版本。</p>
+</blockquote>
+<h3 id="HTTP原理"><a href="#HTTP原理" class="headerlink" title="HTTP原理"></a>HTTP原理</h3><p><em><strong>HTTP</strong></em> 是一个基于 <em><strong>TCP/IP</strong></em> 通信协议来传递数据的协议，传输的数据类型为 <em><strong>HTML</strong></em> 文件、图片文件、查询结果等。</p>
+<p><em><strong>HTTP</strong></em> 协议一般用于 <em><strong>B/S</strong></em> 架构。浏览器作为 <em><strong>HTTP</strong></em> 客户端通过 <em><strong>URL</strong></em> 向 <em><strong>HTTP</strong></em> 服务端即 <em><strong>WEB</strong></em> 服务器发送所有请求。</p>
+<p>以访问百度为例：</p>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-12-17%2021.54.14.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="HTTP特点"><a href="#HTTP特点" class="headerlink" title="HTTP特点"></a>HTTP特点</h3><blockquote>
+<ol>
+<li><em><strong>HTTP</strong></em> 协议支持客户端/服务端模式，也是一种请求/响应模式的协议。</li>
+<li>简单快速：客户向服务器请求服务时，只需传送请求方法和路径。请求方法常用的有<em><strong>GET</strong></em>、<em><strong>HEAD</strong></em>、<em><strong>POST</strong></em>。</li>
+<li>灵活：<em><strong>HTTP</strong></em> 允许传输任意类型的数据对象。传输的类型由 <em><strong>Content-Type</strong></em> 加以标记。</li>
+<li>无连接：限制每次连接只处理一个请求。服务器处理完请求，并收到客户的应答后，即断开连接，但是却不利于客户端与服务器保持会话连接，为了弥补这种不足，产生了两项记录 <em><strong>http</strong></em> 状态的技术，一个叫做 <em><strong>Cookie</strong></em>，一个叫做 <em><strong>Session</strong></em>。</li>
+<li>无状态：无状态是指协议对于事务处理没有记忆，后续处理需要前面的信息，则必须重传。</li>
+</ol>
+</blockquote>
+<h3 id="URI和URL的区别"><a href="#URI和URL的区别" class="headerlink" title="URI和URL的区别"></a>URI和URL的区别</h3><blockquote>
+<p><em><strong>HTTP</strong></em> 使用统一资源标识符（<em><strong>Uniform Resource Identifiers, URI</strong></em>）来传输数据和建立连接。</p>
+<ul>
+<li><em><strong>URI</strong></em>：<em><strong>Uniform Resource Identifier</strong></em> 统一资源<strong>标识</strong>符</li>
+<li><em><strong>URL</strong></em>：<em><strong>Uniform Resource Location</strong></em> 统一资源<strong>定位</strong>符</li>
+</ul>
+<p><em><strong>URI</strong></em> 是用来标示一个具体的资源的，我们可以通过 <em><strong>URI</strong></em> 知道一个资源是什么。</p>
+<p><em><strong>URL</strong></em> 则是用来定位具体的资源的，标示了一个具体的资源位置。互联网上的每个文件都有一个唯一的 <em><strong>URL</strong></em>。</p>
+</blockquote>
+<h3 id="HTTP报文组成"><a href="#HTTP报文组成" class="headerlink" title="HTTP报文组成"></a>HTTP报文组成</h3><p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/885859-20190724173242717-440362909.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="请求报文构成"><a href="#请求报文构成" class="headerlink" title="请求报文构成"></a><strong>请求报文构成</strong></h3><blockquote>
+<ol>
+<li><strong>请求行</strong>：包括请求方法、请求 <em><strong>URL</strong></em>（不包括域名）、协议/版本</li>
+<li><strong>请求头</strong>（<em><strong>Request Header</strong></em>）</li>
+<li><strong>空行</strong> </li>
+<li><strong>请求数据</strong></li>
+</ol>
+</blockquote>
+<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/885859-20190724173230609-1990595514.png" srcset="/img/loading.gif" lazyload></p>
+<p>大致结构：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs awk">＜request-line＞ <span class="hljs-regexp">//</span>请求行<br><br>＜headers＞ <span class="hljs-regexp">//</span>首部行<br><br>＜blank line＞ <span class="hljs-regexp">//</span>空行<br><br>＜request-body＞ <span class="hljs-regexp">//</span>请求体<br></code></pre></td></tr></table></figure>
+
+<p>简单示例：</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sqf">POST /user HTTP/<span class="hljs-number">1.1</span>      <span class="hljs-comment">// 请求行</span><br>Host: www.user.com<br>Content-<span class="hljs-built_in">Type</span>: application/x-www-form-urlencoded<br>Connection: Keep-<span class="hljs-built_in">Alive</span><br>User-<span class="hljs-built_in">agent</span>: Mozilla/<span class="hljs-number">5.0</span>.      <span class="hljs-comment">// 以上是首部行</span><br>（此处必须有一空行）  <span class="hljs-comment">// 空行分割header和请求内容 </span><br><span class="hljs-built_in">name</span>=world   <span class="hljs-comment">// 请求体</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a><strong>请求行</strong></h4><p>　　<strong>请求行</strong>由三部分组成：<strong>请求方法</strong>，<strong>请求URL</strong>（不包括域名），<strong>HTTP协议版本</strong></p>
+<p>　　请求方法比较多：<strong>GET、POST、HEAD、PUT、DELETE、OPTIONS、TRACE、CONNECT</strong></p>
+<p>　　最常用的是GET和POST。</p>
+<h5 id="请求方法"><a href="#请求方法" class="headerlink" title="请求方法"></a>请求方法</h5><blockquote>
+<p><strong>1. GET</strong></p>
+<p>　　传递参数长度受限制，因为传递的参数是直接表示在地址栏中，而特定浏览器和服务器对 <em><strong>url</strong></em> 的长度是有限制的。</p>
+<p>　　因此，<em><strong>GET</strong></em> 不适合用来传递私密数据，也不适合拿来传递大量数据。</p>
+<p>　　一般的HTTP请求大多都是 <em><strong>GET</strong></em>。</p>
+<p><strong>2. POST</strong></p>
+<p>　　<em><strong>POST</strong></em> 把传递的数据封装在 <em><strong>HTTP</strong></em> 请求数据中，以名称/值的形式出现，可以传输大量数据，对数据量没有限制，也不会显示在 <em><strong>URL</strong></em> 中。</p>
+<p>　　表单的提交用的是 <em><strong>POST</strong></em>。</p>
+<p><strong>3. HEAD</strong></p>
+<p>　　<em><strong>HEAD</strong></em> 跟 <em><strong>GET</strong></em> 相似，不过服务端接收到 <em><strong>HEAD</strong></em> 请求时只返回响应头，不发送响应内容。所以，如果只需要查看某个页面的状态时，用 <em><strong>HEAD</strong></em> 更高效，因为省去了传输页面内容的时间。</p>
+<p><strong>4. DELETE</strong></p>
+<p>　　删除某一个资源。</p>
+<p><strong>5. OPTIONS</strong></p>
+<p>　　用于获取当前 <em><strong>URL</strong></em> 所支持的方法。若请求成功，会在HTTP头中包含一个名为 <code>“Allow”</code> 的头，值是所支持的方法，如 <em><strong>GET</strong></em>、<em><strong>POST</strong></em>。</p>
+<p><strong>6. PUT</strong></p>
+<p>　　把一个资源存放在指定的位置上。</p>
+<p>　　本质上来讲， <em><strong>PUT</strong></em> 和 <em><strong>POST</strong></em> 极为相似，都是向服务器发送数据，但它们之间有一个重要区别，<em><strong>PUT</strong></em> 通常指定了资源的存放位置，而 <em><strong>POST</strong></em> 则没有，<em><strong>POST</strong></em> 的数据存放位置由服务器自己决定。</p>
+<p>　　关于 <em><strong>POST</strong></em> 和 <em><strong>PUT</strong></em> 的区别以及请求方法的幂等性，请参考文章：<a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=http://dingdingblog.com/article/21">http的7种请求方法和幂等性</a></p>
+<p><strong>7. TRACE</strong></p>
+<p>　　回显服务器收到的请求，主要用于测试或诊断。</p>
+<p><strong>8. CONNECT</strong></p>
+<p>　　<em><strong>CONNECT</strong></em>方法是 <em><strong>HTTP/1.1</strong></em> 协议预留的，能够将连接改为管道方式的代理服务器。通常用于 <a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=http://itbilu.com/other/relate/N16Uaoyp.html">SSL</a> 加密服务器的链接与非加密的 <em><strong>HTTP</strong></em> 代理服务器的通信。</p>
+</blockquote>
+<h5 id="HTTP协议版本"><a href="#HTTP协议版本" class="headerlink" title="HTTP协议版本"></a>HTTP协议版本</h5><blockquote>
+<p><strong>1. HTTP/1.0</strong></p>
+<p>　　<em><strong>HTTP/1.0</strong></em>支持：<em><strong>GET</strong></em>、<em><strong>POST</strong></em>、<em><strong>HEAD</strong></em>三种 <em><strong>HTTP</strong></em> 请求方法。</p>
+<p><strong>2. HTTP/1.1</strong></p>
+<p>　　<em><strong>HTTP/1.1</strong></em>是当前正在使用的版本。该版本默认采用持久连接，并能很好地配合代理服务器工作。还支持以管道方式同时发送多个请求，以便降低线路负载，提高传输速度。</p>
+<p>　　<em><strong>HTTP/1.1</strong></em>新增了：<em><strong>OPTIONS</strong></em>、<em><strong>PUT</strong></em>、<em><strong>DELETE</strong></em>、<em><strong>TRACE</strong></em>、<em><strong>CONNECT</strong></em> 五种 <em><strong>HTTP</strong></em> 请求方法。</p>
+</blockquote>
+<h4 id="请求头部"><a href="#请求头部" class="headerlink" title="请求头部"></a>请求头部</h4><blockquote>
+<p>请求头部由关键字/值对组成，每行一对</p>
+<ol>
+<li><em><strong>User-Agent</strong></em>：产生请求的浏览器类型</li>
+<li><em><strong>Accept</strong></em>：客户端希望接受的数据类型，比如 <em><strong>Accept：text/xml（application/json）</strong></em>表示希望接受到的是 <em><strong>xml（json）</strong></em>类型</li>
+<li><em><strong>Content-Type</strong></em>：发送端发送的实体数据的数据类型。<br>比如，<em><strong>Content-Type：text/html（application/json）</strong></em>表示发送的是 <em><strong>html</strong></em> 类型。</li>
+<li><em><strong>Host</strong></em> ：请求的主机名，允许多个域名同处一个 <em><strong>IP</strong></em> 地址，即虚拟主机</li>
+</ol>
+</blockquote>
+<h5 id="Content-Type"><a href="#Content-Type" class="headerlink" title="Content-Type"></a>Content-Type</h5><p>常见的 <em><strong>Content-Type</strong></em>：</p>
+<table>
+<thead>
+<tr>
+<th>Content-Type</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em><strong>text/html</strong></em></td>
+<td><em><strong>html</strong></em> 格式</td>
+</tr>
+<tr>
+<td><em><strong>text/plain</strong></em></td>
+<td>纯文本格式</td>
+</tr>
+<tr>
+<td><em><strong>text/css</strong></em></td>
+<td><em><strong>CSS</strong></em> 格式</td>
+</tr>
+<tr>
+<td><em><strong>text/javascript</strong></em></td>
+<td><em><strong>js</strong></em> 格式</td>
+</tr>
+<tr>
+<td><em><strong>image/gif</strong></em></td>
+<td><em><strong>gif</strong></em> 图片格式</td>
+</tr>
+<tr>
+<td><em><strong>image/jpeg</strong></em></td>
+<td><em><strong>jpg</strong></em> 图片格式</td>
+</tr>
+<tr>
+<td><em><strong>image/png</strong></em></td>
+<td><em><strong>png</strong></em> 图片格式</td>
+</tr>
+<tr>
+<td><em><strong>application/x-www-form-urlencoded</strong></em></td>
+<td><em><strong>POST</strong></em> 专用：普通的表单提交默认是通过这种方式。<em><strong>form</strong></em> 表单数据被编码为 <em><strong>key/value</strong></em> 格式发送到服务器。</td>
+</tr>
+<tr>
+<td><em><strong>application/json</strong></em></td>
+<td><em><strong>POST</strong></em> 专用：用来告诉服务端消息主体是序列化后的 <em><strong>JSON</strong></em> 字符串</td>
+</tr>
+<tr>
+<td><em><strong>text/xml</strong></em></td>
+<td><em><strong>POST</strong></em> 专用：发送 <em><strong>xml</strong></em> 数据</td>
+</tr>
+<tr>
+<td><em><strong>multipart/form-data</strong></em></td>
+<td><em><strong>POST</strong></em> 专用：下面讲解</td>
+</tr>
+</tbody></table>
+<h4 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h4><blockquote>
+<p>请求头之后是一个空行，通知服务器以下不再有请求头。</p>
+</blockquote>
+<h4 id="请求体"><a href="#请求体" class="headerlink" title="请求体"></a>请求体</h4><blockquote>
+<p><em><strong>GET</strong></em> 没有请求数据，<em><strong>POST</strong></em> 有。</p>
+<p>与请求数据相关的最常使用的请求头是 <em><strong>Content-Type</strong></em> 和 <em><strong>Content-Length</strong></em>。</p>
+</blockquote>
+<h3 id="响应报文组成"><a href="#响应报文组成" class="headerlink" title="响应报文组成"></a>响应报文组成</h3><blockquote>
+<p><em><strong>HTTP</strong></em> 响应报文和请求报文的结构差不多，也是由四个部分组成：</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs awk">＜status-line＞   <span class="hljs-regexp">//</span>状态行<br><br>＜headers＞   <span class="hljs-regexp">//</span>消息报头<br><br>＜blank line＞   <span class="hljs-regexp">//</span>空行<br><br>＜response-body＞    <span class="hljs-regexp">//</span>响应体<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="状态行"><a href="#状态行" class="headerlink" title="状态行"></a>状态行</h4><blockquote>
+<p>状态行也由三部分组成：服务器 <em><strong>HTTP</strong></em> 协议版本，响应状态码，状态码的文本描述</p>
+<p>格式：<em><strong>HTTP-Version Status-Code Reason-Phrase CRLF</strong></em></p>
+<p>比如：<em><strong>HTTP/1.1 200 OK</strong></em></p>
+</blockquote>
+<h5 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h5><blockquote>
+<p>由3位数字组成，第一个数字定义了响应的类别</p>
+<ol>
+<li><p><em><strong>1xx</strong></em>：指示信息，表示请求已接收，继续处理</p>
+</li>
+<li><p><em><strong>2xx</strong></em>：成功，表示请求已被成功接受，处理。</p>
+<ul>
+<li><em><strong>200 OK</strong></em>：客户端请求成功</li>
+<li><em><strong>204 No Content</strong></em>：无内容。服务器成功处理，但未返回内容。一般用在只是客户端向服务器发送信息，而服务器不用向客户端返回什么信息的情况。不会刷新页面。</li>
+<li><em><strong>206 Partial Content</strong></em>：服务器已经完成了部分GET请求（客户端进行了范围请求）。响应报文中包含Content-Range指定范围的实体内容。</li>
+</ul>
+</li>
+<li><p><em><strong>3xx</strong></em>：重定向</p>
+<ul>
+<li><em><strong>301 Moved Permanently</strong></em>：永久重定向，表示请求的资源已经永久的搬到了其他位置。</li>
+<li><em><strong>302 Found</strong></em>：临时重定向，表示请求的资源临时搬到了其他位置。</li>
+<li><em><strong>303 See Other</strong></em>：临时重定向，应使用 <em><strong>GET</strong></em> 定向获取请求资源。<em><strong>303</strong></em> 功能与 <em><strong>302</strong></em> 一样，区别只是 <em><strong>303</strong></em> 明确客户端应该使用 <em><strong>GET</strong></em> 访问。</li>
+<li><em><strong>307 Temporary Redirect</strong></em>：临时重定向，和 <em><strong>302</strong></em> 有着相同含义。<em><strong>POST</strong></em> 不会变成 <em><strong>GET</strong></em>。 </li>
+<li><em><strong>304 Not Modified</strong></em>：表示客户端发送附带条件的请求（<em><strong>GET</strong></em> 方法请求报文中的 <em><strong>IF</strong></em>）时，条件不满足。返回 <em><strong>304</strong></em> 时，不包含任何响应主体。（虽然 <em><strong>304</strong></em> 被划分在 <em><strong>3XX</strong></em>，但和重定向一毛钱关系都没有。）</li>
+</ul>
+</li>
+<li><p><em><strong>4xx</strong></em>：客户端错误</p>
+</li>
+</ol>
+<ul>
+<li><em><strong>400 Bad Request</strong></em>：客户端请求有语法错误，服务器无法理解。</li>
+<li><em><strong>401 Unauthorized</strong></em>：请求未经授权，这个状态代码必须和 <em><strong>WWW-Authenticate</strong></em> 报头域一起使用。</li>
+<li><em><strong>403 Forbidden</strong></em>：服务器收到请求，但是拒绝提供服务。</li>
+<li><em><strong>404 Not Found</strong></em>：请求资源不存在。比如，输入了错误的 <em><strong>url</strong></em>。</li>
+<li><em><strong>415 Unsupported media type</strong></em>：不支持的媒体类型。</li>
+</ul>
+<ol start="5">
+<li><em><strong>5xx</strong></em>：服务器端错误，服务器未能实现合法的请求。</li>
+</ol>
+<ul>
+<li><em><strong>500 Internal Server Erro</strong></em>r：服务器发生不可预期的错误。</li>
+<li><em><strong>503 Server Unavailable</strong></em>：服务器当前不能处理客户端的请求，一段时间后可能恢复正常，</li>
+</ul>
+</blockquote>
+<h3 id="HTTP存在的问题"><a href="#HTTP存在的问题" class="headerlink" title="HTTP存在的问题"></a>HTTP存在的问题</h3><ul>
+<li>请求信息明文传输，容易被窃听截取；</li>
+<li>数据的完整性未校验，容易被篡改；</li>
+<li>没有验证对方身份，存在冒充危险。</li>
+</ul>
+<h2 id="HTTPs协议"><a href="#HTTPs协议" class="headerlink" title="HTTPs协议"></a>HTTPs协议</h2><p>为了解决上述 <em><strong>HTTP</strong></em> 存在的问题，就使用到了 <em><strong>HTTPS</strong></em>。</p>
+<p><em><strong>HTTPS</strong></em> 协议（<em><strong>HyperText Transfer Protocol over Secure Socket Layer</strong></em>）：一般理解为 <em><strong>HTTP+SSL/TLS</strong></em>，通过 <em><strong>SSL</strong></em> 证书来验证服务器的身份，并为浏览器和服务器之间的通信进行加密。</p>
+<blockquote>
+<p>SSL（<em><strong>Secure Socket Layer</strong></em>，安全套接字层）：<em><strong>SSL</strong></em> 协议位于 <em><strong>TCP/IP</strong></em> 协议与各种应用层协议之间，为数据通讯提供安全支持。</p>
+</blockquote>
+<h3 id="浏览器在使用HTTPS传输数据的流程是什么？"><a href="#浏览器在使用HTTPS传输数据的流程是什么？" class="headerlink" title="浏览器在使用HTTPS传输数据的流程是什么？"></a>浏览器在使用HTTPS传输数据的流程是什么？</h3><p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-12-17%2023.02.30.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<ol>
+<li>首先客户端通过 <em><strong>URL</strong></em> 访问服务器建立 <em><strong>SSL</strong></em> 连接。</li>
+<li>服务端收到客户端请求后，会将网站支持的证书信息（证书中包含公钥）传送一份给客户端。</li>
+<li>客户端的服务器开始协商 <em><strong>SSL</strong></em> 连接的安全等级，也就是信息加密的等级。</li>
+<li>客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。</li>
+<li>服务器利用自己的私钥解密出会话密钥。</li>
+<li>服务器利用会话密钥加密与客户端之间的通信。</li>
+</ol>
+</blockquote>
+<h3 id="HTTPS存在的问题"><a href="#HTTPS存在的问题" class="headerlink" title="HTTPS存在的问题"></a>HTTPS存在的问题</h3><ul>
+<li><em><strong>HTTPS</strong></em> 协议多次握手，导致页面的加载时间延长近 ***50%***；</li>
+<li><em><strong>HTTPS</strong></em> 连接缓存不如 <em><strong>HTTP</strong></em> 高效，会增加数据开销和功耗；</li>
+<li>申请 <em><strong>SSL</strong></em> 证书需要钱，功能越强大的证书费用越高。</li>
+<li><em><strong>SSL</strong></em> 涉及到的安全算法会消耗 <em><strong>CPU</strong></em> 资源，对服务器资源消耗较大。</li>
+</ul>
+<h3 id="总结HTTPS和HTTP的区别"><a href="#总结HTTPS和HTTP的区别" class="headerlink" title="总结HTTPS和HTTP的区别"></a>总结HTTPS和HTTP的区别</h3><ul>
+<li><em><strong>HTTPS</strong></em> 是 <em><strong>HTTP</strong></em> 协议的安全版本，<em><strong>HTTP</strong></em> 协议的数据传输是明文的，是不安全的，<em><strong>HTTPS</strong></em> 使用了 <em><strong>SSL/TLS</strong></em> 协议进行了加密处理。</li>
+<li><em><strong>HTTPS</strong></em> 和 <em><strong>HTTP</strong></em> 使用连接方式不同，默认端口也不一样，<em><strong>HTTP</strong></em> 是 <em><strong>80</strong></em>，<em><strong>HTTPS</strong></em> 是 <em><strong>443</strong></em>。</li>
+</ul>
+<h1 id="全流程回顾"><a href="#全流程回顾" class="headerlink" title="全流程回顾"></a>全流程回顾</h1><ul>
 <li><strong>链路层</strong>：对 <em><strong>0</strong></em> 和 <em><strong>1</strong></em> 进行分组，定义数据帧，确认主机的物理（<em><strong>MAC</strong></em>）地址，传输数据；</li>
 <li><strong>网络层</strong>：定义 <em><strong>IP</strong></em> 地址，确认主机所在的网络位置，并通过 <em><strong>IP</strong></em> 进行 <em><strong>MAC</strong></em> 寻址，对外网数据包进行路由转发；</li>
 <li><strong>传输层</strong>：定义端口，确认主机上应用程序的身份，并将数据包交给对应的应用程序；</li>
@@ -734,6 +963,7 @@
 <li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19E411D78Q?from=search&seid=5480191567800494678&spm_id_from=333.337.0.0">王道计算机网络考研</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/onepixel/p/7092302.html">参考博客-深入浅出TCP/IP协议栈</a></li>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/72616216">http和https协议</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/myseries/p/11239662.html">http结构和报文</a></li>
 </ul>
 
             </div>
@@ -783,8 +1013,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/25/java-collection/">
-                        <span class="hidden-mobile">Java集合</span>
+                      <a href="/2021/08/25/ds-algorithm/">
+                        <span class="hidden-mobile">数据结构与算法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
