@@ -1,0 +1,771 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#6f7b5b">
+  <meta name="description" content="">
+  <meta name="author" content="tsuiraku">
+  <meta name="keywords" content="">
+  
+  <title>在线教育平台 - tsuiraku</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":100,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"dC2NdQqyqOkPy2Xg2ij7PMS4-gzGzoHsz","app_key":"XMhtIUKKmpfGkgkdObosNu5I","server_url":"https://dc2ndqqy.lc-cn-n1-shared.com"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tsuiraku</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="在线教育平台">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-18 11:39" pubdate>
+        2021年12月18日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      19
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">在线教育平台</h1>
+            
+            <div class="markdown-body">
+              <h1 id="后台系统"><a href="#后台系统" class="headerlink" title="后台系统"></a>后台系统</h1><p><strong>权限管理模块</strong></p>
+<p>(<em><strong>spring security</strong></em>)</p>
+<blockquote>
+<p><strong>菜单管理</strong></p>
+<ul>
+<li>菜单的增删改查。</li>
+</ul>
+<p><strong>角色管理</strong></p>
+<ul>
+<li>角色的增删改查。</li>
+<li>为角色分配菜单。</li>
+</ul>
+<p><strong>用户管理</strong></p>
+<ul>
+<li>用户的增删改查。</li>
+<li>为用户分配角色。</li>
+</ul>
+</blockquote>
+<p><strong>权限管理表</strong></p>
+<blockquote>
+<p>菜单  &lt;- 多对多 -&gt;  角色  &lt;- 多对多 -&gt;  用户</p>
+<p>一个用户拥有若干角色，每一个角色拥有若干权限。</p>
+</blockquote>
+<p><em><strong>acl_permission</strong></em></p>
+<blockquote>
+<p>权限菜单表。</p>
+<p>是用户可以访问的资源，包括页面权限、操作权限、数据权限等。</p>
+<p>每个权限可以分配给多个角色。</p>
+</blockquote>
+<p><em><strong>acl_role</strong></em></p>
+<blockquote>
+<p>角色表。</p>
+<p>角色是什么？可以理解为一定数量的权限的集合，权限的载体。每个角色可以被多个用户使用。每个角色可以拥有多个权限。</p>
+<p>例如：一个论坛系统，<em>超级管理员</em>、<em>版主</em>，都是角色。版主可管理版内的帖子、可管理版内的用户等，这些是权限。要给某个用户授予这些权限，不需要直接将权限授予用户，可将 <em>版主</em> 这个角色赋予该用户。 </p>
+</blockquote>
+<p><em><strong>acl_user</strong></em></p>
+<blockquote>
+<p>用户表。即参与后台管理的主体，每个用户都可以被分配多个角色。</p>
+</blockquote>
+<p><em><strong>acl_role_permission</strong></em></p>
+<blockquote>
+<p>角色和权限是多对多关系。</p>
+</blockquote>
+<p><em><strong>acl_user_role</strong></em></p>
+<blockquote>
+<p>用户和角色是多对多关系。</p>
+</blockquote>
+<p><strong>教师管理模块</strong></p>
+<blockquote>
+<p>条件查询分页列表、增删改查。（<em><strong>mybatis-plus</strong></em> + <em><strong>element-ui</strong></em>）</p>
+</blockquote>
+<p><strong>课程分类管理模块</strong></p>
+<blockquote>
+<p>课程分类的列表显示（树形结构）</p>
+<p>添加课程分类（<em><strong>easyexcell</strong></em>）</p>
+</blockquote>
+<p><strong>课程管理模块</strong></p>
+<blockquote>
+<p>条件查询分页列表、增删改查。（<em><strong>mybatis-plus</strong></em> + <em><strong>element-ui</strong></em>）</p>
+<p>添加课程及发布。（<em><strong>mybatis-plus</strong></em> + <em><strong>element-ui</strong></em> + <em><strong>阿里云OSS</strong></em> + <em><strong>阿里云视频点播</strong></em>）</p>
+<ul>
+<li>填写课程基本信息；</li>
+<li>填写课程的大纲（上传视频）；</li>
+<li>课程信息确认，发布。</li>
+</ul>
+</blockquote>
+<p><strong>统计分析模块</strong></p>
+<blockquote>
+<p>数据生成</p>
+<p>图标显示（<em><strong>echarts</strong></em>）</p>
+</blockquote>
+<h1 id="前台系统"><a href="#前台系统" class="headerlink" title="前台系统"></a>前台系统</h1><p><em><strong>vue-nuxt</strong></em></p>
+<blockquote>
+<p><em><strong>header.vue</strong></em></p>
+<p><em><strong>index.vue</strong></em></p>
+<p><em><strong>footer.vue</strong></em></p>
+</blockquote>
+<p><strong>首页</strong></p>
+<blockquote>
+<p>幻灯片 <em><strong>banner</strong></em>。（<em><strong>mybatis-plus</strong></em> + <em><strong>element-ui</strong></em>）</p>
+<p>热门课程显示。（<em><strong>mybatis-plus</strong></em> + <em><strong>element-ui</strong></em>）</p>
+<p>教师显示。（<em><strong>mybatis-plus</strong></em> + <em><strong>element-ui</strong></em>）</p>
+<p>注册。（<em><strong>mybatis-plus</strong></em> + <em><strong>element-ui</strong></em> + <em><strong>腾讯短信服务</strong></em>）</p>
+<p>登陆。（<em><strong>mybatis-plus</strong></em> + <em><strong>element-ui</strong></em> + <em><strong>JWT</strong></em>）</p>
+<ul>
+<li><p>单点登录（<em><strong>JWT</strong></em>）</p>
+<p>登陆流程</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-number">1.</span>调用接口返回<span class="hljs-built_in">token</span>字符串<br><span class="hljs-number">2.</span>将<span class="hljs-built_in">token</span>字符串存入cookie<br><span class="hljs-number">3.</span>前端拦截器：<br>	- 判断cookie中是否有<span class="hljs-built_in">token</span>字符串<br>	- 如果有，则将<span class="hljs-built_in">token</span>字符串放入<span class="hljs-built_in">header</span>（请求头）<br><span class="hljs-number">4.</span>根据<span class="hljs-built_in">token</span>字符串，获取用户id；根据用户id查询数据库<br></code></pre></td></tr></table></figure></li>
+<li><p>微信扫码登陆（<em><strong>OAuth 2.0</strong></em> ）</p>
+<p>登陆流程</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pf"><span class="hljs-number">1</span>.扫描二维码，执行本地的callback方法，获取返回的值(<span class="hljs-keyword">state</span>,code)<br><span class="hljs-number">2</span>.请求微信提供的固定地址（需要传递code），获取(access_token：访问凭证,openid：微信的唯一标识)<br><span class="hljs-number">3</span>.求微信提供的固定地址（需要传递access_token、openid），获取扫描者的信息<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>课程显示。（<em><strong>mybatis-plus</strong></em> + <em><strong>element-ui</strong></em>）</p>
+<p>教师显示。（<em><strong>mybatis-plus</strong></em> + <em><strong>element-ui</strong></em>）</p>
+</blockquote>
+<p><strong>课程显示</strong></p>
+<blockquote>
+<p>条件查询列表分页。</p>
+<p>课程详情页。</p>
+<p>课程支付功能。（未完成）</p>
+<p>课程的在线播放。</p>
+</blockquote>
+<p><strong>教师显示</strong></p>
+<blockquote>
+<p>条件查询列表分页。</p>
+<p>教师详情页面。</p>
+</blockquote>
+<h1 id="技术总结"><a href="#技术总结" class="headerlink" title="技术总结"></a>技术总结</h1><p>前后端分离开发。</p>
+<h2 id="前端技术"><a href="#前端技术" class="headerlink" title="前端技术"></a>前端技术</h2><blockquote>
+<p><em><strong>Vue</strong></em>：</p>
+<p>​    基本 <em><strong>js</strong></em> 语法</p>
+<p>​    指令：<em><strong>v-bind</strong></em>、<em><strong>v-model</strong></em>、<em><strong>v-if</strong></em>、<em><strong>v-for</strong></em>、<em><strong>v-html</strong></em></p>
+<p>​    生命周期：<em><strong>created</strong></em>、<em><strong>mounted</strong></em>、<em><strong>data</strong></em>、<em><strong>methds</strong></em></p>
+<p><em><strong>Element-UI</strong></em>：<br>    列表、表单等</p>
+<p><em><strong>node js</strong></em>：<br>    <em><strong>JS</strong></em> 运行环境，不需要浏览器可以直接运行 <em><strong>js</strong></em> 代码，模拟服务器的运行效果</p>
+<p><em><strong>npm</strong></em>：<br>    包管理工具</p>
+<p>​    命令：<em><strong>npm init</strong></em>、<em><strong>npm install</strong></em></p>
+<p><em><strong>Babel</strong></em>：<br>    转码器，<em><strong>es6</strong></em> 转化为 <em><strong>es5</strong></em>。（有些浏览器的兼容问题）</p>
+<p><em><strong>后台框架：vue-admin-template</strong></em></p>
+<p><em><strong>前台框架：nuxt</strong></em>：<br>    服务器渲染技术（<em><strong>SEO</strong></em>）</p>
+</blockquote>
+<h2 id="后端技术"><a href="#后端技术" class="headerlink" title="后端技术"></a>后端技术</h2><blockquote>
+<p><em><strong>微服务架构</strong></em>：<br>    功能模块、业务模块独立运行，独立部署。</p>
+<p><em><strong>springboot</strong></em>：</p>
+<p>​    启动类扫描机制（设置扫描规则：***@ComponentScan()***）</p>
+<p>​    配置类或者启动类（设置 <em><strong>xml</strong></em> 的扫描路径，***@MapperScan***）</p>
+<p>​    配置文件 <em><strong>application.yml/properties</strong></em></p>
+<p>​    微服务的依赖引入（<em><strong>pom</strong></em>）</p>
+<p><em><strong>springcloud</strong></em>:</p>
+<p>​    服务发现，<em><strong>nacos</strong></em>（服务注册中心）</p>
+<p>​    服务调用，<em><strong>feign</strong></em>（实现微服务之间的远程调用）</p>
+<p>​    熔断器，（服务器挂掉、连接不上）</p>
+<p>​    服务网关，<em><strong>gateway</strong></em></p>
+<p>​    版本与 <em><strong>springboot</strong></em> 对应（<em><strong>H</strong></em> 版本对应 <em><strong>2.2</strong></em>）</p>
+<p><em><strong>mybatisplus</strong></em></p>
+<p>​    自动填充</p>
+<p>​    乐观锁</p>
+<p>​    逻辑删除</p>
+<p>​    代码生成器    </p>
+<p><em><strong>阿里云OSS</strong></em>：</p>
+<p>​    上传图片等资源</p>
+<p><em><strong>阿里云视频点播</strong></em>：</p>
+<p>​    使用视屏凭证进行播放</p>
+<p><em><strong>腾讯云短信服务</strong></em>：</p>
+<p>​    使用 <em><strong>SDK</strong></em> 进行短信发送</p>
+<p><em><strong>Spring Security</strong></em>：</p>
+<p>​    实现权限管理功能（认证 + 授权）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>登陆模块（用户名，密码）<br><span class="hljs-number">2.</span>查询用户的权限列表<br><span class="hljs-number">3.</span>redis：存储用户名和权限列表<br><span class="hljs-number">4.</span>根据用户名返回token信息<br><span class="hljs-number">5.</span>cookie.set(<span class="hljs-string">&quot;token&quot;</span>,token)，config.headers(<span class="hljs-string">&quot;token&quot;</span>) = token<br><span class="hljs-number">6.</span>spring security获取用户名，赋予相应的授权服务<br><br>执行流程：<br><span class="hljs-number">1.</span>用户登录（用户名和密码）<br><span class="hljs-number">2.</span>进入认证过滤器<br><span class="hljs-function"><span class="hljs-keyword">public</span> Authentication <span class="hljs-title">attemptAuthentication</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse res)</span> </span>&#123;&#125;<br>* 获取用户的用户名和密码<br><span class="hljs-number">3.</span>查询用户信息和用户权限通过security对象返回<br><span class="hljs-number">4.</span>认证过滤器<br><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">successfulAuthentication</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse res, FilterChain chain,Authentication auth)</span> <span class="hljs-keyword">throws</span> IOException, ServletException</span>&#123;&#125;<br>* 根据对象用户名生成token<br>* 将用户名和信息存入redis<br>* 返回生成的token<br><span class="hljs-number">5.</span>授权过滤器<br><span class="hljs-function"><span class="hljs-keyword">private</span> UsernamePasswordAuthenticationToken <span class="hljs-title">getAuthentication</span><span class="hljs-params">(HttpServletRequest request)</span> </span>&#123;&#125;<br>* 从header中获取token信息<br>* 根据token信息获取用户名称<br>* 根据用户名查询redis，查询用户相应的权限列表<br>* 给用户授权<br></code></pre></td></tr></table></figure>
+
+<p><em><strong>Redis</strong></em>：</p>
+<p>​    对数据缓存处理    </p>
+<p><em><strong>nginx</strong></em>：</p>
+<p>​    负载均衡</p>
+<p>​    请求转发</p>
+<p>​    动静分离</p>
+<p><em><strong>Jwt</strong></em>：</p>
+<p>​    生成 <em><strong>token</strong></em> 字符串</p>
+<p><em><strong>Cookie</strong></em>：</p>
+<p>​    客户端技术（浏览器），每次请求都会带 <em><strong>cookie</strong></em> 值进行发送，且有默认时间</p>
+<p><em><strong>git</strong></em></p>
+<p><em><strong>Docker</strong></em></p>
+</blockquote>
+<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><ol>
+<li>路由切换问题</li>
+</ol>
+<blockquote>
+<p>多次跳转到同一个路由页面，而 <em><strong>created</strong></em> 方法只执行一次，数据不会清空。</p>
+<p>解决方法，使用<em><strong>watch</strong></em> 进行监听。</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs lasso">watch: &#123;<br>	$route(<span class="hljs-keyword">to</span>, from) &#123;<br>		<span class="hljs-params">...</span><br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+</blockquote>
+<ol start="2">
+<li><em><strong>mybatisplus</strong></em> 主键生成策略问题，（19 位 id值）</li>
+</ol>
+<blockquote>
+<p><em><strong>mp</strong></em> 生成的 <em><strong>id</strong></em> 值是 19 位，而 <em><strong>JS</strong></em> 处理数字类型时，只会处理到 16位。</p>
+<p>解决方案，<em><strong>Integer id</strong></em> -&gt; <em><strong>String id</strong></em> </p>
+</blockquote>
+<ol start="3">
+<li>跨域问题</li>
+</ol>
+<blockquote>
+<p>协议、<em><strong>ip</strong></em> 地址、端口号任意一个不同，则产生跨域问题。</p>
+<p>方法1：***@CrossOrgin***</p>
+<p>方法2：网关 <em><strong>gateway</strong></em>，进行配置</p>
+</blockquote>
+<ol start="4">
+<li>413 问题</li>
+</ol>
+<blockquote>
+<p><em><strong>nginx</strong></em> 有上传文件的大小限制，在 <em><strong>nginx</strong></em> 中配置客户端上传文件大小。</p>
+</blockquote>
+<ol start="5">
+<li><em><strong>maven</strong></em> 加载 <em><strong>xml</strong></em> 问题</li>
+</ol>
+<blockquote>
+<p>默认不加载 <em><strong>src/java</strong></em> 下的 <em><strong>xml</strong></em> 文件。</p>
+<p>方法1：将 <em><strong>xml</strong></em> 文件复制到 <em><strong>target</strong></em> 目录下</p>
+<p>方法2：</p>
+<ul>
+<li><p><em><strong>application.yml</strong></em> 中进行配置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">mybatis-plus:</span><br>  <span class="hljs-attr">configuration:</span><br>  <span class="hljs-attr">mapper-locations:</span> <span class="hljs-string">classpath:com/tsuiraku/eduservice/mapper/xml/*.xml</span><br></code></pre></td></tr></table></figure></li>
+<li><p>父 <em><strong>pom</strong></em> 文件中配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">resources</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">resource</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">directory</span>&gt;</span>src/main/java<span class="hljs-tag">&lt;/<span class="hljs-name">directory</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">includes</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>**/*.xml<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">includes</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">filtering</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">filtering</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">resource</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">resources</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">后端开发总结</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/%E9%A1%B9%E7%9B%AE/">项目</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/project/">project</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处： <a target="_blank" href="https://tsuiraku.com/" rel="nofollow noopener noopener">tsuiraku</a>
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/17/springcloud-gateway/">
+                        <span class="hidden-mobile">springclound整合：网关gateway</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"dC2NdQqyqOkPy2Xg2ij7PMS4-gzGzoHsz","appKey":"XMhtIUKKmpfGkgkdObosNu5I","placeholder":"优质评论可以帮助作者获得更高权重（可以填写您的昵称以及联系方式，方便作者回复）","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+<div>
+  <span id="timeDate">载入天数...</span>
+  <span id="times">载入时分秒...</span>
+  <script>
+  var now = new Date();
+  function createtime(){
+      var grt= new Date("10/01/2021 8:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站已经运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  </script>
+</div>
+
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?tsuirak";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="tsuirak";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/about/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -251,14 +251,12 @@
 <h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><p class="note note-primary">重要</p>
 
 <p>同一个时刻，多个任务交替执行。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-09-16 08.54.41.png" srcset="/img/loading.gif" lazyload alt="截屏2021-09-16 08.54.41" style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241150839.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <h3 id="并行"><a href="#并行" class="headerlink" title="并行"></a>并行</h3><p class="note note-primary">重要</p>
 
 <p>同一个时刻，多个任务同时执行。多核 CPU 可以实现并行。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-09-16 08.54.55.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
-
-
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241151172.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -272,7 +270,7 @@
 </ul>
 </blockquote>
 <p><strong>Diagram关系</strong></p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-09-16 09.08.04.png" srcset="/img/loading.gif" lazyload  style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241151633.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -289,7 +287,7 @@
 <li>当主线程（main 线程）启动一个子线程 Thread-0，主线程不会阻塞，会继续执行，此时主线程和子线程交替进行；</li>
 <li>主线程结束后，若子线程还在运行，整个进程并不会结束。</li>
 </ul>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-09-16 09.37.42.png" srcset="/img/loading.gif" lazyload  style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241152970.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -313,12 +311,12 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.tsuiraku.thread.demo;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> *  <span class="hljs-doctag">@Author</span>: tsuiraku</span><br><span class="hljs-comment"> *  <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SellTicket</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br><span class="hljs-comment">//        SellTicket01 s1 = new SellTicket01();</span><br><span class="hljs-comment">//        SellTicket01 s2 = new SellTicket01();</span><br><span class="hljs-comment">//        SellTicket01 s3 = new SellTicket01();</span><br><span class="hljs-comment">//        s1.start();</span><br><span class="hljs-comment">//        s2.start();</span><br><span class="hljs-comment">//        s3.start();</span><br><br>        SellTicket02 s = <span class="hljs-keyword">new</span> SellTicket02();<br><br>        Thread t1 = <span class="hljs-keyword">new</span> Thread(s);<br>        Thread t2 = <span class="hljs-keyword">new</span> Thread(s);<br>        Thread t3 = <span class="hljs-keyword">new</span> Thread(s);<br><br>        t1.start();<br>        t2.start();<br>        t3.start();<br><br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 使用 Thread 方式</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SellTicket01</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> ticketNum = <span class="hljs-number">100</span>;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;<br>            <span class="hljs-keyword">if</span>(ticketNum &lt;= <span class="hljs-number">0</span>) &#123;<br>                System.out.println(<span class="hljs-string">&quot;售票结束...&quot;</span>);<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-comment">// 休眠50ms</span><br>            <span class="hljs-keyword">try</span> &#123;<br>                Thread.sleep(<span class="hljs-number">50</span>);<br>            &#125; <span class="hljs-keyword">catch</span> (InterruptedException e) &#123;<br>                e.printStackTrace();<br>            &#125;<br>            System.out.println(<span class="hljs-string">&quot;窗口&quot;</span> + Thread.currentThread().getName() + <span class="hljs-string">&quot;售出了一张票&quot;</span><br>            + <span class="hljs-string">&quot;;剩余票数 = &quot;</span> + (--ticketNum));<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 使用 Runnable 方式</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SellTicket02</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runnable</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> ticketNum = <span class="hljs-number">100</span>;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;<br>            <span class="hljs-keyword">if</span>(ticketNum &lt;= <span class="hljs-number">0</span>) &#123;<br>                System.out.println(<span class="hljs-string">&quot;售票结束...&quot;</span>);<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-comment">// 休眠50ms</span><br>            <span class="hljs-keyword">try</span> &#123;<br>                Thread.sleep(<span class="hljs-number">50</span>);<br>            &#125; <span class="hljs-keyword">catch</span> (InterruptedException e) &#123;<br>                e.printStackTrace();<br>            &#125;<br>            System.out.println(<span class="hljs-string">&quot;窗口&quot;</span> + Thread.currentThread().getName() + <span class="hljs-string">&quot;售出了一张票&quot;</span><br>                    + <span class="hljs-string">&quot;;剩余票数 = &quot;</span> + (--ticketNum));<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>问题：出现 ticketNum 值为负数的情况。因为三个线程同时访问修改 tiketNum。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-09-16 10.51.12.png" srcset="/img/loading.gif" lazyload  style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241153663.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p>如何解决？<a href="#Synchronized">Synchronized</a></p>
 <p><u><strong>源码</strong></u></p>
 <p><code>thread.start()</code></p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-09-16 09.48.18.png" srcset="/img/loading.gif" lazyload  style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241153240.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p>**<u>start0</u>**：<code>start0</code> 是一个 native 方法，由 JVM 调用。<code>start()</code> 方法调用 <code>start0()</code> 方法后，该线程并不一定马上执行，只是讲线程变成了可运行状态。具体执行时间，由 CPU 统一调度。</p>
 <p><strong>思考</strong></p>
@@ -335,7 +333,7 @@
 <p>启动一个线程 t，要求在 main 线程中停止线程 t。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Thread</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>&#123;<br>        T t = <span class="hljs-keyword">new</span> T();<br>        t.start();<br><br>        <span class="hljs-comment">// 希望 main 线程控制 t 线程的终止，即修改 loop</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) &#123;<br>            Thread.sleep(<span class="hljs-number">1000</span>);<br>        &#125;<br>        <br>        t.setLoop(<span class="hljs-keyword">false</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">T</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span> </span>&#123;<br>    <span class="hljs-keyword">boolean</span> loop = <span class="hljs-keyword">true</span>;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">while</span> (loop) &#123;<br>            <span class="hljs-keyword">try</span> &#123;<br>                Thread.sleep(<span class="hljs-number">50</span>);<br>            &#125; <span class="hljs-keyword">catch</span> (InterruptedException e) &#123;<br>                e.printStackTrace();<br>            &#125;<br>            System.out.println(<span class="hljs-string">&quot;T运行中...&quot;</span>);;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setLoop</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> loop)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.loop = loop;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-09-16 11.07.12.png" srcset="/img/loading.gif" lazyload  style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241154800.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -356,13 +354,15 @@
 <li>yield</li>
 </ul>
 <p>线程主动礼让 CPU。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-09-16 13.48.42.png" srcset="/img/loading.gif" lazyload  style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241154779.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
 
 <ul>
 <li>join</li>
 </ul>
 <p>主动放弃 CPU，让其他线程插队。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-09-16 15.36.56.png" srcset="/img/loading.gif" lazyload  style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241155300.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadMethodExercise</span> </span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>&#123;<br>    Thread t = <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> T());<br>    <span class="hljs-comment">// 创建子线程 </span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) &#123;<br>      System.out.println(<span class="hljs-string">&quot;hi &quot;</span> + i);<br>      <span class="hljs-keyword">if</span>(i == <span class="hljs-number">5</span>) &#123; <span class="hljs-comment">// 说明主线程输出了 5 次 hi</span><br>        t.start(); <span class="hljs-comment">// 启动子线程 输出 hello...</span><br>        t.join(); <span class="hljs-comment">// 立即将 t 子线程，插入到 main 线程，让 t 先执行 </span><br>      &#125;<br>        Thread.sleep(<span class="hljs-number">1000</span>); <span class="hljs-comment">//输出一次 hi, 让 main 线程也休眠 1s </span><br>    &#125;<br>  &#125; <br>&#125;<br>  <br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">T</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runnable</span> </span>&#123; <br>  <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;<br>	<span class="hljs-meta">@Override</span><br>  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;<br>      System.out.println(<span class="hljs-string">&quot;hello &quot;</span> + (++count)); <br>      <span class="hljs-keyword">try</span> &#123;<br>        Thread.sleep(<span class="hljs-number">1000</span>);<br>      &#125; <span class="hljs-keyword">catch</span> (InterruptedException e) &#123;<br>        e.printStackTrace(); &#125;<br>      <span class="hljs-keyword">if</span> (count == <span class="hljs-number">10</span>) &#123; <br>        <span class="hljs-keyword">break</span>;<br>       &#125; <br>    &#125;<br>	&#125; <br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -370,7 +370,7 @@
 
 <p><u><strong>源码</strong></u></p>
 <p>优先级</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-09-16 11.18.02.png" srcset="/img/loading.gif" lazyload  style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241155183.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -409,7 +409,7 @@
 <p><strong>死亡状态（TERMINATED）</strong></p>
 <p>线程执行完了或者因异常退出了 `run() 方法，该线程结束生命周期。</p>
 </blockquote>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/1539204-20190625104746568-573625770-20210916175419041.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241156836.png" srcset="/img/loading.gif" lazyload></p>
 <h1 id="Synchronized"><a href="#Synchronized" class="headerlink" title="Synchronized"></a><u>Synchronized</u></h1><p class="note note-primary">重要</p>
 
 <blockquote>
@@ -524,9 +524,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/25/spring/">
+                      <a href="/2021/08/25/java-jvm/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Spring</span>
+                        <span class="hidden-mobile">Java虚拟机</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

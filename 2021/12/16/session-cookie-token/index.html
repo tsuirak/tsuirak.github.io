@@ -247,23 +247,21 @@
 <p>例如，假设两个机器组成了一个集群， <em><strong>F</strong></em> 君通过机器 <em><strong>A</strong></em> 登录了系统， 那 <em><strong>session id</strong></em> 会保存在机器 <em><strong>A</strong></em> 上， 假如<em><strong>F</strong></em> 君的下一次请求被转发到机器 <em><strong>B</strong></em> 怎么办？ 机器 <em><strong>B</strong></em> 可没有存储 <em><strong>F</strong></em> 君的 <em><strong>session id</strong></em>！</p>
 <p>有时候会采用一点小伎俩： <em><strong>session sticky</strong></em> ， 就是让 <em><strong>F</strong></em> 君的请求一直粘连在机器 <em><strong>A</strong></em> 上， 但是这也不管用， 要是机器 <em><strong>A</strong></em> 挂掉了， 还是得转到机器 <em><strong>B</strong></em> 去。</p>
 <p>那只好做 <em><strong>session</strong></em> 的复制了， 把 <em><strong>session id</strong></em> 在两个机器之间搬来搬去，服务器的压力很大的！</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/1350514-20180504122814029-1201707523.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
-
-
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202207011347408.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p>后来有个叫 <em><strong>Memcached</strong></em> 的支了招： 把 <em><strong>session id</strong></em> 集中存储到一个地方，所有的机器都来访问这个地方的数据， 这样一来，就不用复制了，但是增加了单点失败的可能性， 要是那个负责 <em><strong>session</strong></em> 的机器挂掉了， 所有人都得重新登录一遍， 估计得被人骂死。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/1350514-20180504123036062-1920411426.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" /></li>
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202207011348596.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" /></li>
 <li><p>于是有人就一直在思考， 为什么要保存这可恶的 <em><strong>session id</strong></em> 呢， 只让每个客户端去保存该多好？</p>
 <p>可是如果不保存这些 <em><strong>session id</strong></em>，怎么验证客户端发给服务器的 <em><strong>session id</strong></em> 的确是本服务器生成的呢？</p>
 <p>如果不去验证，服务器都不知道这些请求是不是合法登录的用户， 那些不怀好意的家伙们就可能伪造 <em><strong>session id</strong></em>为所欲为了。</p>
 <p><u><strong>嗯对！关键点就是验证 ！</strong></u></p>
-<p>比如说， <em><strong>F</strong></em> 君已经登录了系统， 服务器给 <em><strong>F</strong></em> 君发宋一个令牌（<em><strong>token</strong></em>）， 里边包含了 <em><strong>F</strong></em> 君的 <em><strong>user id</strong></em>，下一次 <em><strong>F</strong></em> 君再次通过 <em><strong>Http</strong></em> 请求访问服务器的时候， 将这个 <em><strong>token</strong></em> 通过<em><strong>Http header</strong></em> 带过来。</p>
+<p>比如说， <em><strong>F</strong></em> 君已经登录了系统， 服务器给 <em><strong>F</strong></em> 君发送一个令牌（<em><strong>token</strong></em>）， 里边包含了 <em><strong>F</strong></em> 君的 <em><strong>user id</strong></em>，下一次 <em><strong>F</strong></em> 君再次通过 <em><strong>Http</strong></em> 请求访问服务器的时候， 将这个 <em><strong>token</strong></em> 通过<em><strong>Http header</strong></em> 带过来。</p>
 <p>不过这和 <em><strong>session id</strong></em> 没有本质区别啊， 任何人都可以可以伪造， 所以得想点儿办法， 让别人伪造不了。</p>
 <p>那就对数据做一个签名吧， 比如说在发送数据前用 <em><strong>HMAC-SHA256</strong></em> 算法，加上一个只有服务器才知道的密钥， 对数据做一个签名， 把这个签名和数据一起作为 <em><strong>token</strong></em> ， 由于密钥别人不知道， 就无法伪造 <em><strong>token</strong></em> 了。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/1350514-20180504123206667-444188772.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202207011348292.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p>对于这个 <em><strong>token</strong></em> 服务器端并不保存， 当 <em><strong>F</strong></em> 君把这个 <em><strong>token</strong></em> 给服务器发过来的时候，再用同样的 <em><strong>HMAC-SHA256</strong></em> 算法和同样的密钥，对数据再计算一次签名， 和 <em><strong>token</strong></em> 中的签名做个比较， 如果相同， 服务器就知道 <em><strong>F</strong></em> 君已经登录过了，并且可以直接取到 <em><strong>F</strong></em> 君的 <em><strong>user id</strong></em>。如果不相同， 数据部分肯定被人篡改过， 服务器就告诉发送者： 对不起，没有认证。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/1350514-20180504123326596-1492094512.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202207011349379.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p><em><strong>token</strong></em> 中的数据是明文保存的（虽然在传送前会用 <em><strong>Base64</strong></em> 做下编码， 但那不是加密）， 还是可以被别人看到的， 所以我不能在其中保存像密码这样的敏感信息。</p>
 <p>当然， 如果一个人的 <em><strong>token</strong></em> 被别人偷走了， 那服务器端也没办法， 也会认为小偷就是合法用户， 这其实和一个人的 <em><strong>session id</strong></em> 被别人偷走是一样的。</p>
@@ -330,8 +328,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/12/16/login/">
-                        <span class="hidden-mobile">登陆注册（腾讯云短信服务）</span>
+                      <a href="/2021/12/14/vue-nuxt/">
+                        <span class="hidden-mobile">前台模版框架：vue-nuxt</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

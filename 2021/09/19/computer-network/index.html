@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      116
+      115
        分钟
     </span>
   
@@ -238,12 +238,12 @@
             <div class="markdown-body">
               <h1 id="TCP-IP协议栈"><a href="#TCP-IP协议栈" class="headerlink" title="TCP/IP协议栈"></a>TCP/IP协议栈</h1><p><em><strong>TCP/IP</strong></em> 协议采用 <em><strong>4</strong></em> 层结构，分别是<em><strong>应用层、传输层、网络层、链路层</strong></em>。</p>
 <p><em><strong>TCP/IP</strong></em> 协议和 <em><strong>OSI</strong></em> 参考模型</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2015.27.42.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
-
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241117640.png" srcset="/img/loading.gif" lazyload></p>
 <p><em><strong>TCP/IP</strong></em> 协议的基本框架</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-18%2020.11.30.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241117064.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/849589-20170628002845914-1085185628.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241118387.png" srcset="/img/loading.gif" lazyload style="zoom:75%;" />
+
 <p>流程：当通过 <em><strong>http</strong></em> 发起一个请求时，应用层、传输层、网络层和链路层的相关协议依次对该请求进行包装并携带对应的首部，最终在链路层生成以太网数据包，以太网数据包通过物理介质传输给对方主机，对方接收到数据包以后，然后再一层一层采用对应的协议进行拆包，最后把应用层数据交给应用程序处理。</p>
 <blockquote>
 <p>网络通信就好比送快递，商品外面的一层层包裹就是各种协议。协议包含了商品信息、收货地址、收件人、联系方式等，然后还需要配送车、配送站、快递员，商品才能最终到达用户手中。</p>
@@ -254,11 +254,9 @@
 <h1 id="物理介质"><a href="#物理介质" class="headerlink" title="物理介质"></a>物理介质</h1><p>物理介质就是把电脑连接起来的物理手段，常见的有光纤、双绞线，以及无线电波，它决定了电信号（<em><strong>0 or 1</strong></em>）的传输方式，物理介质的不同决定了电信号的传输带宽、速率、传输距离以及抗干扰性等。</p>
 <h1 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h1><h2 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h2><p>网络通信就是把有特定意义的数据通过物理介质传送给对方，单纯的发送 <strong>0</strong> 和 <strong>1</strong> 是没有意义的，要传输有意义的数据，就需要以字节为单位对 <strong>0</strong> 和 <strong>1</strong> 进行分组，并且要标识好每一组电信号的信息特征，然后按照分组的顺序依次发送。**<u>以太网规定一组电信号就是一个数据包，一个数据包被称为一帧， 制定这个规则的协议就是以太网协议</u>**。</p>
 <h3 id="以太网帧的格式"><a href="#以太网帧的格式" class="headerlink" title="以太网帧的格式"></a>以太网帧的格式</h3><p><strong>一个完整的以太网数据包</strong>。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2015.44.10.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241120528.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
-
-
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2023.36.52.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241121344.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -279,7 +277,7 @@
 <p>因此，以太网协议通过对电信号进行分组并形成数据帧，然后通过物理介质把数据帧发送给接收方。</p>
 </blockquote>
 <p><strong><u>以太网如何来识别接收方的身份？</u></strong> - <strong>网卡地址（Mac地址）</strong></p>
-<h2 id="Mac地址"><a href="#Mac地址" class="headerlink" title="Mac地址"></a>Mac地址</h2><p>以太网规协议定，接入网络的设备都必须安装网络适配器，即 <strong>网卡</strong>。数据包必须是从一块网卡传送到另一块网卡。</p>
+<h2 id="Mac-地址"><a href="#Mac-地址" class="headerlink" title="Mac 地址"></a><em>Mac</em> 地址</h2><p>以太网规协议定，接入网络的设备都必须安装网络适配器，即 <strong>网卡</strong>。数据包必须是从一块网卡传送到另一块网卡。</p>
 <p>而 <strong>网卡地址</strong> 就是数据包的发送地址和接收地址，也就是帧首部所包含的  <strong>MAC</strong> 地址，<strong>MAC</strong> 地址是每块网卡的身份标识，就如同身份证上的身份证号码，具有全球唯一性。</p>
 <blockquote>
 <p>MAC地址采用十六进制标识，共6个字节， 前三个字节是厂商编号，后三个字节是网卡流水号，例如 <strong>4C-0F-6E-12-D2-19</strong>。</p>
@@ -315,11 +313,11 @@
 <li><p><strong>IPv6</strong></p>
 </li>
 </ul>
-<h3 id="IP数据报格式"><a href="#IP数据报格式" class="headerlink" title="IP数据报格式"></a>IP数据报格式</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2019.08.20.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h3 id="IP数据报格式"><a href="#IP数据报格式" class="headerlink" title="IP数据报格式"></a>IP数据报格式</h3><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241121886.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:50%;" />
+
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241122113.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
-
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2019.04.14.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <blockquote>
 <p><strong>固定部分</strong>：一定是 20B；</p>
@@ -344,20 +342,16 @@
 </blockquote>
 <h3 id="IP数据报分片"><a href="#IP数据报分片" class="headerlink" title="IP数据报分片"></a>IP数据报分片</h3><h4 id="最大传送单元MTU"><a href="#最大传送单元MTU" class="headerlink" title="最大传送单元MTU"></a>最大传送单元MTU</h4><p>链路层数据帧可以封装数据的上限。</p>
 <p>以太网的 <em><strong>MTU</strong></em> 是 1500 字节。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2019.34.13.png" srcset="/img/loading.gif" lazyload  style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241123296.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p>如果所传送的数据报长度超过某链路的 MTU 值？ - 分片。</p>
-<h4 id="如何避免分片"><a href="#如何避免分片" class="headerlink" title="如何避免分片"></a>如何避免分片</h4><p><strong><u><em>To do</em></u></strong></p>
-<h4 id="分片的顺序"><a href="#分片的顺序" class="headerlink" title="分片的顺序"></a>分片的顺序</h4><p><strong><u><em>To do</em></u></strong></p>
-<h4 id="接收端如何确认所有的分片都已经到达"><a href="#接收端如何确认所有的分片都已经到达" class="headerlink" title="接收端如何确认所有的分片都已经到达"></a>接收端如何确认所有的分片都已经到达</h4><p><strong><u><em>To do</em></u></strong></p>
-<h3 id="IP选路"><a href="#IP选路" class="headerlink" title="IP选路"></a>IP选路</h3><p><strong><u><em>To do</em></u></strong></p>
 <h2 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h2><blockquote>
 <p><strong>TCP/IP</strong> 协议栈中处于网络层，<strong>OSI</strong> 标准中处于数据链路层。</p>
-<p>引用：**<u>谈论 ARP 协议究竟属于第几层一点意义也没有，那完全是对 IETF 哲学的误解，是强行使用 ISO 的哲学研究 IETF 体系的生搬硬套。IETF 哲学是很实际和洒脱的，不似 ISO 那样刻板。</u>**</p>
+<p>引用：<strong>谈论 ARP 协议究竟属于第几层一点意义也没有，那完全是对 IETF 哲学的误解，是强行使用 ISO 的哲学研究 IETF 体系的生搬硬套。IETF 哲学是很实际和洒脱的，不似 ISO 那样刻板。</strong></p>
 </blockquote>
 <p><strong><u>解决：发送者如何知道接收者的 MAC 地址？</u></strong></p>
 <p>即地址解析协议，是根据 <strong>IP</strong> 地址获取 <strong>MAC</strong> 地址的一个网络层协议。</p>
-<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-20%2013.58.26.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241124685.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -387,7 +381,9 @@
 <p>本地网络接口。</p>
 </blockquote>
 <p>生存周期一般为 10～20 min。</p>
-<h3 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-20%2015.22.13.png" srcset="/img/loading.gif" lazyload style="zoom:30%;" />
+<h3 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h3><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241124448.png" srcset="/img/loading.gif" lazyload style="zoom:30%;" />
+
+
 
 <p>ARP 报文总长度为 28 字节，MAC 地址长度为 6 字节，IP 地址长度为 4 字节。</p>
 <blockquote>
@@ -402,23 +398,23 @@
 <li>目标 IP 地址：接收方设备的IP地址。</li>
 </ul>
 </blockquote>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h2><p><strong><u>解决：如果接收者和自己不在同一个子网，数据包如何发给对方？</u></strong></p>
+<h2 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h2><p><strong><u>解决：如果接收者和自己不在同一个子网，数据包如何发给对方？</u></strong></p>
 <p>通过 <em><strong>ARP</strong></em> 协议的工作原理可以发现，<em><strong>ARP</strong></em> 的 <em><strong>MAC</strong></em> 寻址还是局限在同一个子网中，因此网络层引入了路由协议，首先通过 <em><strong>IP</strong></em> 协议来判断两台主机是否在同一个子网中，如果在同一个子网，就通过 <em><strong>ARP</strong></em> 协议查询对应的 <em><strong>MAC</strong></em> 地址，然后以广播的形式向该子网内的主机发送数据包；如果不在同一个子网，以太网会将该数据包转发给本子网的<strong>网关</strong>进行路由。网关是互联网上子网与子网之间的桥梁，所以网关会进行多次转发，最终将该数据包转发到目标 <em><strong>IP</strong></em> 所在的子网中，然后再通过 <em><strong>ARP</strong></em> 获取目标机 <em><strong>MAC</strong></em>，最终也是通过广播形式将数据包发送给接收方。</p>
 <p>而完成这个路由协议的物理设备就是<strong>路由器，</strong>在错综复杂的网络世界里，路由器扮演者<strong>交通枢纽</strong>的角色，它会根据信道情况，选择并设定路由，以最佳路径来转发数据包。</p>
 <h2 id="ICMP协议"><a href="#ICMP协议" class="headerlink" title="ICMP协议"></a>ICMP协议</h2><p><em><strong>ICPM</strong></em> 协议支持主机或路由器，</p>
-<h3 id="ICMP数据报格式"><a href="#ICMP数据报格式" class="headerlink" title="ICMP数据报格式"></a>ICMP数据报格式</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-18%2020.15.15.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h3 id="ICMP数据报格式"><a href="#ICMP数据报格式" class="headerlink" title="ICMP数据报格式"></a>ICMP数据报格式</h3><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241125168.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
 <h3 id="ICMP差错报文"><a href="#ICMP差错报文" class="headerlink" title="ICMP差错报文"></a>ICMP差错报文</h3><ol>
-<li>终点不可达：当路由器或者主机不能交付数据报时就向源点发生终点不可达。**<u>（无法交付）</u>**</li>
+<li>终点不可达：当路由器或者主机不能交付数据报时就向源点发生终点不可达。<strong>（无法交付）</strong></li>
 <li>源点抑制：几乎不再使用。</li>
-<li>时间超过：当路由器收到 <em><strong>TTL=0</strong></em> 的数据报时，除了丢弃该数据报外，还要向源点发生时间超过报文。**<u>（TTL=0）</u>**</li>
-<li>参数问题：路由器或目的主机收到的数据报的首部中有的字段的值不正确时，就丢弃该数据报，并向源点发 送参数问题报文。 <strong><u>（即首部字段有问题）</u></strong></li>
-<li>变路由（重定向）：路由器把改变路由报文发送给主机，让主机知道下次应将数据报发送给另外的路由器 （可通过更好的路由）。 （**<u>值得更好的路由）</u>**</li>
+<li>时间超过：当路由器收到 <em><strong>TTL=0</strong></em> 的数据报时，除了丢弃该数据报外，还要向源点发生时间超过报文。<strong>（TTL=0）</strong></li>
+<li>参数问题：路由器或目的主机收到的数据报的首部中有的字段的值不正确时，就丢弃该数据报，并向源点发 送参数问题报文。 <strong>（即首部字段有问题）</strong></li>
+<li>变路由（重定向）：路由器把改变路由报文发送给主机，让主机知道下次应将数据报发送给另外的路由器 （可通过更好的路由）。 （<strong>值得更好的路由）</strong></li>
 </ol>
 <p><strong>ICMP差错报文数据字段</strong></p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-18%2020.25.29.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241125499.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -445,7 +441,7 @@
 </blockquote>
 <p><strong><u><em>UDP 协议、TCP协议</em></u></strong></p>
 <h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>端口号长度为 <em><strong>16bit</strong></em>，能表示 65536 个不同的端口号。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2013.02.12.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241126763.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <table>
 <thead>
@@ -481,13 +477,13 @@
 <li>无拥塞控制，适合实时应用。</li>
 <li>首部开销小，8B，而 <em><strong>TCP</strong></em>：20B。</li>
 </ul>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2013.17.43.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241126781.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
-<h3 id="UDP数据报格式"><a href="#UDP数据报格式" class="headerlink" title="UDP数据报格式"></a>UDP数据报格式</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-18%2020.01.53.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h3 id="UDP数据报格式"><a href="#UDP数据报格式" class="headerlink" title="UDP数据报格式"></a>UDP数据报格式</h3><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241127465.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2013.22.05.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241127479.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p><em><strong>UDP</strong></em> 数据包由首部和数据两部分组成，首部长度为 8 个字节，主要包括源端口和目标端口；数据最大为 65527 个字节，整个数据包的长度最大可达到 65535 个字节。</p>
 <p><em><strong>UDP</strong></em> 协议比较简单，实现容易，但它没有确认机制， 数据包一旦发出，无法知道对方是否收到，因此可靠性较差。</p>
@@ -509,11 +505,11 @@
 <li><p><em><strong>TCP</strong></em> 面向字节流。<em><strong>TCP</strong></em> 会把应用程序交下来的数据看成仅仅是一连串的无结构的字节流。</p>
 </li>
 </ol>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2013.42.33.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241127105.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
-<h3 id="TCP数据报格式"><a href="#TCP数据报格式" class="headerlink" title="TCP数据报格式"></a>TCP数据报格式</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2013.45.44.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h3 id="TCP数据报格式"><a href="#TCP数据报格式" class="headerlink" title="TCP数据报格式"></a>TCP数据报格式</h3><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241128317.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -533,10 +529,10 @@
 <p>选项：最大报文段长度 <em><strong>MSS</strong></em>、窗口扩大、时间戳、选择确认等。</p>
 </blockquote>
 <h3 id="TCP的连接控制管理"><a href="#TCP的连接控制管理" class="headerlink" title="TCP的连接控制管理"></a>TCP的连接控制管理</h3><p>连接传输的三个阶段：</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2014.26.23.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241128590.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p><em><strong>TCP</strong></em> 连接的建立采用客户服务器方式，主动发起连接建立的应用进程叫做客户，而被动等待连接建 立的应用进程叫服务器。</p>
-<h4 id="三次握手！！！"><a href="#三次握手！！！" class="headerlink" title="三次握手！！！"></a>三次握手！！！</h4><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2014.30.49.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h4 id="三次握手！！！"><a href="#三次握手！！！" class="headerlink" title="三次握手！！！"></a>三次握手！！！</h4><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241129860.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <ol>
 <li><strong>第一次握手</strong></li>
@@ -561,9 +557,7 @@
 <p><em><strong>SYN</strong></em> 洪泛攻击发生在 <em><strong>OSI</strong></em> 第四层，这种方式利用 <em><strong>TCP</strong></em> 协议的特性，就是三次握手。攻击者发送 <em><strong>TCP</strong></em> <em><strong>SYN</strong></em>，<em><strong>SYN</strong></em> 是 <em><strong>TCP</strong></em> 三次握手中的第一个数据包，而当服务器返回 <em><strong>ACK</strong></em> 后，该攻击者就不对其进行再确认，那这个 <em><strong>TCP</strong></em> 连接就处于挂起状态，也就是所谓的半连接状态，服务器收不到再确认的话，还会重复发送 <em><strong>ACK</strong></em> 给攻击者。这样更加会浪费服务器的资源。攻击者就对服务器发送非常大量的这种TCP连接，由于每一个都没法完成三次握手，所以在服务器上，这些 <em><strong>TCP</strong></em> 连接会因为挂起状态而消耗 <em><strong>CPU</strong></em> 和内存，最后服务器可能死机，就无法为正常用户提供服务了。</p>
 </blockquote>
 <h4 id="四次挥手！！！"><a href="#四次挥手！！！" class="headerlink" title="四次挥手！！！"></a>四次挥手！！！</h4><p>可以由双方任意提出终止。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2014.39.30.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
-
-
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241129638.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -580,7 +574,7 @@
 <li><p>客户端回送一个确认报文段，再等到时间等待计时器设置的 <em><strong>2MSL</strong></em> （最长报文段寿命）后，连接彻底关闭。 <em><strong>ACK=1，seq=u+1，ack=w+1</strong></em></p>
 </li>
 </ol>
-<h3 id="TCP的可靠传输"><a href="#TCP的可靠传输" class="headerlink" title="TCP的可靠传输"></a>TCP的可靠传输</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2015.11.54.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h3 id="TCP的可靠传输"><a href="#TCP的可靠传输" class="headerlink" title="TCP的可靠传输"></a>TCP的可靠传输</h3><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241130984.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p><strong><u>可靠：保证接收方进程从缓存区读出的字节流与发送方发出的字节流是完全一样的。</u></strong></p>
 <h4 id="TCP实现可靠传输的机制"><a href="#TCP实现可靠传输的机制" class="headerlink" title="TCP实现可靠传输的机制"></a>TCP实现可靠传输的机制</h4><blockquote>
@@ -592,17 +586,17 @@
 </ol>
 </blockquote>
 <p><strong>序号</strong></p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2015.14.20.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241130417.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
 <p><strong>确认</strong></p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2015.15.27.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241130211.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
 <p><strong>重传</strong></p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2015.15.58.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241131853.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -619,7 +613,7 @@
 <p>TCP利用 <strong><u>滑动窗口</u></strong> 机制实现流量控制。</p>
 <p>在通信过程中，接收方根据自己接收缓存的大小，动态地调整发送方的发送窗口大小，即接收窗口 <em><strong>rwnd</strong></em>（接收方 设置确认报文段的窗口字段来将 <em><strong>rwnd</strong></em> 通知给发送方），发送方的发送窗口取接收窗口 <em><strong>rwnd</strong></em> 和拥塞窗口 <em><strong>cwnd</strong></em> 的最小值。</p>
 <p>A 向 B 发送数据，连接建立时，B 告诉 A：“我的 rwnd=400（字节）”，设每一个报文段 100B，报文段序号初始值为 1。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2015.48.48.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241133521.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -630,9 +624,7 @@
 <p>网络中有许多资源同时呈现供应不足 $\longrightarrow$ 网络性能变坏 $\longrightarrow$ 网络吞吐量将随输入负荷增大而下降。</p>
 <p>拥塞控制：防止过多的数据注入到网络中。</p>
 <p>拥塞控制和流量控制的区别：</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2017.49.34.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:33%;" />
-
-
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241133614.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -644,7 +636,7 @@
 <p>发送窗口= <em><strong>Min</strong></em> { 接收窗口 <em><strong>rwnd</strong></em>，拥塞窗口 <em><strong>cwnd</strong></em> } </p>
 <p>接收窗口：接收方根据接受缓存设置的值，并告知给发送方，反映接收方容量。 </p>
 <p>拥塞窗口：发送方根据自己估算的网络拥塞程度而设置的窗口值，反映网络当前容量。</p>
-<h4 id="慢开始和拥塞避免"><a href="#慢开始和拥塞避免" class="headerlink" title="慢开始和拥塞避免"></a>慢开始和拥塞避免</h4><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2017.55.02.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h4 id="慢开始和拥塞避免"><a href="#慢开始和拥塞避免" class="headerlink" title="慢开始和拥塞避免"></a>慢开始和拥塞避免</h4><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241134748.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -654,7 +646,7 @@
 <li>一个往返时延 <em><strong>RTT</strong></em>；</li>
 <li>开始发送一批拥塞窗口内的报文段到开始发送下一批拥塞窗口内的报文段的时间。</li>
 </ul>
-<h4 id="快重传和快恢复"><a href="#快重传和快恢复" class="headerlink" title="快重传和快恢复"></a>快重传和快恢复</h4><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2017.55.20.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h4 id="快重传和快恢复"><a href="#快重传和快恢复" class="headerlink" title="快重传和快恢复"></a>快重传和快恢复</h4><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241134326.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -664,15 +656,15 @@
 </blockquote>
 <p><strong><u><em>DNS协议、FTP协议、HTTP协议、HTTPS协议</em></u></strong></p>
 <h2 id="DNS协议"><a href="#DNS协议" class="headerlink" title="DNS协议"></a>DNS协议</h2><p>域名解析系统，即域名解析为 <em><strong>ip</strong></em> 地址。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2019.02.32.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241134472.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
-<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2019.03.52.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:50%;" />
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241135395.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2019.06.31.png" srcset="/img/loading.gif" lazyload style="zoom:30%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241135579.png" srcset="/img/loading.gif" lazyload style="zoom:30%;" />
 
 
 
-<h3 id="域名（DNS）服务器"><a href="#域名（DNS）服务器" class="headerlink" title="域名（DNS）服务器"></a>域名（DNS）服务器</h3><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2019.11.21.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h3 id="域名（DNS）服务器"><a href="#域名（DNS）服务器" class="headerlink" title="域名（DNS）服务器"></a>域名（DNS）服务器</h3><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241136913.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -680,7 +672,10 @@
 <li>递归查询</li>
 <li>迭代查询</li>
 </ul>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-19%2019.16.12.png" srcset="/img/loading.gif" lazyload></p>
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241136447.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
 <h2 id="FTP协议"><a href="#FTP协议" class="headerlink" title="FTP协议"></a>FTP协议</h2><p>文件传输协议 <em><strong>FTP</strong></em>（File Transfer Protocol）。</p>
 <p>提供不同种类主机系统（硬、软件体系等都可以不同）之间的文件传输能力。</p>
 <p>简单文件传送协议 <em><strong>TFTP</strong></em>（Trivial File Transfer Protocol）。</p>
@@ -695,7 +690,7 @@
 </li>
 </ul>
 <p><u><strong>FTP使用TCP实现可靠传输。</strong></u></p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-10-20%2019.45.43.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241136836.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p><em><strong>TCP</strong></em> 控制连接端口：传请求，控制连接始终保持。</p>
 <p><em><strong>TCP</strong></em> 数据连接端口：传文件，数据连接保持一会。</p>
@@ -718,7 +713,10 @@
 <h3 id="HTTP原理"><a href="#HTTP原理" class="headerlink" title="HTTP原理"></a>HTTP原理</h3><p><em><strong>HTTP</strong></em> 是一个基于 <em><strong>TCP/IP</strong></em> 通信协议来传递数据的协议，传输的数据类型为 <em><strong>HTML</strong></em> 文件、图片文件、查询结果等。</p>
 <p><em><strong>HTTP</strong></em> 协议一般用于 <em><strong>B/S</strong></em> 架构。浏览器作为 <em><strong>HTTP</strong></em> 客户端通过 <em><strong>URL</strong></em> 向 <em><strong>HTTP</strong></em> 服务端即 <em><strong>WEB</strong></em> 服务器发送所有请求。</p>
 <p>以访问百度为例：</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-12-17%2021.54.14.png" srcset="/img/loading.gif" lazyload></p>
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241137652.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
 <h3 id="HTTP特点"><a href="#HTTP特点" class="headerlink" title="HTTP特点"></a>HTTP特点</h3><blockquote>
 <ol>
 <li><em><strong>HTTP</strong></em> 协议支持客户端/服务端模式，也是一种请求/响应模式的协议。</li>
@@ -737,7 +735,10 @@
 <p><em><strong>URI</strong></em> 是用来标示一个具体的资源的，我们可以通过 <em><strong>URI</strong></em> 知道一个资源是什么。</p>
 <p><em><strong>URL</strong></em> 则是用来定位具体的资源的，标示了一个具体的资源位置。互联网上的每个文件都有一个唯一的 <em><strong>URL</strong></em>。</p>
 </blockquote>
-<h3 id="HTTP报文组成"><a href="#HTTP报文组成" class="headerlink" title="HTTP报文组成"></a>HTTP报文组成</h3><p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/885859-20190724173242717-440362909.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="HTTP报文组成"><a href="#HTTP报文组成" class="headerlink" title="HTTP报文组成"></a>HTTP报文组成</h3><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241137777.png" srcset="/img/loading.gif" lazyload style="zoom:70%;" />
+
+
+
 <h3 id="请求报文构成"><a href="#请求报文构成" class="headerlink" title="请求报文构成"></a><strong>请求报文构成</strong></h3><blockquote>
 <ol>
 <li><strong>请求行</strong>：包括请求方法、请求 <em><strong>URL</strong></em>（不包括域名）、协议/版本</li>
@@ -746,7 +747,10 @@
 <li><strong>请求数据</strong></li>
 </ol>
 </blockquote>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/885859-20190724173230609-1990595514.png" srcset="/img/loading.gif" lazyload></p>
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241138053.png" srcset="/img/loading.gif" lazyload style="zoom:70%;" />
+
+
+
 <p>大致结构：</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs awk">＜request-line＞ <span class="hljs-regexp">//</span>请求行<br><br>＜headers＞ <span class="hljs-regexp">//</span>首部行<br><br>＜blank line＞ <span class="hljs-regexp">//</span>空行<br><br>＜request-body＞ <span class="hljs-regexp">//</span>请求体<br></code></pre></td></tr></table></figure>
 
@@ -918,7 +922,10 @@
 <blockquote>
 <p>SSL（<em><strong>Secure Socket Layer</strong></em>，安全套接字层）：<em><strong>SSL</strong></em> 协议位于 <em><strong>TCP/IP</strong></em> 协议与各种应用层协议之间，为数据通讯提供安全支持。</p>
 </blockquote>
-<h3 id="浏览器在使用HTTPS传输数据的流程是什么？"><a href="#浏览器在使用HTTPS传输数据的流程是什么？" class="headerlink" title="浏览器在使用HTTPS传输数据的流程是什么？"></a>浏览器在使用HTTPS传输数据的流程是什么？</h3><p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-12-17%2023.02.30.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="浏览器在使用HTTPS传输数据的流程是什么？"><a href="#浏览器在使用HTTPS传输数据的流程是什么？" class="headerlink" title="浏览器在使用HTTPS传输数据的流程是什么？"></a>浏览器在使用HTTPS传输数据的流程是什么？</h3><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241140036.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
 <blockquote>
 <ol>
 <li>首先客户端通过 <em><strong>URL</strong></em> 访问服务器建立 <em><strong>SSL</strong></em> 连接。</li>
@@ -1013,8 +1020,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/25/java-collection/">
-                        <span class="hidden-mobile">Java集合</span>
+                      <a href="/2021/08/25/java-jvm/">
+                        <span class="hidden-mobile">Java虚拟机</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

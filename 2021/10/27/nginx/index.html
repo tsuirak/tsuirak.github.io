@@ -240,23 +240,27 @@
 <h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><p><strong>正向代理</strong></p>
 <p><em><strong>Nginx</strong></em> 不仅可以做反向代理，实现负载均衡。还能用作正向代理来进行上网等功能。 正向代理：如果把局域网外的 <em><strong>Internet</strong></em> 想象成一个巨大的资源库，则局域网中的客户端要访问 <em><strong>Internet</strong></em>，则需要通过代理服务器来访问，这种代理服务就称为正向代理。</p>
 <p><u>需要在客户端配置代理服务器进行指定网站访问</u>。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 16.29.54.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241208578.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p><strong>反向代理</strong></p>
 <p>反向代理，其实客户端对代理是无感知的，因为客户端不需要任何配置就可以访问，我们只需要将请求发送到反向代理服务器，由反向代理服务器去选择目标服务器获取数据后，在返回给客户端，此时反向代理服务器和目标服务器对外就是一个服务器，<u>暴露的是代理服务器地址，隐藏了真实服务器 <em><strong>IP</strong></em> 地址</u>。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 16.35.09.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241210471.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
 <h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p><strong>单一模式</strong></p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 16.40.11.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241211018.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p><strong>负载均衡</strong></p>
 <p>增加服务器的数量，然后将请求分发到各个服务器上，将原先请求集中到单个服务器上的情况改为将请求分发到多个服务器上，将负载分发到不同的服务器，即负载均衡。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 16.45.55.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241211574.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
 
 <h2 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h2><p>为了加快网站的解析速度，可以把动态页面和静态页面由不同的服务器来解析，加快解析速度。降低原来单个服务器的压力。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 16.49.18.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241212636.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
 
 <h1 id="安装和启动"><a href="#安装和启动" class="headerlink" title="安装和启动"></a>安装和启动</h1><p>官网：<a target="_blank" rel="noopener" href="http://nginx.org/">http://nginx.org/</a></p>
 <blockquote>
@@ -300,7 +304,7 @@
 <p>默认安装路径：<code>/usr/local/nginx</code></p>
 <p>启动：<code>cd /usr/local/nginx/sbin</code></p>
 <p>默认启动脚本：<code>./nginx</code></p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 17.02.59.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241213045.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -319,13 +323,13 @@
 <blockquote>
 <p><em><strong>1.全局块</strong></em></p>
 <p>主要包括配置运行 <em><strong>Nginx</strong></em> 服务器的用户（组）、允许生成的 <em><strong>worker process</strong></em> 数，进程 <em><strong>PID</strong></em> 存放路径、日志存放路径和类型以及配置文件的引入等。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 21.47.03.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241213000.png" srcset="/img/loading.gif" lazyload alt="截屏2021-10-22 21.47.03" style="zoom:50%;" />
 
 
 
 <p><em><strong>2.events块</strong></em></p>
 <p><em><strong>events</strong></em> 块涉及的指令主要影响 <em><strong>Nginx</strong></em> 服务器与用户的网络连接，常用的设置包括是否开启对多 <em><strong>work process</strong></em> 下的网络连接进行序列化，是否允许同时接收多个网络连接，选取哪种事件驱动模型来处理连接请求，每个 <em><strong>word process</strong></em> 可以同时支持的最大连接数等。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 21.48.11.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241214078.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -349,13 +353,12 @@
 </ol>
 </li>
 </ol>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 21.48.47.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241214761.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 </blockquote>
 <h2 id="反向代理-1"><a href="#反向代理-1" class="headerlink" title="反向代理"></a>反向代理</h2><h4 id="案例-1"><a href="#案例-1" class="headerlink" title="案例 1"></a>案例 1</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">实现效果：使用 nginx 进行反向代理，访问 www<span class="hljs-selector-class">.test</span><span class="hljs-selector-class">.com</span> 直接跳转到 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8080</span><br></code></pre></td></tr></table></figure>
 
 <p>访问的流程：</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 23.55.12.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:50%;" />
-
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241216403.png" srcset="/img/loading.gif" lazyload></p>
 <p>如何启动 <em><strong>tomcat</strong></em></p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> tomcat安装路径bin目录<span class="hljs-regexp">//</span> 默认端口<span class="hljs-number">8080</span>./startup.sh<br></code></pre></td></tr></table></figure>
 
@@ -369,7 +372,9 @@
 <ol start="2">
 <li>在 <em><strong>nginx</strong></em> 进行请求转发的配置（反向代理配置）</li>
 </ol>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 23.54.20.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241216422.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:50%;" />
+
+
 
 <ol start="3">
 <li>启动 <em><strong>nginx</strong></em></li>
@@ -379,10 +384,7 @@
 
 
 <p>最终：访问 <code>wwww.test.com</code> 跳转到 <em><strong>tomcat</strong></em> 成功启动页面。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-22 23.56.21.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
-
-
-
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241217117.png" srcset="/img/loading.gif" lazyload></p>
 <hr>
 <h4 id="案例-2"><a href="#案例-2" class="headerlink" title="案例 2"></a>案例 2</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">实现效果：使用 nginx 反向代理，根据访问的路径跳转到不同端口的服务中 nginx 监听端口为 <span class="hljs-number">9001</span>访问 http:<span class="hljs-regexp">//</span><span class="hljs-number">172.16</span>.<span class="hljs-number">88.168</span>:<span class="hljs-number">9001</span><span class="hljs-regexp">/edu/</span> 直接跳转到 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8080</span>访问 http:<span class="hljs-regexp">//</span><span class="hljs-number">172.16</span>.<span class="hljs-number">88.168</span>:<span class="hljs-number">9001</span><span class="hljs-regexp">/vod/</span> 直接跳转到 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8081</span><br></code></pre></td></tr></table></figure>
 
@@ -449,7 +451,7 @@
 <h2 id="动静分离-1"><a href="#动静分离-1" class="headerlink" title="动静分离"></a>动静分离</h2><p><em><strong>Nginx</strong></em> 动静分离简单来说就是把动态跟静态请求分开，不能理解成只是单纯的把动态页面和 静态页面物理分离。</p>
 <p>一种是纯粹把静态文件独立成单独的域名，放在独立的服务器上，也是目前主流推崇的方案。</p>
 <p>另外一种方法就是动态跟静态文件混合在一起发布，通过 <em><strong>nginx</strong></em> 来分开。</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-27 14.18.44.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241218249.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -461,7 +463,7 @@
 
 
 
-<h2 id="高可用集群"><a href="#高可用集群" class="headerlink" title="高可用集群"></a>高可用集群</h2><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-27 14.21.39.png" srcset="/img/loading.gif" lazyload alt="截屏2021-10-27 14.21.39" style="zoom:50%;" />
+<h2 id="高可用集群"><a href="#高可用集群" class="headerlink" title="高可用集群"></a>高可用集群</h2><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241218227.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 <p>即主服务器宕机，启动备用服务器。</p>
 <h4 id="案例-1-3"><a href="#案例-1-3" class="headerlink" title="案例 1"></a>案例 1</h4><p><em><strong>keepalive + nginx</strong></em></p>
@@ -480,11 +482,11 @@
 <li><p>启动 <em><strong>nginx</strong></em> 和 <em><strong>keepalived</strong></em> 服务</p>
 </li>
 </ol>
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><h2 id="master-amp-worker"><a href="#master-amp-worker" class="headerlink" title="master&amp;worker"></a>master&amp;worker</h2><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-27 14.49.04.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><h2 id="master-amp-worker"><a href="#master-amp-worker" class="headerlink" title="master&amp;worker"></a>master&amp;worker</h2><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241219113.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
-<h2 id="worker如何工作"><a href="#worker如何工作" class="headerlink" title="worker如何工作"></a>worker如何工作</h2><img src="https://gitee.com/tsuiraku/typora/raw/master/img/截屏2021-10-27 14.59.12.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<h2 id="worker如何工作"><a href="#worker如何工作" class="headerlink" title="worker如何工作"></a>worker如何工作</h2><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241219485.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 

@@ -304,7 +304,7 @@
 <li>客户端发起请求测试</li>
 </ol>
 <p><strong>流程演示</strong></p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-08-19%2019.16.34.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202207011359824.png" srcset="/img/loading.gif" lazyload></p>
 <h1 id="SpringMVC的注解解析"><a href="#SpringMVC的注解解析" class="headerlink" title="SpringMVC的注解解析"></a>SpringMVC的注解解析</h1><h2 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h2><p>作用：用于建立请求 URL 和处理请求方法之间的对应关系。</p>
 <p>位置</p>
 <ul>
@@ -757,7 +757,7 @@
 <td>只会拦截访问的控制器方法，如果访问的是 jsp、html、css、image、js 是不会进行拦截的</td>
 </tr>
 </tbody></table>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-18%2015.53.35.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202207011359419.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
 
 
 
@@ -828,8 +828,11 @@
 <p><strong><u>HandlerExceptionResolver</u></strong></p>
 <p>系统中异常包括两类：<strong>预期异常</strong>和<strong>运行时异常（RuntimeException）</strong>，前者通过捕获异常从而获取异常信息，后者主要通过规范代码开发、测试等手段减少运行时异常的发生。</p>
 <p>系统的 <strong>Dao</strong>、<strong>Service</strong>、<strong>Controller</strong> 出现都通过 throws Exception 向上抛出，最后由 SpringMVC 前端控制器交由异常处理器进行异常处理，如下图：</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/image-20210821171506546.png" srcset="/img/loading.gif" lazyload></p>
-<h5 id=""><a href="#" class="headerlink" title=""></a></h5><p><strong>自定义异常处理的方式</strong></p>
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202207011400890.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<p><strong>自定义异常处理的方式</strong></p>
 <ul>
 <li><p>使用 Spring MVC 提供的简单异常处理器 <strong><u>SimpleMappingExceptionResolver</u></strong></p>
 </li>
@@ -911,8 +914,7 @@
 <h3 id="初始化过程"><a href="#初始化过程" class="headerlink" title="初始化过程"></a>初始化过程</h3><p><em><strong><u>源码 to do</u></strong></em></p>
 <h3 id="服务过程"><a href="#服务过程" class="headerlink" title="服务过程"></a>服务过程</h3><p><em><strong><u>源码 to do</u></strong></em></p>
 <h3 id="调用组件处理请求"><a href="#调用组件处理请求" class="headerlink" title="调用组件处理请求"></a>调用组件处理请求</h3><p><em><strong><u>源码 to do</u></strong></em></p>
-<h2 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h2><img src="https://gitee.com/tsuiraku/typora/raw/master/img/%E6%88%AA%E5%B1%8F2021-09-19%2010.23.18.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
-
+<h2 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h2><p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202207011400464.png" srcset="/img/loading.gif" lazyload></p>
 <p><strong><u>总结流程</u></strong></p>
 <blockquote>
 <ol>
@@ -925,7 +927,7 @@
 <li><p>判断是否配置默认 <em><strong>Servlet</strong></em> 处理资源资源： ***&lt;default-servlet-handler&gt;***。</p>
 </li>
 <li><p>若未配置，控制台显示映射无法找到，客户端展示 <em><strong>404</strong></em> 页面错误；</p>
-<img src="https://gitee.com/tsuiraku/typora/raw/master/img/img007.png" srcset="/img/loading.gif" lazyload alt="img007" style="zoom:50%;" /></li>
+<img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202207011401357.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" /></li>
 <li><p>若已经配置，但是无法找到访问资源，客户端展示 <em><strong>404</strong></em> 页面错误。</p>
 </li>
 </ol>
@@ -1032,8 +1034,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/10/10/java-reflection/">
-                        <span class="hidden-mobile">Java反射</span>
+                      <a href="/2021/08/17/spring/">
+                        <span class="hidden-mobile">Spring</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

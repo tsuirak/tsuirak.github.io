@@ -236,7 +236,7 @@
             <h1 style="display: none">JSON Web Token（JWT）</h1>
             
             <div class="markdown-body">
-              <h1 id="Json-Web-Token"><a href="#Json-Web-Token" class="headerlink" title="Json Web Token?"></a><em>Json Web Token?</em></h1><p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwt.png" srcset="/img/loading.gif" lazyload></p>
+              <h1 id="Json-Web-Token"><a href="#Json-Web-Token" class="headerlink" title="Json Web Token?"></a><em>Json Web Token?</em></h1><p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241157650.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p><em><strong>JSON Web Token</strong></em>：在 <em><strong>Web</strong></em> 应用间安全地传递信息。</p>
 <p><em><strong>JWT</strong></em> 是一个非常轻巧的<a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32"><strong>规范</strong></a>。这个规范允许我们使用 <em><strong>JWT</strong></em> 在用户和服务器之间传递安全可靠的信息。</p>
@@ -285,7 +285,7 @@
 <figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">rSWamyAYwuHC<span class="hljs-meta">o7</span>IFAgd<span class="hljs-number">1</span>oRpSP<span class="hljs-number">7</span><span class="hljs-symbol">nzL7</span>BF<span class="hljs-number">5</span>t<span class="hljs-number">7</span>ItqpKViM<br></code></pre></td></tr></table></figure>
 
 <p>这一部分又叫做<strong>签名</strong>。</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/sig1.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241157535.png" srcset="/img/loading.gif" lazyload></p>
 <p>最后将这一部分签名也拼接在被签名的字符串后面，我们就得到了完整的 <em><strong>JWT</strong></em></p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9</span>.ew<span class="hljs-number">0</span>KICAgICJpc<span class="hljs-number">3</span>MiOiAidHN<span class="hljs-number">1</span>aXJha<span class="hljs-number">3</span>UgSldUIiwNCiAgICAiaWF<span class="hljs-number">0</span>IjogMTQ<span class="hljs-number">0</span>MTU<span class="hljs-number">5</span>MzUwMiwNCiAgICAiZXhwIjogMTQ<span class="hljs-number">0</span>MTU<span class="hljs-number">5</span>NDcyMiwNCiAgICAiYXVkIjogInd<span class="hljs-number">3</span>dy<span class="hljs-number">50</span>c<span class="hljs-number">3</span>VpcmFrdS<span class="hljs-number">5</span>jb<span class="hljs-number">20</span>iLA<span class="hljs-number">0</span>KICAgICJzdWIiOiAibmFuYXNlQGV<span class="hljs-number">4</span>YW<span class="hljs-number">1</span>wbGUuY<span class="hljs-number">29</span>tIiwNCiAgICAiZnJvbV<span class="hljs-number">91</span>c<span class="hljs-number">2</span>VyIjogIkIiLA<span class="hljs-number">0</span>KICAgICJ<span class="hljs-number">0</span>YXJnZXRfdXNlciI<span class="hljs-number">6</span>ICJBIg<span class="hljs-number">0</span>KfQ==.rSWamyAYwuHCo<span class="hljs-number">7</span>IFAgd<span class="hljs-number">1</span>oRpSP<span class="hljs-number">7</span>nzL<span class="hljs-number">7</span>BF<span class="hljs-number">5</span>t<span class="hljs-number">7</span>ItqpKViM<br></code></pre></td></tr></table></figure>
 
@@ -297,7 +297,7 @@
 <p>最后！这样就可以安全地完成添加好友的操作了！</p>
 <h2 id="签名的目的"><a href="#签名的目的" class="headerlink" title="签名的目的"></a>签名的目的</h2><p>最后一步签名的过程，实际上是对头部以及载荷内容进行签名。一般而言，加密算法对于不同的输入产生的输出总是不一样的。对于两个不同的输入，产生同样的输出的概率极其地小。所以，可以统一的认为：不一样的输入产生不一样的输出。</p>
 <p>所以，如果有人对头部以及载荷的内容解码之后进行修改，再进行编码的话，那么新的头部和载荷的签名和之前的签名就将是不一样的。而且，如果不知道服务器加密的时候用的密钥的话，得出来的签名也一定会是不一样的。</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/sig2.png" srcset="/img/loading.gif" lazyload alt="签名过程"></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241157902.png" srcset="/img/loading.gif" lazyload></p>
 <p>服务器应用在接受到 <em><strong>JWT</strong></em> 后，首先对头部和载荷的内容用同一算法再次签名。（<em><strong>JWT</strong></em> 的头部中用 <em><strong>alg</strong></em> 字段指明了加密算法）。</p>
 <p>如果服务器应用对头部和载荷再次以同样方法签名之后发现，计算出来的签名和接受到的签名不一样，那么就说明这个 <em><strong>token</strong></em> 的内容被别人动过的，服务器就应该拒绝这个 <em><strong>token</strong></em>，返回一个 <em><strong>HTTP 401 Unauthorized</strong></em> 响应。</p>
 <h2 id="信息会暴露"><a href="#信息会暴露" class="headerlink" title="信息会暴露"></a>信息会暴露</h2><p>在 <em><strong>JWT</strong></em> 中，不应该在载荷里面加入任何敏感的数据。在上面的例子中，传输的是用户的 <em><strong>User ID</strong></em>。这个值实际上不是什么敏感内容，一般情况下被知道也是安全的。</p>
@@ -309,23 +309,23 @@
 <p>用户认证和用户授权（<em><strong>Authorization</strong></em>）。用户授权指的是规定并允许用户使用自己的权限，例如发布帖子、管理站点等。</p>
 </blockquote>
 <p>首先，服务器应用让用户通过 <em><strong>Web</strong></em> 表单将用户名和密码发送到服务器的接口。这一过程一般是一个 <em><strong>HTTP POST</strong></em> 请求。建议的方式是通过 <em><strong>SSL</strong></em> 加密的传输（<em><strong>https协议</strong></em>），从而避免敏感信息被嗅探。</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth1.png" srcset="/img/loading.gif" lazyload alt="用户登录请求"></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241159028.png" srcset="/img/loading.gif" lazyload></p>
 <p>接下来，应用和数据库核对用户名和密码。</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth2.png" srcset="/img/loading.gif" lazyload alt="核对用户名密码"></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241159738.png" srcset="/img/loading.gif" lazyload></p>
 <p>核对用户名和密码成功后，应用将用户的 <em><strong>user_id</strong></em> 作为 <em><strong>JWT Payload</strong></em> 的一个属性，将其与头部分别进行 <em><strong>Base64</strong></em> 编码拼接后签名，形成一个<u>半成品</u> <em><strong>JWT</strong></em>。</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth3.png" srcset="/img/loading.gif" lazyload alt="生成JWT"></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241200953.png" srcset="/img/loading.gif" lazyload></p>
 <p>应用将 <em><strong>JWT</strong></em> 字符串作为该请求 <em><strong>Cookie</strong></em> 的一部分返回给用户。注意，在这里必须使用 <em><strong>HttpOnly</strong></em> 属性来防止 <em><strong>Cookie</strong></em> 被 <em><strong>JavaScript</strong></em> 读取，从而避免 <a target="_blank" rel="noopener" href="http://www.cnblogs.com/bangerlee/archive/2013/04/06/3002142.html">跨站脚本攻击（XSS攻击）</a>。</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth4.png" srcset="/img/loading.gif" lazyload alt="在Cookie中嵌入JWT"></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241200503.png" srcset="/img/loading.gif" lazyload></p>
 <p>在 <em><strong>Cookie</strong></em> 失效或者被删除前，用户每次访问应用，应用都会接受到含有 <em><strong>jwt</strong></em> 的 <em><strong>Cookie</strong></em>。从而应用就可以将 <em><strong>JWT</strong></em> 从请求中提取出来。</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth5.png" srcset="/img/loading.gif" lazyload alt="从Cookie提取JWT"></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241200428.png" srcset="/img/loading.gif" lazyload></p>
 <p>应用通过一系列任务检查 <em><strong>JWT</strong></em> 的有效性。检查签名是否正确；检查 <em><strong>Token</strong></em> 是否过期；检查 <em><strong>Token</strong></em> 的接收方是否是自己（可选）等。</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth6.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241201263.png" srcset="/img/loading.gif" lazyload></p>
 <p>应用在确认 <em><strong>JWT</strong></em> 有效之后，<em><strong>JWT</strong></em> 进行 <em><strong>Base64</strong></em> 解码，然后在 <em><strong>Payload</strong></em> 中读取用户的 <em><strong>id</strong></em> 值，也就是<code>user_id</code>属性。</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth7.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241202968.png" srcset="/img/loading.gif" lazyload></p>
 <p>应用从数据库取到 <em><strong>id=1025</strong></em> 用户的信息，加载到内存中，进行 <em><strong>ORM</strong></em> 之类的一系列底层逻辑初始化。</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth8.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241202795.png" srcset="/img/loading.gif" lazyload></p>
 <p>应用根据用户请求进行响应。</p>
-<p><img src="https://gitee.com/tsuiraku/typora/raw/master/img/jwtauth9.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://tsuiraku.oss-cn-chengdu.aliyuncs.com/typora/202206241202458.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="JWT-和-Session-方式存储-id-的差异"><a href="#JWT-和-Session-方式存储-id-的差异" class="headerlink" title="JWT 和 Session 方式存储 id 的差异"></a><em>JWT</em> 和 <em>Session</em> 方式存储 <em>id</em> 的差异</h3><p><em><strong>Session</strong></em></p>
 <blockquote>
 <p>当使用 <em><strong>Session</strong></em> 方式来存储用户 <em><strong>id</strong></em>，一开始用户的 <em><strong>Session</strong></em> 只会存储在一台服务器上。对于有多个子域名的站点，每个子域名至少会对应一台不同的服务器，例如：</p>
